@@ -1,5 +1,4 @@
 source $HOME/.config/nvim/plug-config/coc.vim
-
 syntax on
 
 set number
@@ -44,6 +43,9 @@ Plug 'sheerun/vim-polyglot'
 " vim fugitive
 Plug 'tpope/vim-fugitive'
 
+" smart commenting
+Plug 'tpope/vim-commentary'
+
 " file explorer
 Plug 'preservim/nerdtree'
 
@@ -51,7 +53,7 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
 " undotree
-Plug  'mbbill/undotree'
+Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -62,6 +64,9 @@ let g:monokai_gui_italic = 1
 
 " air-line
 let g:airline_powerline_fonts = 1
+
+" leaderkey
+let mapleader = " "
 
 " autocomplete brackets
 inoremap " ""<left>
@@ -80,6 +85,20 @@ noremap <C-Left> 5<C-w><
 noremap <C-Right> 5<C-w>>
 noremap <C-Up> 5<C-w>-
 noremap <C-Down> 5<C-w>+
+noremap <leader>h <C-w>h
+noremap <leader>j <C-w>j
+noremap <leader>k <C-w>k
+noremap <leader>l <C-w>l
+
+" some easier motions
+noremap <C-h> B
+noremap <C-l> W
+noremap <C-k> 3k
+noremap <C-j> 3j
+
+" ctrl w but opposite
+imap <C-E> <C-o>de
+imap <C-W> <C-o>db
 
 " functions here
 fun! TrimWhitespace()
