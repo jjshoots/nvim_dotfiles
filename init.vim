@@ -1,30 +1,7 @@
 source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/plug-config/set.vim
+source $HOME/.config/nvim/plug-config/map.vim
 syntax on
-
-set number
-set nu
-set nohlsearch
-set hidden
-set noerrorbells
-set signcolumn
-
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set smartindent
-
-set nobackup
-set noswapfile
-set undodir=~/.nvim/undodir
-set undofile
-set clipboard=unnamed
-
-set incsearch
-set termguicolors
-set scrolloff=8
-set noshowmode
-set cmdheight=2
 
 call plug#begin('~/.vim/plugged')
 
@@ -55,6 +32,12 @@ Plug 'ryanoasis/vim-devicons'
 " undotree
 Plug 'mbbill/undotree'
 
+" rainbow brackets
+Plug 'frazrepo/vim-rainbow'
+
+" nice syntax highlighting
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+
 call plug#end()
 
 " colorscheme
@@ -62,43 +45,13 @@ colorscheme monokai
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
 
+" rainbow parentheses
+let g:rainbow_active = 1
+let g:rainbow_guifgs = ['yellow', 'orange', 'red', 'lightblue']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
 " air-line
 let g:airline_powerline_fonts = 1
-
-" leaderkey
-let mapleader = " "
-
-" autocomplete brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap < <lt>><left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
-" window management
-noremap <C-E> :NERDTreeToggle<CR>
-noremap <C-z> :UndotreeToggle<CR>
-noremap <C-Left> 5<C-w><
-noremap <C-Right> 5<C-w>>
-noremap <C-Up> 5<C-w>-
-noremap <C-Down> 5<C-w>+
-noremap <leader>h <C-w>h
-noremap <leader>j <C-w>j
-noremap <leader>k <C-w>k
-noremap <leader>l <C-w>l
-
-" some easier motions
-noremap <C-h> B
-noremap <C-l> W
-noremap <C-k> 3k
-noremap <C-j> 3j
-
-" ctrl w but opposite
-imap <C-E> <C-o>de
-imap <C-W> <C-o>db
 
 " functions here
 fun! TrimWhitespace()
@@ -107,9 +60,25 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
+" sync open file with NERDTree
+" " Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
 augroup JET
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
+    autocmd BufEnter * call SyncTree()
 augroup END
 
 
