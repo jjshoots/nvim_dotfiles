@@ -1,9 +1,14 @@
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/set.vim
 source $HOME/.config/nvim/plug-config/map.vim
+" source $HOME/.config/nvim/plug-config/python.vim
 syntax on
 
 call plug#begin('~/.vim/plugged')
+
+" Edge colorscheme
+Plug 'sainnhe/edge'
+" Plug 'tanvirtin/monokai.nvim'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -13,9 +18,6 @@ Plug 'tpope/vim-surround'
 
 " vim airline
 Plug 'vim-airline/vim-airline'
-
-" polyglot for nicer syntax support
-Plug 'sheerun/vim-polyglot'
 
 " vim fugitive
 Plug 'tpope/vim-fugitive'
@@ -35,20 +37,46 @@ Plug 'mbbill/undotree'
 " rainbow brackets
 Plug 'frazrepo/vim-rainbow'
 
-" nice syntax highlighting
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" gitgutter integration
+Plug 'airblade/vim-gitgutter'
 
+" treesitter
+" Plug 'nvim-treesitter/nvim-treesitter'
+" use semshi for now
+Plug 'numirias/semshi'
+
+" polyglot for nicer syntax support
+Plug 'sheerun/vim-polyglot'
+
+" devicons
+Plug 'ryanoasis/vim-devicons'
+
+" highlight matching word under cursor
+Plug 'dominikduda/vim_current_word'
+
+" smart python folding
+Plug 'kalekundert/vim-coiled-snake'
+Plug 'Konfekt/FastFold'
 call plug#end()
 
 " colorscheme
-colorscheme monokai
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
+colorscheme edge
+set cursorline
 
 " rainbow parentheses
 let g:rainbow_active = 1
-let g:rainbow_guifgs = ['yellow', 'orange', 'red', 'lightblue']
+let g:rainbow_guifgs = ['yellow', 'orange', 'pink', 'lightblue']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+" airline buffer tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" for nerdtree icons brackets
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -60,27 +88,11 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-augroup JET
-    autocmd!
-    autocmd BufWritePre * :call TrimWhitespace()
-    autocmd BufEnter * call SyncTree()
+" autohide cursorline
+augroup CursorLine
+    au!
+    au VimEnter * setlocal cursorline
+    au WinEnter * setlocal cursorline
+    au BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
 augroup END
-
-
-
-

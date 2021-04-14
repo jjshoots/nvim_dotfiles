@@ -19,7 +19,32 @@ noremap <C-l> w
 noremap <C-k> 3k
 noremap <C-j> 3j
 
-" ctrl w but opposite
-imap <C-E> <C-o>de
-imap <C-W> <C-o>db
+" ctrl w and ctrl e to do C-BS and C-DEL stuff
+inoremap <C-e> <C-o>de
+inoremap <C-w> <C-\><C-o>dB
 
+" mapping for comment
+map <C-_> gcc 
+
+" cheaty cut command
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+vnoremap D "_D
+nnoremap x "_x
+nnoremap X "_X
+vnoremap x "_x
+vnoremap X "_X
+nnoremap <C-x> yydd
+vnoremap <C-x> ygvd
+
+" for indenting in visual mode
+vnoremap > >gv
+vnoremap < <gv
+
+" next and previous buffer
+nnoremap <leader>i :bn<CR>
+nnoremap <leader>u :bp<CR>
+
+" honestly this is the better save
+nnoremap <C-s> :w<CR>
