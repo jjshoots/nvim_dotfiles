@@ -1,13 +1,12 @@
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/set.vim
 source $HOME/.config/nvim/plug-config/map.vim
-" source $HOME/.config/nvim/plug-config/python.vim
 syntax on
 
 call plug#begin('~/.vim/plugged')
 
 " Edge colorscheme
-Plug 'sainnhe/edge'
+Plug 'jjshoots/edge-jet'
 " Plug 'tanvirtin/monokai.nvim'
 
 " autocomplete
@@ -55,8 +54,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'dominikduda/vim_current_word'
 
 " smart python folding
-Plug 'kalekundert/vim-coiled-snake'
-Plug 'Konfekt/FastFold'
+" Plug 'kalekundert/vim-coiled-snake'
+" Plug 'Konfekt/FastFold'
 
 " latex live preview
 Plug 'lervag/vimtex'
@@ -68,12 +67,18 @@ call plug#end()
 " colorscheme
 colorscheme edge
 set cursorline
+" highlight CursorLine ctermfg=White guibg=#6C5A1F ctermbg=White
+
+" for highlight common words
+hi CurrentWordTwins guibg=#313E42
+" let g:vim_current_word#highlight_delay = 100
 
 " rainbow parentheses
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['yellow', 'orange', 'pink', 'lightblue']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 hi Visual guibg=#6A2D21  gui=none
+hi CursorLine guibg=#403D34
 
 " for visual multi remap
 let g:VM_maps = {}
@@ -113,4 +118,21 @@ augroup CursorLine
     au WinEnter * setlocal cursorline
     au BufWinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
+augroup END
+
+" don't move mouse on screen refocus
+augroup CursorIgnoreOnFocus
+  au!
+  au FocusLost * let g:oldmouse=&mouse | set mouse=
+  au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
+augroup END
+
+" file stuff on open
+augroup FileStuff
+  au!
+  " file associations
+  autocmd BufNewFile,BufRead *.bib   set syntax=tex
+
+  " trim whitespaces
+  autocmd BufWritePre * :call TrimWhitespace()
 augroup END

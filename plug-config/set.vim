@@ -1,6 +1,7 @@
 
 set number
 set nu
+set relativenumber
 set nohlsearch
 set incsearch
 set ignorecase
@@ -13,12 +14,19 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
+set linebreak
+set breakindent
+
+set nowrap
+set breakindent
+set breakindentopt=shift:4,min:80,sbr
+set showbreak=>-
 
 set nobackup
 set noswapfile
 set undodir=~/.nvim/undodir
 set undofile
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set termguicolors
 set scrolloff=8

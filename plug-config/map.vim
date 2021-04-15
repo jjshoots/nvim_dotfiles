@@ -21,7 +21,7 @@ noremap <C-j> 3j
 
 " ctrl w and ctrl e to do C-BS and C-DEL stuff
 inoremap <C-e> <C-o>de
-inoremap <C-w> <C-\><C-o>dB
+inoremap <C-w> <C-\><C-o>db
 
 " mapping for comment
 map <C-_> gcc 
