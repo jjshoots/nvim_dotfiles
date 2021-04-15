@@ -27,6 +27,3 @@ cd nerd-fonts
 ```
 
 Change terminal font to `MesloLGMDZ Nerd Font Regular`
-
-## Credits
-Credits for colorscheme goes to `https://github.com/crusoexia/vim-monokai`, I just changed the default bg folour
