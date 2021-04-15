@@ -57,6 +57,12 @@ Plug 'dominikduda/vim_current_word'
 " smart python folding
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
+
+" latex live preview
+Plug 'lervag/vimtex'
+
+" vim multi cursor
+Plug 'mg979/vim-visual-multi'
 call plug#end()
 
 " colorscheme
@@ -67,6 +73,11 @@ set cursorline
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['yellow', 'orange', 'pink', 'lightblue']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+hi Visual guibg=#6A2D21  gui=none
+
+" for visual multi remap
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-d>'
 
 " airline buffer tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -80,6 +91,13 @@ endif
 
 " air-line
 let g:airline_powerline_fonts = 1
+
+" for vimtex
+let g:vimtex_view_general_viewer = 'brave-browser'
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 " functions here
 fun! TrimWhitespace()

@@ -48,3 +48,9 @@ nnoremap <leader>u :bp<CR>
 
 " honestly this is the better save
 nnoremap <C-s> :w<CR>
+
+" remap for tex wrap files
+au FileType html,tex noremap <buffer> j gj
+au FileType html,tex noremap <buffer> k gk
+au FileType html,tex noremap <buffer> <C-j> 3gj
+au FileType html,tex noremap <buffer> <C-k> 3gk
