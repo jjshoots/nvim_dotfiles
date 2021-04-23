@@ -22,5 +22,6 @@
     "reference": "\uf87a",
     "typeParameter": "\uf278",
     "default": "\uf29c"
-  }
+  },
+  "clangd.path": "/home/jet/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
 }

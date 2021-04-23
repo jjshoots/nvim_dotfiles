@@ -24,9 +24,11 @@ inoremap <C-e> <C-o>de
 inoremap <C-w> <C-\><C-o>db
 
 " mapping for comment
-map <C-_> gcc 
+vmap <C-_> gcgv
+nmap <C-_> gcc
+imap <C-_> <Esc>gcci
 
-" cheaty cut command
+" remap the buffer
 nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
@@ -35,8 +37,20 @@ nnoremap x "_x
 nnoremap X "_X
 vnoremap x "_x
 vnoremap X "_X
-nnoremap <C-x> yydd
-vnoremap <C-x> ygvd
+nnoremap c "_c
+nnoremap C "_C
+vnoremap c "_c
+vnoremap C "_C
+vnoremap i "_i
+vnoremap I "_I
+vnoremap p "_p
+vnoremap P "_P
+nnoremap <A-d> yydd
+vnoremap <A-d> ygvd
+
+" remap p to P
+noremap p P
+noremap P p
 
 " for indenting in visual mode
 vnoremap > >gv
@@ -49,8 +63,25 @@ nnoremap <leader>u :bp<CR>
 " honestly this is the better save
 nnoremap <C-s> :w<CR>
 
-" remap for tex wrap files
-au FileType html,tex noremap <buffer> j gj
-au FileType html,tex noremap <buffer> k gk
-au FileType html,tex noremap <buffer> <C-j> 3gj
-au FileType html,tex noremap <buffer> <C-k> 3gk
+" remap for quickly grabbing word under cursor and
+" applying to search without moving
+nnoremap <C-n> *N
+vnoremap <C-n> y/<C-R>+<CR>Ngv
+
+" move down a line, display or not, when I say so
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+noremap <silent> 0 g0
+noremap <silent> $ g$
+
+" quick new section
+nnoremap <M-o> o<Esc>O
+
+" floaterm map
+nnoremap <C-t> :FloatermToggle<CR>
+tnoremap <Esc> <C-\><C-n>
+
+" disable some stupid things
+nnoremap <backspace> <nop>
+nnoremap <space> <nop>
+nnoremap <CR> <nop>

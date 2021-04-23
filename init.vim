@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 " Edge colorscheme
 Plug 'jjshoots/edge-jet'
-" Plug 'tanvirtin/monokai.nvim'
+Plug 'morhetz/gruvbox'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -30,18 +30,17 @@ Plug 'preservim/nerdtree'
 " devicons for file explorer
 Plug 'ryanoasis/vim-devicons'
 
-" undotree
+" undotreevim terminal function not working with buffers
 Plug 'mbbill/undotree'
 
 " rainbow brackets
-Plug 'frazrepo/vim-rainbow'
+Plug 'luochen1990/rainbow'
 
 " gitgutter integration
 Plug 'airblade/vim-gitgutter'
 
 " treesitter
 " Plug 'nvim-treesitter/nvim-treesitter'
-" use semshi for now
 Plug 'numirias/semshi'
 
 " polyglot for nicer syntax support
@@ -53,36 +52,39 @@ Plug 'ryanoasis/vim-devicons'
 " highlight matching word under cursor
 Plug 'dominikduda/vim_current_word'
 
-" smart python folding
-" Plug 'kalekundert/vim-coiled-snake'
-" Plug 'Konfekt/FastFold'
+" for nice scrolling
+Plug 'psliwka/vim-smoothie'
 
-" latex live preview
-Plug 'lervag/vimtex'
+" floating terminal
+Plug 'voldikss/vim-floaterm'
 
-" vim multi cursor
-Plug 'mg979/vim-visual-multi'
 call plug#end()
 
 " colorscheme
-colorscheme edge
-set cursorline
-" highlight CursorLine ctermfg=White guibg=#6C5A1F ctermbg=White
-
-" for highlight common words
-hi CurrentWordTwins guibg=#313E42
-" let g:vim_current_word#highlight_delay = 100
-
-" rainbow parentheses
-let g:rainbow_active = 1
-let g:rainbow_guifgs = ['yellow', 'orange', 'pink', 'lightblue']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+colorscheme gruvbox
+let g:gruvbox_italicize_strings = 1
+let g:gruvbox_italicize_comments = 1
+let g:gruvbox_undercurl = 0
 hi Visual guibg=#6A2D21  gui=none
 hi CursorLine guibg=#403D34
 
-" for visual multi remap
-let g:VM_maps = {}
-let g:VM_maps['Find Under'] = '<C-d>'
+" don't highlight whitespace errors
+let g:python_highlight_space_errors = 0
+
+" for highlight word under cursor and twins
+hi CurrentWordTwins guibg=#313E42
+hi CurrentWord guibg=#313E42
+
+" floaterm
+let g:floaterm_width = 1.0
+let g:floaterm_autoinsert = v:false
+let g:floaterm_position = 'bottom'
+let g:floaterm_title = 'Terminal $1 of $2'
+hi Floaterm guibg=#161B20
+hi FloatermBorder guibg=#0E1034
+
+" rainbow parentheses
+let g:rainbow_active = 1
 
 " airline buffer tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -97,13 +99,6 @@ endif
 " air-line
 let g:airline_powerline_fonts = 1
 
-" for vimtex
-let g:vimtex_view_general_viewer = 'brave-browser'
-let g:tex_flavor='latex'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
 " functions here
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -113,11 +108,11 @@ endfun
 
 " autohide cursorline
 augroup CursorLine
-    au!
-    au VimEnter * setlocal cursorline
-    au WinEnter * setlocal cursorline
-    au BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
+  au!
+  au VimEnter * setlocal cursorline
+  au WinEnter * setlocal cursorline
+  au BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
 augroup END
 
 " don't move mouse on screen refocus
@@ -130,9 +125,7 @@ augroup END
 " file stuff on open
 augroup FileStuff
   au!
-  " file associations
-  autocmd BufNewFile,BufRead *.bib   set syntax=tex
-
   " trim whitespaces
   autocmd BufWritePre * :call TrimWhitespace()
 augroup END
+

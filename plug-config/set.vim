@@ -4,6 +4,7 @@ set nu
 set relativenumber
 set nohlsearch
 set incsearch
+set cpoptions+=x
 set ignorecase
 set hidden
 set noerrorbells
@@ -17,7 +18,6 @@ set smartindent
 set linebreak
 set breakindent
 
-set nowrap
 set breakindent
 set breakindentopt=shift:4,min:80,sbr
 set showbreak=>-
@@ -31,7 +31,7 @@ set clipboard=unnamedplus
 set termguicolors
 set scrolloff=8
 set noshowmode
-set cmdheight=2
+" set cmdheight=2
 set foldcolumn=2
 
 set mouse=a
