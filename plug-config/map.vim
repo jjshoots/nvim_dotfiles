@@ -94,7 +94,7 @@ tnoremap <Esc> <C-\><C-n>
 " fugitive
 nmap <leader>gj :diffget //2
 nmap <leader>gf :diffget //2
-nmap <leader>gs :G<CR>
+nmap <leader>gs :G<CR>:resize 10<CR>
 
 " disable some stupid things
 nnoremap <backspace> <nop>
