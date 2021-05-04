@@ -92,8 +92,8 @@ nnoremap <silent> <leader>9 :FloatermNext<CR>
 tnoremap <Esc> <C-\><C-n>
 
 " fugitive
-nmap <leader>gj :diffget //2
-nmap <leader>gf :diffget //2
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>:resize 10<CR>
 
 " disable some stupid things

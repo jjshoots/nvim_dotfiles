@@ -90,8 +90,12 @@ hi FloatermBorder guibg=#303035
 " rainbow parentheses
 let g:rainbow_active = 1
 
+" disable git gutter mappings
+let g:gitgutter_map_keys = v:false
+
 " airline
 " let g:airline_theme = 'edge'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -105,9 +109,6 @@ let g:bufferline_show_bufnr = 0
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
 endif
-
-" air-line
-let g:airline_powerline_fonts = 1
 
 " functions here
 fun! TrimWhitespace()
