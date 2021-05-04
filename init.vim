@@ -65,6 +65,7 @@ colorscheme gruvbox
 let g:gruvbox_italicize_strings = 1
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_undercurl = 0
+hi Normal guibg=#2d2d31
 hi Visual guibg=#6A2D21  gui=none
 hi CursorLine guibg=#403D34
 
@@ -76,19 +77,28 @@ hi CurrentWordTwins guibg=#313E42
 hi CurrentWord guibg=#313E42
 
 " floaterm
-let g:floaterm_width = 1.0
-let g:floaterm_autoinsert = v:false
-let g:floaterm_position = 'bottom'
-let g:floaterm_title = 'Terminal $1 of $2'
-hi Floaterm guibg=#161B20
-hi FloatermBorder guibg=#0E1034
+let g:floaterm_width = 0.5
+let g:floaterm_height = 1.0
+let g:floaterm_wintype = 'float'
+let g:floaterm_position = 'right'
+let g:floaterm_title = 'Terminal $1|$2'
+let g:floaterm_borderchars = '        '
+let g:floaterm_autoinsert = v:true
+hi Floaterm guibg=#2e333d
+hi FloatermBorder guibg=#303035
 
 " rainbow parentheses
 let g:rainbow_active = 1
 
-" airline buffer tabs
+" airline
+" let g:airline_theme = 'edge'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#left_sep = '◤'
+let g:airline#extensions#tabline#left_alt_sep = '｜'
+let g:airline_skip_empty_sections = 1
+let g:bufferline_show_bufnr = 0
 
 " for nerdtree icons brackets
 " after a re-source, fix syntax matching issues (concealing brackets):
@@ -127,5 +137,14 @@ augroup FileStuff
   au!
   " trim whitespaces
   autocmd BufWritePre * :call TrimWhitespace()
+  autocmd BufNewFile,BufRead *.world set syntax=xml
 augroup END
 
+" custom text-object for numerical values
+function! Numbers()
+    call search('\d\([^0-9\.]\|$\)', 'cW')
+    normal v
+    call search('\(^\|[^0-9\.]\d\)', 'becW')
+endfunction
+xnoremap in :<C-u>call Numbers()<CR>
+onoremap in :normal vin<CR>
