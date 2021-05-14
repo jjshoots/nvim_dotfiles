@@ -1,6 +1,6 @@
 source $HOME/.config/nvim/plug-config/coc.vim
-source $HOME/.config/nvim/plug-config/set.vim
-source $HOME/.config/nvim/plug-config/map.vim
+source $HOME/.config/nvim/set.vim
+source $HOME/.config/nvim/map.vim
 syntax on
 
 call plug#begin('~/.vim/plugged')
@@ -14,6 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " brackets
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " vim airline
 Plug 'vim-airline/vim-airline'
@@ -58,6 +59,10 @@ Plug 'psliwka/vim-smoothie'
 " floating terminal
 Plug 'voldikss/vim-floaterm'
 
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " colorscheme
@@ -65,7 +70,7 @@ colorscheme gruvbox
 let g:gruvbox_italicize_strings = 1
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_undercurl = 0
-hi Normal guibg=#2d2d31
+" hi Normal guibg=#2d2d31
 hi Visual guibg=#6A2D21  gui=none
 hi CursorLine guibg=#403D34
 
@@ -84,7 +89,7 @@ let g:floaterm_position = 'right'
 let g:floaterm_title = 'Terminal $1|$2'
 let g:floaterm_borderchars = '        '
 let g:floaterm_autoinsert = v:true
-hi Floaterm guibg=#2e333d
+hi Floaterm guibg=#2d2d31
 hi FloatermBorder guibg=#303035
 
 " rainbow parentheses
@@ -109,6 +114,9 @@ let g:bufferline_show_bufnr = 0
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
 endif
+
+" fzf settings
+let $FZF_DEFAULT_OPTS="--ansi --layout reverse --margin=1,4"
 
 " functions here
 fun! TrimWhitespace()
@@ -141,11 +149,3 @@ augroup FileStuff
   autocmd BufNewFile,BufRead *.world set syntax=xml
 augroup END
 
-" custom text-object for numerical values
-function! Numbers()
-    call search('\d\([^0-9\.]\|$\)', 'cW')
-    normal v
-    call search('\(^\|[^0-9\.]\d\)', 'becW')
-endfunction
-xnoremap in :<C-u>call Numbers()<CR>
-onoremap in :normal vin<CR>

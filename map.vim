@@ -2,16 +2,17 @@
 let mapleader = " "
 
 " window management
-noremap <C-e> :NERDTreeToggle<CR>
-noremap <C-z> :UndotreeToggle<CR>
-noremap <C-Left> 5<C-w><
-noremap <C-Right> 5<C-w>>
-noremap <C-Up> 5<C-w>-
-noremap <C-Down> 5<C-w>+
-noremap <leader>h <C-w>h
-noremap <leader>j <C-w>j
-noremap <leader>k <C-w>k
-noremap <leader>l <C-w>l
+nmap <silent> <C-P> :Files<CR>
+noremap <silent> <C-e> :NERDTreeToggle<CR>
+noremap <silent> <C-z> :UndotreeToggle<CR>
+noremap <silent> <C-Left> 5<C-w><
+noremap <silent> <C-Right> 5<C-w>>
+noremap <silent> <C-Up> 5<C-w>-
+noremap <silent> <C-Down> 5<C-w>+
+noremap <silent> <leader>h <C-w>h
+noremap <silent> <leader>j <C-w>j
+noremap <silent> <leader>k <C-w>k
+noremap <silent> <leader>l <C-w>l
 
 " some easier motions
 noremap <C-h> b
@@ -80,7 +81,7 @@ noremap <silent> $ g$
 
 " quick new section / position
 nnoremap <M-o> o<Esc>O
-nnoremap <M-a> i<space>
+nnoremap <M-i> i<space>
 
 " floaterm map
 nnoremap <silent> <A-j> :FloatermToggle<CR>
@@ -94,7 +95,18 @@ tnoremap <Esc> <C-\><C-n>
 " fugitive
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
-nmap <leader>gs :G<CR>:resize 10<CR>
+nmap <leader>gs :G<CR>:resize 30<CR>
+
+" coc smartf integration
+nmap <leader>f <Plug>(coc-smartf-forward)
+nmap <leader>F <Plug>(coc-smartf-backward)
+nmap <silent> <M-[> <Plug>(coc-diagnostic-prev)
+nmap <silent> <M-]> <Plug>(coc-diagnostic-next)
+
+augroup Smartf
+  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
+augroup end
 
 " disable some stupid things
 nnoremap <backspace> <nop>
