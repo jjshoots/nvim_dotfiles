@@ -25,33 +25,34 @@ inoremap <C-e> <C-o>de
 inoremap <C-w> <C-\><C-o>db
 
 " mapping for comment
-vmap <C-_> gcgv
-nmap <C-_> gcc
-imap <C-_> <Esc>gcci
+vnoremap <C-_> gcgv
+nnoremap <C-_> gcc
+inoremap <C-_> <Esc>gcci
+
+" mapping for macro repeat
+nnoremap m @q
 
 " remap the buffer
 nnoremap d "_d
 nnoremap D "_D
-vnoremap d "_d
-vnoremap D "_D
 nnoremap x "_x
 nnoremap X "_X
-vnoremap x "_x
-vnoremap X "_X
 nnoremap c "_c
 nnoremap C "_C
-vnoremap c "_c
-vnoremap C "_C
-vnoremap i "_i
-vnoremap I "_I
-vnoremap p "_p
-vnoremap P "_P
+xnoremap d "_d
+xnoremap D "_D
+xnoremap x "_x
+xnoremap X "_X
+xnoremap c "_c
+xnoremap C "_C
+xnoremap p "_dp
+xnoremap P "_dP
 nnoremap <A-d> yydd
 vnoremap <A-d> ygvd
 
 " remap p to P
-noremap p P
-noremap P p
+nnoremap p P
+nnoremap P p
 
 " for indenting in visual mode
 vnoremap > >gv
@@ -93,9 +94,20 @@ nnoremap <silent> <leader>9 :FloatermNext<CR>
 tnoremap <Esc> <C-\><C-n>
 
 " fugitive
-nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
-nmap <leader>gs :G<CR>:resize 30<CR>
+nnoremap <leader>gj :diffget //3<CR>
+nnoremap <leader>gf :diffget //2<CR>
+
+function! ToggleGStatus()
+    if buflisted(bufname('.git/index'))
+        bd .git/index
+    else
+			vertical Git
+			vertical resize 45
+    endif
+endfunction
+command! ToggleGStatus :call ToggleGStatus()
+
+nnoremap <M-g> :ToggleGStatus<CR>
 
 " coc smartf integration
 nmap <leader>f <Plug>(coc-smartf-forward)

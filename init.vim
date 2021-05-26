@@ -102,12 +102,12 @@ let g:gitgutter_map_keys = v:false
 " let g:airline_theme = 'edge'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffers_label = ''
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#left_sep = '◤'
 let g:airline#extensions#tabline#left_alt_sep = '｜'
 let g:airline_skip_empty_sections = 1
-let g:bufferline_show_bufnr = 0
 
 " for nerdtree icons brackets
 " after a re-source, fix syntax matching issues (concealing brackets):
