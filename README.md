@@ -1,6 +1,13 @@
 ## Location
 Place in ~/.config
 
+## Plug Install
+Install Plug
+```
+curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 ## CoC Install
 Install NPM
 ```
