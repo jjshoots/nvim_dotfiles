@@ -3,7 +3,6 @@ let mapleader = " "
 
 " window management
 nmap <silent> <C-P> :Files<CR>
-noremap <silent> <C-e> :NERDTreeToggle<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <silent> <C-Left> 5<C-w><
 noremap <silent> <C-Right> 5<C-w>>
@@ -25,9 +24,9 @@ inoremap <C-e> <C-o>de
 inoremap <C-w> <C-\><C-o>db
 
 " mapping for comment
-vnoremap <C-_> gcgv
-nnoremap <C-_> gcc
-inoremap <C-_> <Esc>gcci
+vmap <C-_> gcgv
+nmap <C-_> gcc
+imap <C-_> <Esc>gcci
 
 " mapping for macro repeat
 nnoremap m @q
@@ -58,6 +57,10 @@ nnoremap P p
 vnoremap > >gv
 vnoremap < <gv
 
+" move section up and down HEK YES
+vnoremap J :m '>+1<CR>gv
+vnoremap K :m '<-2<CR>gv
+
 " next and previous buffer
 nnoremap <leader>o :bn<CR>
 nnoremap <leader>i :bp<CR>
@@ -81,8 +84,8 @@ noremap <silent> 0 g0
 noremap <silent> $ g$
 
 " quick new section / position
-nnoremap <M-o> o<Esc>O
-nnoremap <M-i> i<space>
+nnoremap <A-o> o<Esc>O
+nnoremap <A-i> i<space>
 
 " floaterm map
 nnoremap <silent> <A-j> :FloatermToggle<CR>
@@ -98,26 +101,26 @@ nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 
 function! ToggleGStatus()
-    if buflisted(bufname('.git/index'))
-        bd .git/index
-    else
-			vertical Git
-			vertical resize 45
-    endif
+  if buflisted(bufname('.git/index'))
+    bd .git/index
+  else
+    vertical Git
+    vertical resize 45
+  endif
 endfunction
 command! ToggleGStatus :call ToggleGStatus()
 
-nnoremap <M-g> :ToggleGStatus<CR>
+nnoremap <A-f> :ToggleGStatus<CR>
 
 " coc smartf integration
 nmap <leader>f <Plug>(coc-smartf-forward)
 nmap <leader>F <Plug>(coc-smartf-backward)
-nmap <silent> <M-[> <Plug>(coc-diagnostic-prev)
-nmap <silent> <M-]> <Plug>(coc-diagnostic-next)
+nmap <silent> <A-[> <Plug>(coc-diagnostic-prev)
+nmap <silent> <A-]> <Plug>(coc-diagnostic-next)
 
 augroup Smartf
-  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
-  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
+  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#FF0000
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#FFFFFF
 augroup end
 
 " disable some stupid things

@@ -25,9 +25,6 @@ Plug 'tpope/vim-fugitive'
 " smart commenting
 Plug 'tpope/vim-commentary'
 
-" file explorer
-Plug 'preservim/nerdtree'
-
 " devicons for file explorer
 Plug 'ryanoasis/vim-devicons'
 
@@ -62,11 +59,12 @@ Plug 'voldikss/vim-floaterm'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'coreyja/fzf.devicon.vim'
 
 call plug#end()
 
 " colorscheme
-colorscheme gruvbox
+colorscheme edge
 let g:gruvbox_italicize_strings = 1
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_undercurl = 0
@@ -99,7 +97,7 @@ let g:rainbow_active = 1
 let g:gitgutter_map_keys = v:false
 
 " airline
-" let g:airline_theme = 'edge'
+let g:airline_theme = 'edge'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -108,12 +106,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#left_sep = '◤'
 let g:airline#extensions#tabline#left_alt_sep = '｜'
 let g:airline_skip_empty_sections = 1
-
-" for nerdtree icons brackets
-" after a re-source, fix syntax matching issues (concealing brackets):
-if exists('g:loaded_webdevicons')
-    call webdevicons#refresh()
-endif
 
 " fzf settings
 let $FZF_DEFAULT_OPTS="--ansi --layout reverse --margin=1,4"
