@@ -61,14 +61,16 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'coreyja/fzf.devicon.vim'
 
+" nerdtree
+Plug 'preservim/nerdtree'
+
 call plug#end()
 
 " colorscheme
-colorscheme edge
+colorscheme gruvbox
 let g:gruvbox_italicize_strings = 1
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_undercurl = 0
-" hi Normal guibg=#2d2d31
 hi Visual guibg=#6A2D21  gui=none
 hi CursorLine guibg=#403D34
 
@@ -97,7 +99,6 @@ let g:rainbow_active = 1
 let g:gitgutter_map_keys = v:false
 
 " airline
-let g:airline_theme = 'edge'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1

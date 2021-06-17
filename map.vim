@@ -1,7 +1,16 @@
+" disable some stupid things
+nnoremap <backspace> <nop>
+nnoremap <space> <nop>
+nnoremap <CR> <nop>
+" disable scrolling, use the mouse
+nnoremap <C-u> <nop>
+nnoremap <C-d> <nop>
+
 " leaderkey
 let mapleader = " "
 
 " window management
+nmap <C-e> :NERDTreeToggle<CR>
 nmap <silent> <C-P> :Files<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <silent> <C-Left> 5<C-w><
@@ -18,6 +27,8 @@ noremap <C-h> b
 noremap <C-l> w
 noremap <C-k> 3k
 noremap <C-j> 3j
+noremap <C-m> $
+noremap <C-n> ^
 
 " ctrl w and ctrl e to do C-BS and C-DEL stuff
 inoremap <C-e> <C-o>de
@@ -49,10 +60,6 @@ xnoremap P "_dP
 nnoremap <A-d> yydd
 vnoremap <A-d> ygvd
 
-" remap p to P
-nnoremap p P
-nnoremap P p
-
 " for indenting in visual mode
 vnoremap > >gv
 vnoremap < <gv
@@ -72,10 +79,13 @@ nnoremap <C-i> <C-o>
 " honestly this is the better save
 nnoremap <C-s> :w<CR>
 
+" create session
+nnoremap <C-w> :mks!<CR>
+
 " remap for quickly grabbing word under cursor and
 " applying to search without moving
-nnoremap <C-n> *N
-vnoremap <C-n> y?<C-R>+<CR>N/<Esc>gv
+nnoremap <C-f> *N
+vnoremap <C-f> y?<C-R>+<CR>N/<Esc>gv
 
 " move down a line, display or not, when I say so
 nnoremap <expr> j v:count ? 'j' : 'gj'
@@ -123,7 +133,3 @@ augroup Smartf
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#FFFFFF
 augroup end
 
-" disable some stupid things
-nnoremap <backspace> <nop>
-nnoremap <space> <nop>
-nnoremap <CR> <nop>
