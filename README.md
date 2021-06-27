@@ -18,7 +18,7 @@ PlugInstall inside Nvim w/ `:PlugInstall`
 
 Install languages (add more languages as necessary)
 ```
-:CocInstall coc-python coc-clangd coc-html coc-json coc-cmake coc-smartf
+:CocInstall coc-pyright coc-clangd coc-html coc-json coc-cmake coc-smartf
 ```
 
 ## Custom Fonts
