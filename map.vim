@@ -84,8 +84,11 @@ nnoremap <C-w> :mks!<CR>
 
 " remap for quickly grabbing word under cursor and
 " applying to search without moving
-nnoremap <C-f> *N
-vnoremap <C-f> y?<C-R>+<CR>N/<Esc>gv
+nnoremap <C-d> *N
+vnoremap <C-d> y?<C-R>+<CR>N/<Esc>gv
+
+" mapping for folding
+nnoremap <leader>z za
 
 " move down a line, display or not, when I say so
 nnoremap <expr> j v:count ? 'j' : 'gj'
@@ -109,6 +112,7 @@ tnoremap <Esc> <C-\><C-n>
 " fugitive
 nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
+vmap <silent> u <esc>:Gdiff<cr>gv:diffget<cr><c-w><c-w>ZZ
 
 function! ToggleGStatus()
   if buflisted(bufname('.git/index'))

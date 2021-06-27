@@ -31,8 +31,13 @@ set clipboard=unnamedplus
 set termguicolors
 set scrolloff=8
 set noshowmode
-" set cmdheight=2
 set foldcolumn=2
 
 set mouse=a
 set conceallevel=3
+
+set foldmethod=indent
+set nofoldenable
+
+" fugitive vsp
+set diffopt+=vertical

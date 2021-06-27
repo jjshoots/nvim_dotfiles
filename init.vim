@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 " Edge colorscheme
 Plug 'jjshoots/edge-jet'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/sonokai'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -67,12 +68,11 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 " colorscheme
-colorscheme gruvbox
-let g:gruvbox_italicize_strings = 1
-let g:gruvbox_italicize_comments = 1
-let g:gruvbox_undercurl = 0
-hi Visual guibg=#6A2D21  gui=none
+set termguicolors
+let g:sonokai_style = 'default'
+colo sonokai
 hi CursorLine guibg=#403D34
+hi Visual guibg=#6A2D21  gui=none
 
 " don't highlight whitespace errors
 let g:python_highlight_space_errors = 0
