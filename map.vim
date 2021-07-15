@@ -84,8 +84,8 @@ nnoremap <C-w> :mks!<CR>
 
 " remap for quickly grabbing word under cursor and
 " applying to search without moving
-nnoremap <C-d> *N
-vnoremap <C-d> y?<C-R>+<CR>N/<Esc>gv
+nnoremap <A-e> *N
+vnoremap <A-e> y?<C-R>+<CR>N/<Esc>gv
 
 " mapping for folding
 nnoremap <leader>z za
