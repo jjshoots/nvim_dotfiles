@@ -1,4 +1,3 @@
-
 set number
 set nu
 set relativenumber

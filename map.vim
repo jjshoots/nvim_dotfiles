@@ -9,6 +9,9 @@ nnoremap <C-d> <nop>
 " leaderkey
 let mapleader = " "
 
+" nohl toggle
+:noremap <leader>s :set hlsearch! hlsearch?<CR>
+
 " window management
 nmap <C-e> :NERDTreeToggle<CR>
 nmap <silent> <C-P> :Files<CR>
@@ -69,8 +72,8 @@ vnoremap J :m '>+1<CR>gv
 vnoremap K :m '<-2<CR>gv
 
 " next and previous buffer
-nnoremap <leader>o :bn<CR>
-nnoremap <leader>i :bp<CR>
+nnoremap <silent> <leader>o :bn<CR>
+nnoremap <silent> <leader>i :bp<CR>
 
 " remap previous and next positions
 nnoremap <C-o> <C-i>
@@ -80,7 +83,10 @@ nnoremap <C-i> <C-o>
 nnoremap <C-s> :w<CR>
 
 " create session
-nnoremap <C-w> :mks!<CR>
+nnoremap <C-d> :mks!<CR>
+
+" close buffer
+" nnoremap <C-w> :mks!<CR>
 
 " remap for quickly grabbing word under cursor and
 " applying to search without moving
@@ -107,7 +113,7 @@ nnoremap <silent> <leader>4 :FloatermKill<CR>:FloatermToggle<CR>
 nnoremap <silent> <leader>5 :FloatermNew<CR>
 nnoremap <silent> <leader>8 :FloatermPrev<CR>
 nnoremap <silent> <leader>9 :FloatermNext<CR>
-tnoremap <Esc> <C-\><C-n>
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " fugitive
 nnoremap <leader>gj :diffget //3<CR>
@@ -119,7 +125,7 @@ function! ToggleGStatus()
     bd .git/index
   else
     vertical Git
-    vertical resize 45
+    vertical resize 70
   endif
 endfunction
 command! ToggleGStatus :call ToggleGStatus()

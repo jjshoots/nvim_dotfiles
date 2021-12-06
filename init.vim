@@ -73,6 +73,10 @@ let g:sonokai_style = 'default'
 colo sonokai
 hi CursorLine guibg=#403D34
 hi Visual guibg=#6A2D21  gui=none
+hi IncSearch cterm=NONE ctermfg=yellow ctermbg=green
+
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
 
 " don't highlight whitespace errors
 let g:python_highlight_space_errors = 0
@@ -89,7 +93,8 @@ let g:floaterm_position = 'right'
 let g:floaterm_title = 'Terminal $1|$2'
 let g:floaterm_borderchars = '        '
 let g:floaterm_autoinsert = v:true
-hi Floaterm guibg=#2d2d31
+" hi Floaterm guibg=#2d2d31
+hi Floaterm guibg=NONE
 hi FloatermBorder guibg=#303035
 
 " rainbow parentheses
@@ -112,12 +117,7 @@ let g:airline_skip_empty_sections = 1
 let $FZF_DEFAULT_OPTS="--ansi --layout reverse --margin=1,4"
 
 " functions here
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
-
+"
 " autohide cursorline
 augroup CursorLine
   au!
@@ -134,11 +134,15 @@ augroup CursorIgnoreOnFocus
   au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
 augroup END
 
-" file stuff on open
+" remove whitespaces
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
 augroup FileStuff
   au!
-  " trim whitespaces
   autocmd BufWritePre * :call TrimWhitespace()
   autocmd BufNewFile,BufRead *.world set syntax=xml
 augroup END
-
