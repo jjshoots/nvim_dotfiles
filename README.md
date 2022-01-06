@@ -1,5 +1,5 @@
 ## Location
-Place in ~/.config
+Place in `~/.config/nvim`
 
 ## Install Plug, PlugInstall plugins, Setup CoC
 ```
