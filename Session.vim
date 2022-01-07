@@ -7,7 +7,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +116 init.vim
+badd +115 init.vim
 badd +137 map.vim
 badd +42 set.vim
 argglobal
@@ -31,11 +31,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 112 - ((18 * winheight(0) + 22) / 45)
+let s:l = 115 - ((25 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-112
+115
 normal! 0
 if exists(':tcd') == 2 | tcd ~/.config/nvim | endif
 tabnext 1

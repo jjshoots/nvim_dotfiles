@@ -111,6 +111,8 @@ let g:airline#extensions#tabline#buffers_label = ''
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline#extensions#tabline#left_sep = '◤'
 let g:airline#extensions#tabline#left_alt_sep = '｜'
+" let g:airline_right_sep= '◢'
+" let g:airline_left_sep= '◣'
 let g:airline_skip_empty_sections = 1
 
 " fzf settings
