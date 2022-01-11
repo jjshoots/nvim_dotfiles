@@ -8,7 +8,9 @@ set ignorecase
 set hidden
 set noerrorbells
 set signcolumn
+set splitright splitbelow
 
+set nowrap
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -27,7 +29,7 @@ set undodir=~/.nvim/undodir
 set undofile
 set clipboard=unnamedplus
 
-set termguicolors
+set notermguicolors
 set scrolloff=8
 set noshowmode
 set foldcolumn=2

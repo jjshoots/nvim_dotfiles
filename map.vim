@@ -13,7 +13,7 @@ let mapleader = " "
 :noremap <leader>s :set hlsearch! hlsearch?<CR>
 
 " window management
-nmap <C-e> :NERDTreeToggle<CR>
+nmap <silent> <C-e> :NERDTreeToggle<CR>
 nmap <silent> <C-P> :Files<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <silent> <C-Left> 5<C-w><
@@ -120,14 +120,14 @@ nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 vmap <silent> u <esc>:Gdiff<cr>gv:diffget<cr><c-w><c-w>ZZ
 
-function! ToggleGStatus()
+fun! ToggleGStatus()
   if buflisted(bufname('.git/index'))
     bd .git/index
   else
     vertical Git
     vertical resize 70
   endif
-endfunction
+endfun
 command! ToggleGStatus :call ToggleGStatus()
 
 nnoremap <A-f> :ToggleGStatus<CR>
@@ -139,7 +139,6 @@ nmap <silent> <A-[> <Plug>(coc-diagnostic-prev)
 nmap <silent> <A-]> <Plug>(coc-diagnostic-next)
 
 augroup Smartf
-  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#FF0000
-  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#FFFFFF
+  au User SmartfEnter :hi Conceal ctermfg=220 guifg=#FF0000
+  au User SmartfLeave :hi Conceal ctermfg=239 guifg=#FFFFFF
 augroup end
-

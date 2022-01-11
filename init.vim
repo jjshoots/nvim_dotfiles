@@ -86,12 +86,12 @@ hi CurrentWordTwins guibg=#313E42
 hi CurrentWord guibg=#313E42
 
 " floaterm
-let g:floaterm_width = 0.5
+let g:floaterm_width = 0.6
 let g:floaterm_height = 1.0
 let g:floaterm_wintype = 'float'
 let g:floaterm_position = 'right'
 let g:floaterm_title = 'Terminal $1|$2'
-let g:floaterm_borderchars = '        '
+let g:floaterm_borderchars = '─│─│┌┐┘└'
 let g:floaterm_autoinsert = v:true
 " hi Floaterm guibg=#2d2d31
 hi Floaterm guibg=NONE
@@ -118,16 +118,58 @@ let g:airline_skip_empty_sections = 1
 " fzf settings
 let $FZF_DEFAULT_OPTS="--ansi --layout reverse --margin=1,4"
 
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 " functions here
-"
-" autohide cursorline
-augroup CursorLine
+
+" do some stuff on window focus
+augroup FocusWindows
   au!
-  au VimEnter * setlocal cursorline
-  au WinEnter * setlocal cursorline
-  au BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
+  au VimEnter * call OnEnter()
+  au BufWinEnter * call OnEnter()
+  au WinEnter * call OnEnter()
+
+  au WinLeave * call OnLeave()
+
+  au VimResized * call Readjust()
+
 augroup END
+
+fun! OnEnter()
+  if &buftype != 'nowrite'
+    if &modifiable
+      setlocal cursorline
+      setlocal signcolumn=auto
+      setlocal relativenumber
+      setlocal winwidth=90
+    endif
+  endif
+endfun
+
+fun! OnLeave()
+  if &buftype != 'nowrite'
+    if &modifiable
+      setlocal nocursorline
+      setlocal signcolumn=no
+      setlocal norelativenumber
+      setlocal wrap
+      setlocal nowrap
+    endif
+  endif
+endfun
 
 " don't move mouse on screen refocus
 augroup CursorIgnoreOnFocus
@@ -136,15 +178,15 @@ augroup CursorIgnoreOnFocus
   au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
 augroup END
 
-" remove whitespaces
+" trim whitespace on save
+augroup FileStuff
+  au!
+  au BufWritePre * call TrimWhitespace()
+  au BufNewFile,BufRead *.world set syntax=xml
+augroup END
+
 fun! TrimWhitespace()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e
   call winrestview(l:save)
 endfun
-
-augroup FileStuff
-  au!
-  autocmd BufWritePre * :call TrimWhitespace()
-  autocmd BufNewFile,BufRead *.world set syntax=xml
-augroup END

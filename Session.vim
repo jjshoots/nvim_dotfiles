@@ -7,9 +7,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +115 init.vim
-badd +137 map.vim
-badd +42 set.vim
+badd +170 init.vim
+badd +40 set.vim
+badd +142 map.vim
 argglobal
 %argdel
 $argadd ./
@@ -31,19 +31,19 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 115 - ((25 * winheight(0) + 23) / 47)
+let s:l = 154 - ((26 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-115
-normal! 0
+154
+normal! 07|
 if exists(':tcd') == 2 | tcd ~/.config/nvim | endif
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFA
+set winheight=1 winwidth=90 winminheight=1 winminwidth=1 shortmess=filnxtToOFA
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
