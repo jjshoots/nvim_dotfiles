@@ -1,5 +1,4 @@
 set number
-set nu
 set relativenumber
 set nohlsearch
 set incsearch
@@ -29,10 +28,9 @@ set undodir=~/.nvim/undodir
 set undofile
 set clipboard=unnamedplus
 
-set notermguicolors
+set termguicolors
 set scrolloff=8
 set noshowmode
-set foldcolumn=2
 
 set mouse=a
 set conceallevel=3

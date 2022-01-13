@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 
 " Edge colorscheme
 Plug 'jjshoots/edge-jet'
-Plug 'morhetz/gruvbox'
 Plug 'sainnhe/sonokai'
 
 " autocomplete
@@ -68,15 +67,16 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 " colorscheme
-set termguicolors
 let g:sonokai_style = 'default'
 colo sonokai
-hi CursorLine guibg=#403D34
-hi Visual guibg=#6A2D21  gui=none
+hi CursorLine guibg=#343330
+hi Visual guibg=#6A2D21 gui=none
 hi IncSearch cterm=NONE ctermfg=yellow ctermbg=green
 
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
+hi Normal ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE
+hi FoldColumn guibg=#2C3245 guifg=NONE
+hi SignColumn guibg=#2C3245 guifg=NONE
 
 " don't highlight whitespace errors
 let g:python_highlight_space_errors = 0
@@ -91,7 +91,7 @@ let g:floaterm_height = 1.0
 let g:floaterm_wintype = 'float'
 let g:floaterm_position = 'right'
 let g:floaterm_title = 'Terminal $1|$2'
-let g:floaterm_borderchars = '─│─│┌┐┘└'
+let g:floaterm_borderchars = '─│─│╭╮╯╰'
 let g:floaterm_autoinsert = v:true
 " hi Floaterm guibg=#2d2d31
 hi Floaterm guibg=NONE
@@ -117,6 +117,7 @@ let g:airline_skip_empty_sections = 1
 
 " fzf settings
 let $FZF_DEFAULT_OPTS="--ansi --layout reverse --margin=1,4"
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -150,23 +151,33 @@ augroup END
 
 fun! OnEnter()
   if &buftype != 'nowrite'
+        \ && &buftype != 'nofile'
+        \ && &buftype != 'terminal'
+        \ && &buftype != 'prompt'
+        \ && &buftype != 'quickfix'
     if &modifiable
       setlocal cursorline
       setlocal signcolumn=auto
       setlocal relativenumber
       setlocal winwidth=90
+      setlocal foldcolumn=1
     endif
   endif
 endfun
 
 fun! OnLeave()
   if &buftype != 'nowrite'
+        \ && &buftype != 'nofile'
+        \ && &buftype != 'terminal'
+        \ && &buftype != 'prompt'
+        \ && &buftype != 'quickfix'
     if &modifiable
       setlocal nocursorline
       setlocal signcolumn=no
       setlocal norelativenumber
       setlocal wrap
       setlocal nowrap
+      setlocal foldcolumn=0
     endif
   endif
 endfun
