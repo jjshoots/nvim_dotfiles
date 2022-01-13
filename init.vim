@@ -74,7 +74,7 @@ hi Visual guibg=#6A2D21 gui=none
 hi IncSearch cterm=NONE ctermfg=yellow ctermbg=green
 
 hi Normal ctermbg=NONE guibg=NONE
-hi NonText ctermbg=NONE guibg=NONE
+hi EndOfBuffer ctermbg=NONE guibg=NONE
 hi FoldColumn guibg=#2C3245 guifg=NONE
 hi SignColumn guibg=#2C3245 guifg=NONE
 
