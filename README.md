@@ -36,6 +36,11 @@ nvim +PlugInstall +qall
 nvim +'CocInstall coc-pyright coc-clangd coc-html coc-json coc-cmake coc-smartf' +qall
 ```
 
+## Update semshi
+```
+nvim +UpdateRemotePlugins +qall
+```
+
 # Custom Fonts
 Download the font repo first:
 ```
