@@ -1,7 +1,10 @@
+" coc file location
+let g:coc_global_config="$HOME/.config/nvim/coc/coc-settings.json"
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 
 " Make sure you use single quotes
 
