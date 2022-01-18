@@ -85,9 +85,6 @@ nnoremap <C-s> :w<CR>
 " create session
 nnoremap <C-d> :mks!<CR>
 
-" close buffer
-" nnoremap <C-w> :mks!<CR>
-
 " remap for quickly grabbing word under cursor and
 " applying to search without moving
 nnoremap <A-e> *N
