@@ -1,7 +1,7 @@
 # To do everything at once
 Note that this will do everything except install custom fonts
 ```
-curl -s https://github.com/jjshoots/nvim_dotfiles.git | bash -s
+curl -s https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install.sh | bash -s
 ```
 
 # Take me through the steps
