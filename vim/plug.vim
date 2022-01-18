@@ -6,6 +6,9 @@ Plug 'sainnhe/sonokai'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/vim-github-dashboard'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " brackets
 Plug 'tpope/vim-surround'
@@ -33,8 +36,8 @@ Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 
 " treesitter
-" Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'numirias/semshi'
+Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'numirias/semshi'
 
 " polyglot for nicer syntax support
 Plug 'sheerun/vim-polyglot'
@@ -60,6 +63,6 @@ Plug 'coreyja/fzf.devicon.vim'
 Plug 'preservim/nerdtree'
 
 " indentation guides
-" Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
