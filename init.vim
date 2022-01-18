@@ -3,7 +3,7 @@ source $HOME/.config/nvim/set.vim
 source $HOME/.config/nvim/map.vim
 syntax on
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 
 " Edge colorscheme
 Plug 'jjshoots/edge-jet'
@@ -64,6 +64,9 @@ Plug 'coreyja/fzf.devicon.vim'
 " nerdtree
 Plug 'preservim/nerdtree'
 
+" indentation guides
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 call plug#end()
 
 " colorscheme
@@ -76,7 +79,7 @@ hi IncSearch cterm=NONE ctermfg=yellow ctermbg=green
 hi Normal ctermbg=NONE guibg=NONE
 hi EndOfBuffer ctermbg=NONE guibg=NONE
 hi FoldColumn guibg=#2C3245 guifg=NONE
-hi SignColumn guibg=#2C3245 guifg=NONE
+hi clear SignColumn
 
 " don't highlight whitespace errors
 let g:python_highlight_space_errors = 0
