@@ -11,9 +11,8 @@ set shortmess=aoO
 argglobal
 %argdel
 $argadd init.vim
-edit lua/style.lua
+edit vim/set.vim
 argglobal
-balt vim/map.vim
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -22,22 +21,20 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 3 - ((2 * winheight(0) + 22) / 44)
+let s:l = 14 - ((11 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 0
+keepjumps 14
+normal! 07|
 if exists(':tcd') == 2 | tcd ~/.config/nvim | endif
 tabnext 1
-badd +0 ~/.config/nvim/lua/style.lua
 badd +1 ~/.config/nvim/init.vim
-badd +109 ~/.config/nvim/vim/map.vim
-badd +40 ~/.config/nvim/vim/plug.vim
+badd +1 ~/.config/nvim/vim/style.vim
+badd +43 ~/.config/nvim/vim/plug.vim
 badd +1 ~/.config/nvim/coc-settings.json
-badd +69 ~/.config/nvim/vim/style.vim
-badd +21 ~/.config/nvim/coc/coc.vim
-badd +1 ~/.config/nvim/vim/func.vim
+badd +16 ~/.config/nvim/coc/coc.vim
+badd +33 ~/.config/nvim/vim/set.vim
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -48,7 +45,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

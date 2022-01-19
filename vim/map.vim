@@ -128,14 +128,3 @@ endfun
 command! ToggleGStatus :call ToggleGStatus()
 
 nnoremap <A-f> :ToggleGStatus<CR>
-
-" coc smartf integration
-nmap <leader>f <Plug>(coc-smartf-forward)
-nmap <leader>F <Plug>(coc-smartf-backward)
-nmap <silent> <A-[> <Plug>(coc-diagnostic-prev)
-nmap <silent> <A-]> <Plug>(coc-diagnostic-next)
-
-augroup Smartf
-  au User SmartfEnter :hi Conceal ctermfg=220 guifg=#FF0000
-  au User SmartfLeave :hi Conceal ctermfg=239 guifg=#FFFFFF
-augroup end

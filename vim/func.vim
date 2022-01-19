@@ -6,8 +6,6 @@ augroup FocusWindows
   au WinEnter * call OnEnter()
 
   au WinLeave * call OnLeave()
-
-  au VimResized * call Readjust()
 augroup END
 
 fun! OnEnter()

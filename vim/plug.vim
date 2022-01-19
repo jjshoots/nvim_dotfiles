@@ -14,14 +14,17 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
-" vim airline
-Plug 'vim-airline/vim-airline'
-
 " vim fugitive
 Plug 'tpope/vim-fugitive'
 
+" gitgutter integration
+Plug 'airblade/vim-gitgutter'
+
 " smart commenting
 Plug 'tpope/vim-commentary'
+
+" vim airline
+Plug 'vim-airline/vim-airline'
 
 " devicons for file explorer
 Plug 'ryanoasis/vim-devicons'
@@ -32,18 +35,15 @@ Plug 'mbbill/undotree'
 " rainbow brackets
 Plug 'luochen1990/rainbow'
 
-" gitgutter integration
-Plug 'airblade/vim-gitgutter'
-
-" treesitter
-Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'numirias/semshi'
-
-" polyglot for nicer syntax support
+" syntax highlighting for python
+Plug 'numirias/semshi'
 Plug 'sheerun/vim-polyglot'
 
-" devicons
-Plug 'ryanoasis/vim-devicons'
+" LSP
+" Plug 'nvim-treesitter/nvim-treesitter'
+
+" close brackets
+Plug 'cohama/lexima.vim'
 
 " highlight matching word under cursor
 Plug 'dominikduda/vim_current_word'

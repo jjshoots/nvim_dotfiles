@@ -20,12 +20,6 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -43,3 +37,19 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" coc smartf integration
+nmap <leader>f <Plug>(coc-smartf-forward)
+nmap <leader>F <Plug>(coc-smartf-backward)
+nmap <silent> <A-[> <Plug>(coc-diagnostic-prev)
+nmap <silent> <A-]> <Plug>(coc-diagnostic-next)
+
+augroup Smartf
+  au User SmartfEnter :hi Conceal ctermfg=220 guifg=#FF0000
+  au User SmartfLeave :hi Conceal ctermfg=239 guifg=#FFFFFF
+augroup end
