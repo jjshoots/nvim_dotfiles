@@ -14,7 +14,7 @@ let mapleader = " "
 
 " window management
 nmap <silent> <C-e> :NERDTreeToggle<CR>
-nmap <silent> <C-P> :Files<CR>
+nmap <silent> <C-p> <cmd>:Telescope find_files<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <silent> <C-Left> 5<C-w><
 noremap <silent> <C-Right> 5<C-w>>

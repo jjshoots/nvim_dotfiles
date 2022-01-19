@@ -7,12 +7,19 @@ Plug 'sainnhe/sonokai'
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/vim-github-dashboard'
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " brackets
 Plug 'tpope/vim-surround'
+
+" repeat commonly used plugins
 Plug 'tpope/vim-repeat'
+
+" highlight matching word under cursor
+Plug 'dominikduda/vim_current_word'
+
+" rainbow brackets
+Plug 'luochen1990/rainbow'
 
 " vim fugitive
 Plug 'tpope/vim-fugitive'
@@ -23,41 +30,28 @@ Plug 'airblade/vim-gitgutter'
 " smart commenting
 Plug 'tpope/vim-commentary'
 
-" vim airline
-Plug 'vim-airline/vim-airline'
+" for nice scrolling
+Plug 'psliwka/vim-smoothie'
 
-" devicons for file explorer
-Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " undotreevim terminal function not working with buffers
 Plug 'mbbill/undotree'
-
-" rainbow brackets
-Plug 'luochen1990/rainbow'
 
 " syntax highlighting for python
 Plug 'numirias/semshi'
 Plug 'sheerun/vim-polyglot'
 
-" LSP
-" Plug 'nvim-treesitter/nvim-treesitter'
-
 " close brackets
 Plug 'cohama/lexima.vim'
-
-" highlight matching word under cursor
-Plug 'dominikduda/vim_current_word'
-
-" for nice scrolling
-Plug 'psliwka/vim-smoothie'
 
 " floating terminal
 Plug 'voldikss/vim-floaterm'
 
-" fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'coreyja/fzf.devicon.vim'
+" telescope file finder
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " nerdtree
 Plug 'preservim/nerdtree'
