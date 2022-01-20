@@ -128,3 +128,8 @@ endfun
 command! ToggleGStatus :call ToggleGStatus()
 
 nnoremap <A-f> :ToggleGStatus<CR>
+
+" for latex
+let g:livepreview_previewer = 'evince'
+nnoremap <leader>v :LLPStartPreview<CR>
+

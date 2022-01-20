@@ -29,5 +29,6 @@
   "clangd.path": "/home/jet/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
   "smartf.wordJump": false,
   "smartf.timeout": 5000,
-  "smartf.jumpOnTrigger": false
+  "smartf.jumpOnTrigger": false,
+  "signature.enable": false
 }

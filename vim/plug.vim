@@ -55,8 +55,13 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " nerdtree
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
 " indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'
+
+" for latex
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'lervag/vimtex'
 
 call plug#end()

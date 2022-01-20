@@ -43,7 +43,7 @@ set clipboard=unnamedplus
 " looks
 set termguicolors
 set scrolloff=8
-set conceallevel=3
+set conceallevel=0
 
 " hide status cause we using powerline
 set noshowmode
