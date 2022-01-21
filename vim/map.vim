@@ -16,14 +16,14 @@ let mapleader = " "
 nmap <silent> <C-e> :NERDTreeToggle<CR>
 nmap <silent> <C-p> <cmd>:Telescope find_files<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
-noremap <silent> <C-Left> 5<C-w><
-noremap <silent> <C-Right> 5<C-w>>
-noremap <silent> <C-Up> 5<C-w>-
-noremap <silent> <C-Down> 5<C-w>+
-noremap <silent> <leader>h <C-w>h
-noremap <silent> <leader>j <C-w>j
-noremap <silent> <leader>k <C-w>k
-noremap <silent> <leader>l <C-w>l
+noremap <C-Left> 5<C-w><
+noremap <C-Right> 5<C-w>>
+noremap <C-Up> 5<C-w>-
+noremap <C-Down> 5<C-w>+
+noremap <leader>h <C-w>h
+noremap <leader>j <C-w>j
+noremap <leader>k <C-w>k
+noremap <leader>l <C-w>l
 
 " some easier motions
 noremap <C-h> b
@@ -128,8 +128,3 @@ endfun
 command! ToggleGStatus :call ToggleGStatus()
 
 nnoremap <A-f> :ToggleGStatus<CR>
-
-" for latex
-let g:livepreview_previewer = 'evince'
-nnoremap <leader>v :LLPStartPreview<CR>
-

@@ -39,6 +39,7 @@ require('lualine').setup {
     lualine_a = {
       {
         'buffers',
+        max_length = vim.o.columns * 0.8,
         buffers_color = {
           inactive = {bg = colors.black, fg = colors.lightgray}
         }
@@ -47,8 +48,8 @@ require('lualine').setup {
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {'hostname'},
-    lualine_z = {'filename'}
+    lualine_y = {},
+    lualine_z = {'hostname'}
   },
   extensions = {}
 }

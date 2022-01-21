@@ -60,3 +60,17 @@ fun! TrimWhitespace()
   keeppatterns %s/\s\+$//e
   call winrestview(l:save)
 endfun
+
+" for md and tex autowrap
+augroup AutoWrap
+  au!
+  au FileType tex setlocal wrap
+  au FileType markdown setlocal wrap
+augroup end
+
+" for md and tex preview
+augroup PreviewWindow
+  au!
+  au FileType tex nnoremap <leader>v :LLPStartPreview<CR>
+  au FileType markdown nnoremap <leader>v :CocCommand markdown-preview-enhanced.openPreview<CR>
+augroup end

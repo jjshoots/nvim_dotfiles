@@ -36,3 +36,7 @@ let g:rainbow_active = 1
 
 " disable git gutter mappings
 let g:gitgutter_map_keys = v:false
+
+" for latex previewing
+let g:livepreview_previewer = 'evince'
+let g:livepreview_cursorhold_recompile = 0
