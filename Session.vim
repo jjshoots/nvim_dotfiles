@@ -11,9 +11,9 @@ set shortmess=aoO
 argglobal
 %argdel
 $argadd init.vim
-edit coc-settings.json
+edit vim/style.vim
 argglobal
-balt coc/coc.vim
+balt vim/set.vim
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -22,24 +22,25 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 33 - ((32 * winheight(0) + 22) / 44)
+let s:l = 17 - ((16 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 33
-normal! 025|
+keepjumps 17
+normal! 036|
 if exists(':tcd') == 2 | tcd ~/.config/nvim | endif
 tabnext 1
-badd +58 ~/.config/nvim/vim/plug.vim
+badd +33 ~/.config/nvim/coc-settings.json
 badd +1 ~/.config/nvim/init.vim
-badd +56 ~/.config/nvim/vim/set.vim
+badd +30 ~/.config/nvim/coc/coc.vim
+badd +58 ~/.config/nvim/vim/plug.vim
+badd +46 ~/.config/nvim/vim/set.vim
 badd +7 ~/.config/nvim/lua/tele.lua
-badd +1 ~/.config/nvim/vim/style.vim
+badd +42 ~/.config/nvim/vim/style.vim
 badd +54 ~/.config/nvim/lua/lline.lua
 badd +1 ~/.config/nvim/vim/map.vim
 badd +62 ~/.config/nvim/vim/func.vim
-badd +30 ~/.config/nvim/coc/coc.vim
-badd +27 ~/.config/nvim/coc-settings.json
+badd +1 ~/.config/nvim/lua/style.lua
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -50,7 +51,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

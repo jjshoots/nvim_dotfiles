@@ -13,6 +13,9 @@ hi EndOfBuffer ctermbg=NONE guibg=NONE
 hi FoldColumn guibg=#2C3245 guifg=NONE
 hi clear SignColumn
 
+" highlight concealed blocks for tex
+hi Conceal ctermfg=170 guifg=#9C4791 ctermbg=NONE guibg=NONE
+
 " don't highlight whitespace errors
 let g:python_highlight_space_errors = 0
 
