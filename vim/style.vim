@@ -19,6 +19,9 @@ hi Conceal ctermfg=170 guifg=#9C4791 ctermbg=NONE guibg=NONE
 " don't highlight whitespace errors
 let g:python_highlight_space_errors = 0
 
+" change highlight for split indicator
+hi VertSplit guifg=#9E4447
+
 " for highlight word under cursor and twins
 hi CurrentWordTwins guibg=#313E42
 hi CurrentWord guibg=#313E42
