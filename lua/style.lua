@@ -17,3 +17,5 @@ require("indent_blankline").setup {
     "IndentBlanklineIndent6",
   },
 }
+
+require("focus").setup()

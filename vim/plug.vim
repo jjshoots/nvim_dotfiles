@@ -40,7 +40,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'mbbill/undotree'
 
 " syntax highlighting for python
-Plug 'numirias/semshi'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for':['python', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
 " close brackets
@@ -63,5 +63,8 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 " for latex
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'lervag/vimtex'
+
+" automatic resizing
+Plug 'beauwilliams/focus.nvim'
 
 call plug#end()
