@@ -18,4 +18,6 @@ require("indent_blankline").setup {
   },
 }
 
-require("focus").setup()
+require("focus").setup{
+  excluded_filetypes = {'floaterm'}
+}

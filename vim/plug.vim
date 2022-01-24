@@ -48,6 +48,7 @@ Plug 'cohama/lexima.vim'
 
 " floating terminal
 Plug 'voldikss/vim-floaterm'
+" Plug 'akinsho/toggleterm.nvim'
 
 " telescope file finder
 Plug 'nvim-lua/plenary.nvim'
