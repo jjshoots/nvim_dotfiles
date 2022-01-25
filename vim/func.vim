@@ -21,6 +21,11 @@ fun! OnEnter()
       setlocal winwidth=90
       setlocal foldcolumn=1
     endif
+
+    if &filetype == 'tex'
+        \ || &filetype == 'md'
+      setlocal wrap
+    endif
   endif
 endfun
 
