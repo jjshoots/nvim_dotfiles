@@ -2,6 +2,7 @@
 nnoremap <backspace> <nop>
 nnoremap <space> <nop>
 nnoremap <CR> <nop>
+"
 " disable scrolling, use the mouse
 nnoremap <C-u> <nop>
 nnoremap <C-d> <nop>
@@ -32,6 +33,10 @@ noremap <C-k> 3k
 noremap <C-j> 3j
 noremap <C-m> $
 noremap <C-n> ^
+
+" use to move around in autocompletion menu
+inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 
 " ctrl w and ctrl e to do C-BS and C-DEL stuff
 inoremap <C-e> <C-o>de
