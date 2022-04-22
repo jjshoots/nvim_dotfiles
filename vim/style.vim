@@ -46,3 +46,4 @@ let g:gitgutter_map_keys = v:false
 " for latex previewing
 let g:livepreview_previewer = 'evince'
 let g:livepreview_cursorhold_recompile = 0
+let g:vimtex_log_verbose = 1
