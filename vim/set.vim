@@ -6,6 +6,7 @@ set relativenumber
 set nohlsearch
 set incsearch
 set cpoptions+=x
+set ignorecase
 set smartcase
 
 " no sounds please
