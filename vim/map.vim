@@ -50,6 +50,9 @@ imap <C-_> <Esc>gcci
 " mapping for macro repeat
 nnoremap m @q
 
+" mapping for replace from clipboard
+nnoremap <M-p> "_diwP
+
 " remap the buffer
 nnoremap d "_d
 nnoremap D "_D
