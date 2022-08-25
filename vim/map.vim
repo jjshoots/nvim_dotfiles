@@ -88,10 +88,7 @@ nnoremap <C-o> <C-i>
 nnoremap <C-i> <C-o>
 
 " honestly this is the better save
-nnoremap <C-s> :w<CR>
-
-" create session
-nnoremap <C-d> :mks!<CR>
+nnoremap <C-s> :w!<CR>
 
 " remap for quickly grabbing word under cursor and
 " applying to search without moving
