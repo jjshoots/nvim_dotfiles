@@ -52,7 +52,7 @@ Plug 'voldikss/vim-floaterm'
 
 " telescope file finder
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': 'nvim-0.6' }
 
 " nerdtree
 Plug 'preservim/nerdtree'
