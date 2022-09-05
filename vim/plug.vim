@@ -33,6 +33,7 @@ Plug 'tpope/vim-commentary'
 " for nice scrolling
 Plug 'psliwka/vim-smoothie'
 
+" icons
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
