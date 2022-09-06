@@ -122,17 +122,19 @@ nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 vmap <silent> u <esc>:Gdiff<cr>gv:diffget<cr><c-w><c-w>ZZ
 
-fun! ToggleGStatus()
-  if buflisted(bufname('.git/index'))
-    bd .git/index
-  else
-    vertical Git
-    vertical resize 70
-  endif
+" git status
+fun! s:ToggleGstatus() abort
+	for l:winnr in range(1, winnr('$'))
+		if !empty(getwinvar(l:winnr, 'fugitive_status'))
+			execute l:winnr.'close'
+		else
+      vertical Git
+      vertical resize 70
+		endif
+	endfor
 endfun
-command! ToggleGStatus :call ToggleGStatus()
 
-nnoremap <A-f> :ToggleGStatus<CR>
+nnoremap <M-f> :call <SID>ToggleGstatus()<CR>
 
 " smartf
 nmap f <Plug>(coc-smartf-forward)
