@@ -19,6 +19,9 @@ hi Conceal ctermfg=170 guifg=#9C4791 ctermbg=NONE guibg=NONE
 " don't highlight whitespace errors
 let g:python_highlight_space_errors = 0
 
+" pydocstring format type
+let g:pydocstring_formatter = 'google'
+
 " change highlight for split indicator
 hi VertSplit guifg=#9E4447
 
