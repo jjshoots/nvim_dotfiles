@@ -44,6 +44,9 @@ Plug 'mbbill/undotree'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for':['python', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
+" auto documentation
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+
 " close brackets
 Plug 'cohama/lexima.vim'
 
