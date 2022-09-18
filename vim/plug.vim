@@ -30,9 +30,6 @@ Plug 'airblade/vim-gitgutter'
 " smart commenting
 Plug 'tpope/vim-commentary'
 
-" for nice scrolling
-Plug 'psliwka/vim-smoothie'
-
 " icons
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -52,7 +49,6 @@ Plug 'cohama/lexima.vim'
 
 " floating terminal
 Plug 'voldikss/vim-floaterm'
-" Plug 'akinsho/toggleterm.nvim'
 
 " telescope file finder
 Plug 'nvim-lua/plenary.nvim'
