@@ -26,6 +26,9 @@ noremap <leader>j <C-w>j
 noremap <leader>k <C-w>k
 noremap <leader>l <C-w>l
 
+" disable pydocstring map
+let g:pydocstring_enable_mapping = 0
+
 " some easier motions
 noremap <C-h> b
 noremap <C-l> w
