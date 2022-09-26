@@ -14,7 +14,6 @@ let mapleader = " "
 :noremap <leader>s :set hlsearch! hlsearch?<CR>
 
 " window management
-" nmap <silent> <C-e> :NERDTreeToggle<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <C-Left> 5<C-w><
 noremap <C-Right> 5<C-w>>
@@ -42,9 +41,9 @@ inoremap <C-e> <C-o>de
 inoremap <C-w> <C-\><C-o>db
 
 " mapping for comment
-vmap <C-_> gcgv
-nmap <C-_> gcc
-imap <C-_> <Esc>gcci
+vmap <C-c> gcgv
+nmap <C-c> gcc
+imap <C-c> <Esc>gcci
 
 " mapping for macro repeat
 nnoremap m @q

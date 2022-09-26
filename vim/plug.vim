@@ -30,7 +30,7 @@ Plug 'airblade/vim-gitgutter'
 " smart commenting
 Plug 'tpope/vim-commentary'
 
-" lualine
+" lualine and tree explorer
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -54,10 +54,6 @@ Plug 'voldikss/vim-floaterm'
 " telescope file finder
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-
-" nerdtree
-" Plug 'preservim/nerdtree'
-" Plug 'ryanoasis/vim-devicons'
 
 " indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'

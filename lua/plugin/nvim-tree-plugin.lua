@@ -4,7 +4,9 @@ vim.g.loaded_netrwPlugin = 1
 
 -- OR setup with some options
 require("nvim-tree").setup({
+  hijack_netrw = false,
   sort_by = "case_sensitive",
+  remove_keymaps = true,
   view = {
     adaptive_size = true,
     mappings = {
