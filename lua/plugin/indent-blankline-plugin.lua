@@ -1,4 +1,4 @@
--- for indent blankline
+-- line colours, can't use lua for this for some reason
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#6C3539 gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent2 guifg=#5F4F32 gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent3 guifg=#445835 gui=nocombine]]
@@ -16,8 +16,4 @@ require("indent_blankline").setup {
     "IndentBlanklineIndent5",
     "IndentBlanklineIndent6",
   },
-}
-
-require("focus").setup{
-  excluded_filetypes = {'floaterm'}
 }

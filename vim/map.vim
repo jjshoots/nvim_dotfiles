@@ -2,7 +2,7 @@
 nnoremap <backspace> <nop>
 nnoremap <space> <nop>
 nnoremap <CR> <nop>
-"
+
 " disable scrolling, use the mouse
 nnoremap <C-u> <nop>
 nnoremap <C-d> <nop>
@@ -15,7 +15,6 @@ let mapleader = " "
 
 " window management
 nmap <silent> <C-e> :NERDTreeToggle<CR>
-nmap <silent> <C-p> <cmd>:Telescope find_files<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <C-Left> 5<C-w><
 noremap <C-Right> 5<C-w>>
@@ -110,15 +109,6 @@ noremap <silent> $ g$
 " quick new section / position
 nnoremap <A-o> o<Esc>O
 nnoremap <A-i> i<space>
-
-" floaterm map
-nnoremap <silent> <A-j> :FloatermToggle<CR>
-tnoremap <silent> <A-j> <C-\><C-n>:FloatermToggle<CR>
-nnoremap <silent> <leader>4 :FloatermKill<CR>:FloatermToggle<CR>
-nnoremap <silent> <leader>5 :FloatermNew<CR>
-nnoremap <silent> <leader>8 :FloatermPrev<CR>
-nnoremap <silent> <leader>9 :FloatermNext<CR>
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " fugitive
 nnoremap <leader>gj :diffget //3<CR>

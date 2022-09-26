@@ -29,17 +29,6 @@ hi VertSplit guifg=#9E4447
 hi CurrentWordTwins guibg=#313E42
 hi CurrentWord guibg=#313E42
 
-" floaterm
-let g:floaterm_width = 0.6
-let g:floaterm_height = 1.0
-let g:floaterm_wintype = 'float'
-let g:floaterm_position = 'right'
-let g:floaterm_title = 'Terminal $1|$2'
-let g:floaterm_borderchars = '─│─│╭╮╯╰'
-let g:floaterm_autoinsert = v:true
-hi Floaterm guibg=NONE
-hi FloatermBorder guibg=#303035
-
 " rainbow parentheses
 let g:rainbow_active = 1
 
