@@ -14,7 +14,7 @@ let mapleader = " "
 :noremap <leader>s :set hlsearch! hlsearch?<CR>
 
 " window management
-nmap <silent> <C-e> :NERDTreeToggle<CR>
+" nmap <silent> <C-e> :NERDTreeToggle<CR>
 noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <C-Left> 5<C-w><
 noremap <C-Right> 5<C-w>>
