@@ -22,4 +22,5 @@ vim.api.nvim_set_keymap('n', '<A-j>', ':lua FloatermInsertEnter()<CR>', { norema
 vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-n>:FloatermToggle<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<A-k>', ':FloatermToggle<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-n>:FloatermToggle<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true})
 
