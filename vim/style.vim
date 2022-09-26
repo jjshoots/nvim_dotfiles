@@ -16,26 +16,5 @@ hi clear SignColumn
 " highlight concealed blocks for tex
 hi Conceal ctermfg=170 guifg=#9C4791 ctermbg=NONE guibg=NONE
 
-" don't highlight whitespace errors
-let g:python_highlight_space_errors = 0
-
-" pydocstring format type
-let g:pydocstring_formatter = 'google'
-
 " change highlight for split indicator
 hi VertSplit guifg=#9E4447
-
-" for highlight word under cursor and twins
-hi CurrentWordTwins guibg=#313E42
-hi CurrentWord guibg=#313E42
-
-" rainbow parentheses
-let g:rainbow_active = 1
-
-" disable git gutter mappings
-let g:gitgutter_map_keys = v:false
-
-" for latex previewing
-let g:livepreview_previewer = 'evince'
-let g:livepreview_cursorhold_recompile = 0
-let g:vimtex_log_verbose = 1

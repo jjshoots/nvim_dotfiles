@@ -21,6 +21,9 @@ inoremap <silent><expr> <C-J>
       \ coc#refresh()
 inoremap <expr><C-K> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
+" tab to select completion
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
