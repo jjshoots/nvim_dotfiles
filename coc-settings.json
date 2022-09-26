@@ -30,5 +30,6 @@
   "smartf.wordJump": false,
   "smartf.timeout": 5000,
   "smartf.jumpOnTrigger": false,
-  "signature.enable": false
+  "signature.enable": false,
+  "pyright.inlayHints.enable": false
 }
