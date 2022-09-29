@@ -1,7 +1,7 @@
-vim.api.nvim_set_keymap('n', 'f', '<Plug>(coc-smartf-forward)', {})
-vim.api.nvim_set_keymap('n', 'F', '<Plug>(coc-smartf-backward)', {})
-vim.api.nvim_set_keymap('n', ';', '<Plug>(coc-smartf-repeat)', {})
-vim.api.nvim_set_keymap('n', ',', '<Plug>(coc-smartf-repeat-opposite)', {})
+vim.api.nvim_set_keymap('n', '<leader>f', '<Plug>(coc-smartf-forward)', {})
+vim.api.nvim_set_keymap('n', '<leader>F', '<Plug>(coc-smartf-backward)', {})
+-- vim.api.nvim_set_keymap('n', ';', '<Plug>(coc-smartf-repeat)', {})
+-- vim.api.nvim_set_keymap('n', ',', '<Plug>(coc-smartf-repeat-opposite)', {})
 
 vim.api.nvim_command([[
   augroup Smartf
