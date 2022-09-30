@@ -42,7 +42,7 @@ inoremap <C-w> <C-\><C-o>db
 
 " mapping for comment
 vmap <C-c> gcgv
-nmap <C-_> gcc
+nmap <C-c> gcc
 
 " mapping for macro repeat
 nnoremap m @q
