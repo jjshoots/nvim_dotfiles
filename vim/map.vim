@@ -105,11 +105,6 @@ noremap <silent> $ g$
 nnoremap <A-o> o<Esc>O
 nnoremap <A-i> i<space>
 
-" fugitive
-nnoremap <leader>gj :diffget //3<CR>
-nnoremap <leader>gf :diffget //2<CR>
-vmap <silent> u <esc>:Gdiff<cr>gv:diffget<cr><c-w><c-w>ZZ
-
 " git status
 fun! s:ToggleGstatus() abort
 	for l:winnr in range(1, winnr('$'))
