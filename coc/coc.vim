@@ -38,8 +38,8 @@ endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <M-]> <Plug>(coc-diagnostic-prev)
-nmap <M-[> <Plug>(coc-diagnostic-next)
+nmap <M-[> <Plug>(coc-diagnostic-prev)
+nmap <M-]> <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
