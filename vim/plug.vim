@@ -31,9 +31,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 
 " lualine and tree explorer
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-lualine/lualine.nvim'
 
 " undotreevim terminal function not working with buffers
 Plug 'mbbill/undotree'
