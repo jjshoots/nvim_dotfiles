@@ -41,6 +41,12 @@ nvim +'CocInstall coc-pyright coc-clangd coc-html coc-json coc-cmake coc-smartf'
 nvim +UpdateRemotePlugins +qall
 ```
 
+## Install ripgrep and fd
+```
+sudo apt install fd-find ripgrep
+
+```
+
 # Custom Fonts
 Download the font repo first:
 ```

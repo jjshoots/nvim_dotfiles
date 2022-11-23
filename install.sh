@@ -1,5 +1,5 @@
 # Clone the repo
-sudo apt install git neovim --yes
+sudo apt install git neovim ripgrep fd-find --yes
 git clone https://github.com/jjshoots/nvim_dotfiles.git ~/.config/nvim
 
 # Install Plug
