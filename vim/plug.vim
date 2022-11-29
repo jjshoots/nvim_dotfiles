@@ -6,8 +6,9 @@ Plug 'sainnhe/sonokai'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/vim-github-dashboard'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'junegunn/vim-github-dashboard'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " brackets
 Plug 'tpope/vim-surround'
@@ -39,7 +40,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'mbbill/undotree'
 
 " syntax highlighting for python
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for':['python', 'vim-plug']}
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for':['python', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
 " auto documentation
