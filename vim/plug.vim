@@ -40,7 +40,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'mbbill/undotree'
 
 " syntax highlighting for python
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for':['python', 'vim-plug']}
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for':['python', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
 " auto documentation
