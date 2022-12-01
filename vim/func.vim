@@ -79,3 +79,15 @@ augroup PreviewWindow
   au FileType tex nnoremap <leader>v :LLPStartPreview<CR>
   au FileType markdown nnoremap <leader>v :CocCommand markdown-preview-enhanced.openPreview<CR>
 augroup end
+
+" automatically open telescope if no files opened on commandline
+augroup AutoTelescope
+  au!
+  au VimEnter * call TelescopeFindFiles()
+augroup end
+
+fun! TelescopeFindFiles()
+  if len(v:argv) == 1
+    Telescope find_files
+  endif
+endfun
