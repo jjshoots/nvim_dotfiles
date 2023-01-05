@@ -1,4 +1,5 @@
 vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>p', ':Telescope find_files hidden=true<CR>', {})
 
 require('telescope').setup{
   defaults = {
