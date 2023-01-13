@@ -117,5 +117,5 @@ fun! s:ToggleGstatus() abort
 	endfor
 endfun
 
-nnoremap <M-f> :call <SID>ToggleGstatus()<CR>
+nnoremap <M-f> :call <SID>ToggleGstatus()<CR>4j
 
