@@ -33,5 +33,4 @@
   "signature.enable": false,
   "pyright.inlayHints.variableTypes": false,
   "pyright.inlayHints.functionReturnTypes": false,
-  "coc.preferences.formatOnSaveFiletypes": "rust"
 }
