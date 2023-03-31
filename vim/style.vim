@@ -8,8 +8,12 @@ hi CursorLine guibg=#343330
 hi Visual guibg=#6A2D21 gui=none
 hi IncSearch cterm=NONE ctermfg=yellow ctermbg=green
 
+" transparent all the things
 hi Normal ctermbg=NONE guibg=NONE
+hi NormalNC ctermbg=NONE guibg=NONE
+hi NormalSB ctermbg=NONE guibg=NONE
 hi EndOfBuffer ctermbg=NONE guibg=NONE
+
 hi FoldColumn guibg=#2C3245 guifg=NONE
 hi clear SignColumn
 
