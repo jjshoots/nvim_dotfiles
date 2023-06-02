@@ -6,6 +6,11 @@ curl -s https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install.
 
 # Take me through the steps
 
+## Update Apt
+```
+sudo apt update
+```
+
 ## Location
 Change directory and clone it
 ```
@@ -21,9 +26,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 ## CoC Dependencies
 ```
-sudo apt update && sudo apt install nodejs npm --yes
+sudo apt install nodejs npm --yes
 sudo npm install -g n
 sudo n stable
+```
+
+## Exuberant CTags for Tagbar
+```
+sudo apt install exuberant-ctags --yes
 ```
 
 ## Nvim PlugInstall

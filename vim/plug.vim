@@ -66,4 +66,7 @@ Plug 'lervag/vimtex'
 " automatic resizing
 Plug 'beauwilliams/focus.nvim'
 
+" tagbar
+Plug 'preservim/tagbar'
+
 call plug#end()
