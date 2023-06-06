@@ -22,6 +22,3 @@ nvim +PlugInstall +qall
 
 # Install languages (add more languages as necessary)
 nvim +'CocInstall coc-pyright coc-clangd coc-html coc-json coc-cmake coc-smartf' +qall
-
-# update semshi
-nvim +UpdateRemotePlugins +qall
