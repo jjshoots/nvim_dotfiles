@@ -118,3 +118,5 @@ endfun
 
 nnoremap <M-f> :call <SID>ToggleGstatus()<CR>4j
 
+" map for closing diff view
+command! -nargs=0 Diffquit normal! ZZ:Gedit<CR>
