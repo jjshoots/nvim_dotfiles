@@ -47,7 +47,7 @@ nmap <C-_> gcc
 nnoremap m @q
 
 " mapping for replace from clipboard
-nnoremap <M-p> "_diwP
+nnoremap <C-p> "_diwP
 
 " remap the buffer
 nnoremap d "_d
