@@ -7,6 +7,7 @@ require('telescope').setup{
       i = {
         ["<C-j>"] = "move_selection_next",
         ["<C-k>"] = "move_selection_previous",
+        ["<M-p>"] = "close",
       }
     },
     file_ignore_patterns = {
