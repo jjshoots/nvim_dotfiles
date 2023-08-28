@@ -63,10 +63,11 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'lervag/vimtex'
 
-" automatic resizing
-Plug 'beauwilliams/focus.nvim'
-
 " tagbar
 Plug 'preservim/tagbar'
+
+" window resizing
+" Plug 'camspiers/animate.vim'
+" Plug 'camspiers/lens.vim'
 
 call plug#end()

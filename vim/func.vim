@@ -18,7 +18,7 @@ fun! OnEnter()
       setlocal cursorline
       setlocal signcolumn=auto
       setlocal relativenumber
-      setlocal winwidth=90
+      " setlocal winwidth=90
       setlocal foldcolumn=1
     endif
 
