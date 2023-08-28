@@ -15,10 +15,10 @@ fun! OnEnter()
         \ && &buftype != 'prompt'
         \ && &buftype != 'quickfix'
     if &modifiable
+      " setlocal winwidth=90
       setlocal cursorline
       setlocal signcolumn=auto
       setlocal relativenumber
-      " setlocal winwidth=90
       setlocal foldcolumn=1
     endif
 
