@@ -22,6 +22,10 @@ call_all(vim_paths)
 local plugin_paths = vim.split(vim.fn.glob('$HOME/.config/nvim/lua/plugin/*.lua'), '\n')
 call_all(plugin_paths)
 
+-- source testing environments
+local test_paths = vim.split(vim.fn.glob('$HOME/.config/nvim/lua/test/*.lua'), '\n')
+call_all(test_paths)
+
 -- source coc extension stuff
 local coc_paths = vim.split(vim.fn.glob('$HOME/.config/nvim/lua/coc/*.lua'), '\n')
 call_all(coc_paths)
@@ -29,4 +33,3 @@ call_all(coc_paths)
 -- source coc config
 local coc_config = {'$HOME/.config/nvim/coc/coc.vim'}
 call_all(coc_config)
-
