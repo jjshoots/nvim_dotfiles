@@ -67,6 +67,6 @@ Plug 'lervag/vimtex'
 Plug 'preservim/tagbar'
 
 " betterf
-Plug 'jjshoots/betterf'
+Plug 'jjshoots/betterf.nvim'
 
 call plug#end()
