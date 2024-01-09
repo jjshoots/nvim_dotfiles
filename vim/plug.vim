@@ -34,13 +34,12 @@ Plug 'tpope/vim-commentary'
 " lualine and tree explorer
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim', {'tag': 'compat-nvim-0.6'}
 
 " undotreevim terminal function not working with buffers
 Plug 'mbbill/undotree'
 
 " syntax highlighting for python
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for':['python', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
 " auto documentation
@@ -57,7 +56,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': 'nvim-0.6' }
 
 " indentation guides
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v2.20.8' }
 
 " for latex
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
