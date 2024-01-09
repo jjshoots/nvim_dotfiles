@@ -66,8 +66,7 @@ Plug 'lervag/vimtex'
 " tagbar
 Plug 'preservim/tagbar'
 
-" window resizing
-" Plug 'camspiers/animate.vim'
-" Plug 'camspiers/lens.vim'
+" betterf
+Plug 'jjshoots/betterf'
 
 call plug#end()
