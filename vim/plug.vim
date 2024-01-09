@@ -8,7 +8,6 @@ Plug 'sainnhe/sonokai'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/vim-github-dashboard'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " brackets
 Plug 'tpope/vim-surround'
