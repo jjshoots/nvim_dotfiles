@@ -104,6 +104,18 @@ noremap <silent> $ g$
 nnoremap <A-o> o<Esc>O
 nnoremap <A-i> i<space>
 
+" close buffers or quit nvim
+fun! s:CloseBuffersOrQuit()
+  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
+    execute ':bd'
+  else
+    qall!
+  endif
+endfunction
+
+" for closing buffers
+nnoremap <C-d> :call <SID>CloseBuffersOrQuit()<CR>
+
 " git status
 fun! s:ToggleGstatus() abort
 	for l:winnr in range(1, winnr('$'))
