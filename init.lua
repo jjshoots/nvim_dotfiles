@@ -15,12 +15,12 @@ function call_all(list)
 end
 
 -- source vim stuff
-local lua_paths = vim.split(vim.fn.glob('$HOME/.config/nvim/lua/*.lua'), '\n')
-call_all(lua_paths)
-
--- source vim stuff
 local vim_paths = vim.split(vim.fn.glob('$HOME/.config/nvim/vim/*.vim'), '\n')
 call_all(vim_paths)
+
+-- source vim stuff
+local lua_paths = vim.split(vim.fn.glob('$HOME/.config/nvim/lua/*.lua'), '\n')
+call_all(lua_paths)
 
 -- source lua plugin stuff
 local plugin_paths = vim.split(vim.fn.glob('$HOME/.config/nvim/lua/plugin/*.lua'), '\n')

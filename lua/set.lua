@@ -1,3 +1,4 @@
+-- remap the clipboard
 vim.g.clipboard = {
  name = "xsel",
  copy = {
