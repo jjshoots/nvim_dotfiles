@@ -38,9 +38,6 @@ set noswapfile
 set undodir=~/.nvim/undodir
 set undofile
 
-" paste from system clipboard
-set clipboard=unnamedplus
-
 " looks
 set termguicolors
 set scrolloff=8
