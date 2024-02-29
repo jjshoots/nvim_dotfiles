@@ -52,3 +52,19 @@ set mouse=a
 " fugitive stuff
 set diffopt+=vertical
 set signcolumn
+
+" Set up clipboard integration
+let g:clipboard = {
+      \   'copy': {
+      \      '+': 'xsel --clipboard --input',
+      \      '*': 'xsel --clipboard --input',
+      \   },
+      \   'paste': {
+      \      '+': 'xsel --clipboard --output',
+      \      '*': 'xsel --clipboard --output',
+      \   },
+      \   'cache_enabled': 1,
+      \ }
+
+" Use the system clipboard by default
+set clipboard=unnamedplus
