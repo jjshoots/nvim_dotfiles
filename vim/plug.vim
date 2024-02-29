@@ -10,7 +10,7 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/vim-github-dashboard'
 
 " brackets
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
 
 " repeat commonly used plugins
 Plug 'tpope/vim-repeat'
