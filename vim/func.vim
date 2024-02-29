@@ -87,7 +87,8 @@ augroup AutoTelescope
 augroup end
 
 fun! TelescopeFindFiles()
-  if len(v:argv) == 1
+  " echo 'v:argv = ' . join(v:argv, ', ')
+  if len(v:argv) == 2
     Telescope find_files
   endif
 endfun

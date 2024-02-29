@@ -40,8 +40,8 @@ inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 inoremap <C-e> <C-o>de
 
 " mapping for comment
-vmap <C-_> gcgv
-nmap <C-_> gcc
+vmap <C-/> gcgv
+nmap <C-/> gcc
 
 " mapping for macro repeat
 nnoremap m @q

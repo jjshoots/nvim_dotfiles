@@ -8,7 +8,7 @@ vim.g.floaterm_autoinsert = false
 
 -- colours
 vim.api.nvim_set_hl(0, 'Floaterm', {})
-vim.api.nvim_set_hl(0, 'FloatermBorder', { bg = "#303035" })
+vim.api.nvim_set_hl(0, 'FloatermBorder', {})
 
 -- floaterm function with insert mode
 function FloatermInsertEnter()

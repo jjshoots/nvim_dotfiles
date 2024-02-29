@@ -33,7 +33,7 @@ Plug 'tpope/vim-commentary'
 " lualine and tree explorer
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'nvim-lualine/lualine.nvim', {'tag': 'compat-nvim-0.6'}
+Plug 'nvim-lualine/lualine.nvim'
 
 " undotreevim terminal function not working with buffers
 Plug 'mbbill/undotree'
@@ -52,10 +52,10 @@ Plug 'voldikss/vim-floaterm'
 
 " telescope file finder
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': 'nvim-0.6' }
+Plug 'nvim-telescope/telescope.nvim'
 
 " indentation guides
-Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v2.20.8' }
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " for latex
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
