@@ -3,18 +3,12 @@ call plug#begin('~/.nvim/plugged')
 " Edge colorscheme
 Plug 'sainnhe/sonokai'
 
+" syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-
-" repeat commonly used plugins
-Plug 'tpope/vim-repeat'
-
-" highlight matching word under cursor
-Plug 'xiyaowong/nvim-cursorword'
-
-" rainbow brackets
-Plug 'luochen1990/rainbow'
 
 " vim fugitive
 Plug 'tpope/vim-fugitive'
@@ -44,20 +38,26 @@ Plug 'mbbill/undotree'
 " indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-" syntax highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" auto documentation
-Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
+" highlight matching word under cursor
+Plug 'xiyaowong/nvim-cursorword'
 
 " brackets
 Plug 'kylechui/nvim-surround'
 
+" rainbow brackets
+Plug 'luochen1990/rainbow'
+
 " close brackets
 Plug 'cohama/lexima.vim'
+"
+" repeat commonly used plugins
+Plug 'tpope/vim-repeat'
 
 " for splitting and joining long arguments lists
 Plug 'echasnovski/mini.splitjoin'
+
+" auto documentation
+Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
 
 " tagbar
 Plug 'preservim/tagbar'
