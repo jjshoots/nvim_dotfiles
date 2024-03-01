@@ -5,7 +5,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = event.buf }
 
 		-- buffer-local keybindings
-		vim.keymap.set("n", "<M-l>", "<cmd>lua vim.diagnostic.open_float()<cr>")
+    vim.keymap.set('n', '<M-l>', function()
+        -- If we find a floating window, close it.
+        local found_float = false
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+            if vim.api.nvim_win_get_config(win).relative ~= '' then
+                vim.api.nvim_win_close(win, true)
+                found_float = true
+            end
+        end
+
+        if found_float then
+            return
+        end
+
+        -- if no floating window found, open the diagnostics
+        vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
+    end, { desc = 'Toggle Diagnostics' })
 		vim.keymap.set("n", "<M-[>", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 		vim.keymap.set("n", "<M-]>", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 		vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
