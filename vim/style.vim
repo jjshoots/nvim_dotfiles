@@ -22,3 +22,6 @@ hi Conceal ctermfg=170 guifg=#9C4791 ctermbg=NONE guibg=NONE
 
 " change highlight for split indicator
 hi VertSplit guifg=#9E4447
+
+" highlight word under cursor
+hi CursorWord guibg=#313E42
