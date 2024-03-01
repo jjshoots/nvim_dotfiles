@@ -1,13 +1,11 @@
 call plug#begin('~/.nvim/plugged')
 
 " Edge colorscheme
-" Plug 'jjshoots/edge-jet'
 Plug 'sainnhe/sonokai'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-Plug 'junegunn/vim-github-dashboard'
 
 " brackets
 Plug 'kylechui/nvim-surround'
@@ -46,6 +44,9 @@ Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
 
 " close brackets
 Plug 'cohama/lexima.vim'
+
+" for splitting and joining long arguments lists
+Plug 'echasnovski/mini.splitjoin'
 
 " floating terminal
 Plug 'voldikss/vim-floaterm'
