@@ -36,9 +36,6 @@ noremap <C-n> ^
 inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 
-" ctrl w and ctrl e to do C-BS and C-DEL stuff
-inoremap <C-e> <C-o>de
-
 " mapping for comment
 vmap <C-/> gcgv
 nmap <C-/> gcc
