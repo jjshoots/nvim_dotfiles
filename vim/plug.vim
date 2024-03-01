@@ -6,20 +6,20 @@ Plug 'sainnhe/sonokai'
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
+" For autocomplete
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'ray-x/lsp_signature.nvim'
 
-" vim fugitive
+" vim fugitive and gitgutter
 Plug 'tpope/vim-fugitive'
-
-" gitgutter integration
 Plug 'airblade/vim-gitgutter'
 
-" smart commenting
-Plug 'tpope/vim-commentary'
-
-" lualine and tree explorer
+" lualine
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 
@@ -29,38 +29,37 @@ Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.5'}
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim', {'branch': 'v3.x'}
 
-" floating terminal
-Plug 'voldikss/vim-floaterm'
-
-" undotreevim terminal function not working with buffers
-Plug 'mbbill/undotree'
-
 " indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " highlight matching word under cursor
 Plug 'xiyaowong/nvim-cursorword'
 
-" brackets
+" floating terminal
+Plug 'voldikss/vim-floaterm'
+
+" tagbar
+Plug 'preservim/tagbar'
+
+" undotree
+Plug 'mbbill/undotree'
+
+" easy surroung, rainbow brackets, and autoclose brackets
 Plug 'kylechui/nvim-surround'
-
-" rainbow brackets
 Plug 'luochen1990/rainbow'
-
-" close brackets
 Plug 'cohama/lexima.vim'
-"
-" repeat commonly used plugins
-Plug 'tpope/vim-repeat'
+
+" smart commenting
+Plug 'tpope/vim-commentary'
 
 " for splitting and joining long arguments lists
 Plug 'echasnovski/mini.splitjoin'
 
+" repeat commonly used plugins
+Plug 'tpope/vim-repeat'
+
 " auto documentation
 Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
-
-" tagbar
-Plug 'preservim/tagbar'
 
 " betterf
 Plug 'jjshoots/betterf.nvim'
