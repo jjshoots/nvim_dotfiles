@@ -99,14 +99,14 @@ local function on_confirm_done(evt)
 		or entry:get_kind() == types.lsp.CompletionItemKind.Method
 		or entry:get_kind() == types.lsp.CompletionItemKind.Class
 	then
-		local keys = vim.api.nvim_replace_termcodes("()<left>", false, false, true)
+		local keys = vim.api.nvim_replace_termcodes("(", false, false, true)
 		vim.api.nvim_feedkeys(keys, "i", true)
 		return
 	end
 end
 cmp.event:on("confirm_done", on_confirm_done)
 
--- THIS IS FOR TYPEHINTING FUNCTIONS AND CLASSES
+-- THIS IS FOR SHOWING WHAT ARGUMENTS A FUNCTION ACCEPTS
 local cfg = {
 	debug = false, -- set to true to enable debug logging
 	log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log", -- log dir when debug is on
