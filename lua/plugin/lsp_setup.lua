@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = event.buf }
 
 		-- buffer-local keybindings
-		vim.keymap.set("n", "<M-l>", "<cmd>lua vim.diagnostic.open_float()<cr>")
+		vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<cr>")
 		vim.keymap.set("n", "<M-[>", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 		vim.keymap.set("n", "<M-]>", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 		vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
