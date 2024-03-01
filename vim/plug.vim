@@ -1,12 +1,12 @@
 call plug#begin('~/.nvim/plugged')
 
 " Edge colorscheme
-Plug 'jjshoots/edge-jet'
+" Plug 'jjshoots/edge-jet'
 Plug 'sainnhe/sonokai'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'junegunn/vim-github-dashboard'
 
 " brackets
@@ -38,11 +38,12 @@ Plug 'nvim-lualine/lualine.nvim'
 " undotreevim terminal function not working with buffers
 Plug 'mbbill/undotree'
 
-" syntax highlighting for python
-Plug 'sheerun/vim-polyglot'
+" syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'sheerun/vim-polyglot'
 
 " auto documentation
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
 
 " close brackets
 Plug 'cohama/lexima.vim'
@@ -52,13 +53,13 @@ Plug 'voldikss/vim-floaterm'
 
 " telescope file finder
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.5'}
 
 " indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " for latex
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
 Plug 'lervag/vimtex'
 
 " tagbar
