@@ -1,7 +1,7 @@
-require('mini.splitjoin').setup({
-  mappings = {
-    toggle = '<M-s>',
-    split = '',
-    join = '',
-  },
+require("mini.splitjoin").setup({
+	mappings = {
+		toggle = "<M-s>",
+		split = "",
+		join = "",
+	},
 })

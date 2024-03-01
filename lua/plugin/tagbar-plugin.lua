@@ -8,4 +8,4 @@ vim.g.tagbar_show_tag_linenumbers = 2
 vim.g.tagbar_sort = 0
 
 -- mappings
-vim.api.nvim_set_keymap('n', '<A-t>', ':TagbarToggle<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-t>", ":TagbarToggle<CR>", { noremap = true, silent = true })
