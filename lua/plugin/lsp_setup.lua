@@ -5,23 +5,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = event.buf }
 
 		-- buffer-local keybindings
-    vim.keymap.set('n', '<M-l>', function()
-        -- If we find a floating window, close it.
-        local found_float = false
-        for _, win in ipairs(vim.api.nvim_list_wins()) do
-            if vim.api.nvim_win_get_config(win).relative ~= '' then
-                vim.api.nvim_win_close(win, true)
-                found_float = true
-            end
-        end
+		vim.keymap.set("n", "<M-l>", function()
+			-- If we find a floating window, close it.
+			local found_float = false
+			for _, win in ipairs(vim.api.nvim_list_wins()) do
+				if vim.api.nvim_win_get_config(win).relative ~= "" then
+					vim.api.nvim_win_close(win, true)
+					found_float = true
+				end
+			end
 
-        if found_float then
-            return
-        end
+			if found_float then
+				return
+			end
 
-        -- if no floating window found, open the diagnostics
-        vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
-    end, { desc = 'Toggle Diagnostics' })
+			-- if no floating window found, open the diagnostics
+			vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+		end, { desc = "Toggle Diagnostics" })
 		vim.keymap.set("n", "<M-[>", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 		vim.keymap.set("n", "<M-]>", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 		vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
@@ -65,9 +65,10 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 	},
 	mapping = cmp.mapping.preset.insert({
-		-- Enter and Tab key confirms completion item
+		-- Enter selects the item under cursor
+		-- Tab selects the first item
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
-		["<Tab>"] = cmp.mapping.confirm({ select = false }),
+		["<Tab>"] = cmp.mapping.confirm({ select = true }),
 
 		-- Ctrl + space triggers completion menu
 		["<C-Space>"] = cmp.mapping.complete(),
@@ -90,6 +91,27 @@ cmp.setup({
 		end,
 	},
 })
+
+local function on_confirm_done(evt)
+	local entry = evt.entry
+	local item = entry:get_completion_item()
+	local types = require("cmp.types")
+
+	if evt.commit_character then
+		return
+	end
+
+	if
+		entry:get_kind() == types.lsp.CompletionItemKind.Function
+		or entry:get_kind() == types.lsp.CompletionItemKind.Method
+		or entry:get_kind() == types.lsp.CompletionItemKind.Class
+	then
+		local keys = vim.api.nvim_replace_termcodes("()<left>", false, false, true)
+		vim.api.nvim_feedkeys(keys, "i", true)
+		return
+	end
+end
+cmp.event:on("confirm_done", on_confirm_done)
 
 -- THIS IS FOR TYPEHINTING FUNCTIONS AND CLASSES
 local cfg = {
