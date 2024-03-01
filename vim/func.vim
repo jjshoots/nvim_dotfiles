@@ -73,13 +73,6 @@ augroup AutoWrap
   au FileType markdown setlocal wrap
 augroup end
 
-" for md and tex preview
-augroup PreviewWindow
-  au!
-  au FileType tex nnoremap <leader>v :LLPStartPreview<CR>
-  au FileType markdown nnoremap <leader>v :CocCommand markdown-preview-enhanced.openPreview<CR>
-augroup end
-
 " automatically open telescope if no files opened on commandline
 augroup AutoTelescope
   au!

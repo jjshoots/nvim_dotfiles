@@ -32,10 +32,6 @@ noremap <C-j> 3j
 noremap <C-m> $
 noremap <C-n> ^
 
-" use to move around in autocompletion menu
-inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
-
 " mapping for comment
 vmap <C-/> gcgv
 nmap <C-/> gcc
