@@ -92,6 +92,7 @@ cmp.setup({
 	},
 })
 
+-- CUSTOM CALLBACK FOR AUTO BRACKETS FOR FUNCTIONS AND CLASS
 local function on_confirm_done(evt)
 	local entry = evt.entry
 	local item = entry:get_completion_item()
