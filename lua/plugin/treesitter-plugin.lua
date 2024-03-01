@@ -20,3 +20,6 @@ require("nvim-treesitter.configs").setup({
     additional_vim_regex_highlighting = false,
   },
 })
+
+-- let rainbow handle brackets
+vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })

@@ -40,7 +40,6 @@ Plug 'mbbill/undotree'
 
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'sheerun/vim-polyglot'
 
 " auto documentation
 Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
