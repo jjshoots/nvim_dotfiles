@@ -41,7 +41,6 @@ set undofile
 " looks
 set termguicolors
 set scrolloff=8
-set conceallevel=2
 
 " hide status cause we using powerline
 set noshowmode

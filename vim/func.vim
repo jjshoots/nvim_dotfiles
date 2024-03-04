@@ -85,3 +85,10 @@ fun! TelescopeFindFiles()
     Telescope find_files
   endif
 endfun
+
+" conceal levels for different files
+augroup AutoConceal
+  au!
+  au FileType json set conceallevel=0
+  au FileType md set conceallevel=2
+augroup END
