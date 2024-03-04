@@ -5,14 +5,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = event.buf }
 
 		-- buffer-local keybindings
-    vim.keymap.set("n", "<M-[>", vim.diagnostic.goto_prev)
-    vim.keymap.set("n", "<M-]>", vim.diagnostic.goto_next)
-    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', function() vim.lsp.buf.format({async = true}) end, opts)
+		vim.keymap.set("n", "<M-[>", vim.diagnostic.goto_prev)
+		vim.keymap.set("n", "<M-]>", vim.diagnostic.goto_next)
+		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+		vim.keymap.set({ "n", "x" }, "<F3>", function()
+			vim.lsp.buf.format({ async = true })
+		end, opts)
 
-    vim.keymap.set("n", "<M-l>", "<cmd>Telescope diagnostics<cr>", opts)
+		vim.keymap.set("n", "<M-l>", "<cmd>Telescope diagnostics<cr>", opts)
 		vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
 
 		-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
