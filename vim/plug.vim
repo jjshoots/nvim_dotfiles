@@ -23,9 +23,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 
-" telescope file finder and filetree
+" telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.5'}
+Plug 'stevearc/aerial.nvim'
+
+" file tree
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim', {'branch': 'v3.x'}
 
@@ -37,9 +40,6 @@ Plug 'xiyaowong/nvim-cursorword'
 
 " floating terminal
 Plug 'voldikss/vim-floaterm'
-
-" tagbar
-Plug 'preservim/tagbar'
 
 " undotree
 Plug 'mbbill/undotree'
