@@ -4,23 +4,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
 		local opts = { buffer = event.buf }
 
-    -- SHOW DIAGNOSTICS ON HOVER
-    vim.o.updatetime = 500
-    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-      group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
-      callback = function ()
-        vim.diagnostic.open_float(nil, {focus=false})
-      end
-    })
-
 		-- buffer-local keybindings
-		vim.keymap.set("n", "<M-[>", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
-		vim.keymap.set("n", "<M-]>", "<cmd>lua vim.diagnostic.goto_next()<cr>")
-		vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-		vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-		vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+    vim.keymap.set("n", "<M-[>", vim.diagnostic.goto_prev)
+    vim.keymap.set("n", "<M-]>", vim.diagnostic.goto_next)
+    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+    vim.keymap.set({'n', 'x'}, '<F3>', function() vim.lsp.buf.format({async = true}) end, opts)
 
-		vim.keymap.set("n", "<M-l>", "<cmd>Telescope diagnostics<cr>", opts)
+    vim.keymap.set("n", "<M-l>", "<cmd>Telescope diagnostics<cr>", opts)
 		vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
 
 		-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -49,9 +41,9 @@ require("mason-lspconfig").setup({
 })
 
 -- disable inlay hints
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	virtual_text = false,
-})
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+-- 	virtual_text = false,
+-- })
 
 -- AUTOCOMPLETION
 local cmp = require("cmp")
