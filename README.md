@@ -6,33 +6,29 @@ curl -s https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install.
 
 # Take me through the steps
 
-## Update Apt
+## Install Dependencies
 ```
 sudo apt update
+sudo apt install git ripgrep fd-find --yes
 ```
 
-## Location
+## Install neovim
+```
+sudo snap install neovim --classic
+```
+
+## Clone the repo
 Change directory and clone it
 ```
 cd ~/.config
 git clone https://github.com/jjshoots/nvim_dotfiles.git nvim
 ```
 
-## Install Plug
+## Install Plug and all plugins
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-```
-
-## Exuberant CTags for Tagbar
-```
-sudo apt install exuberant-ctags --yes
-```
-
-## Nvim PlugInstall
-```
-nvim +PlugInstall +qall
+nvim --headless +PlugInstall +qall
 ```
 
 ## Install ripgrep and fd
