@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- buffer-local keybindings
 		vim.keymap.set("n", "<M-[>", vim.diagnostic.goto_prev)
 		vim.keymap.set("n", "<M-]>", vim.diagnostic.goto_next)
-		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+		vim.keymap.set("n", "<space>l", vim.diagnostic.open_float)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "x" }, "<F3>", function()
