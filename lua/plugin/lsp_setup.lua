@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = event.buf }
 
 		-- buffer-local keybindings
+		vim.keymap.set("i", "<c-s>", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<M-[>", vim.diagnostic.goto_prev)
 		vim.keymap.set("n", "<M-]>", vim.diagnostic.goto_next)
 		vim.keymap.set("n", "<space>l", vim.diagnostic.open_float)
@@ -22,7 +23,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 		-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 		-- vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-		-- vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 		-- vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 	end,
 })
@@ -68,9 +68,7 @@ cmp.setup({
 		},
 	},
 	mapping = cmp.mapping.preset.insert({
-		-- Enter selects the item under cursor
 		-- Tab selects the first item
-		["<CR>"] = cmp.mapping.confirm({ select = false }),
 		["<Tab>"] = cmp.mapping.confirm({ select = true }),
 
 		-- Ctrl + space triggers completion menu
