@@ -14,6 +14,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'lukas-reineke/cmp-under-comparator'
 
 " vim fugitive and gitgutter
 Plug 'tpope/vim-fugitive'

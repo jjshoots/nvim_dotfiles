@@ -2,6 +2,7 @@
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP actions",
 	callback = function(event)
+		print("LSP Attached!")
 		local opts = { buffer = event.buf }
 
 		-- buffer-local keybindings
@@ -52,7 +53,18 @@ local cmp = require("cmp")
 cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
-    { name = "nvim_lsp_signature_help" },
+		{ name = "nvim_lsp_signature_help" },
+	},
+	sorting = {
+		comparators = {
+			require("cmp-under-comparator").under,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.order,
+			cmp.config.compare.offset,
+			cmp.config.compare.exact,
+			cmp.config.compare.score,
+			cmp.config.compare.kind,
+		},
 	},
 	mapping = cmp.mapping.preset.insert({
 		-- Enter selects the item under cursor
