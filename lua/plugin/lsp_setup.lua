@@ -2,9 +2,6 @@
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP actions",
 	callback = function(event)
-		" small pop up menu only
-		set pumheigiht=10
-
 		print("LSP Attached!")
 		local opts = { buffer = event.buf }
 

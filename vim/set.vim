@@ -9,6 +9,9 @@ set cpoptions+=x
 set ignorecase
 set smartcase
 
+" pop up menu height
+set pumheight=10
+
 " no sounds please
 set noerrorbells
 
