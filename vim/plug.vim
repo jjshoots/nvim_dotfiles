@@ -6,15 +6,19 @@ Plug 'sainnhe/sonokai'
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" For autocomplete
+" For LSP
+" the basic stuff
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
+" autocomplete
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+" sorting autocomplete list
 Plug 'lukas-reineke/cmp-under-comparator'
+" better lsp displays
+Plug 'folke/noice.nvim'
 
 " vim fugitive and gitgutter
 Plug 'tpope/vim-fugitive'

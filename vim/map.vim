@@ -11,7 +11,7 @@ nnoremap <C-d> <nop>
 let mapleader = " "
 
 " nohl toggle
-:noremap <leader>s :set hlsearch! hlsearch?<CR>
+noremap <leader>s :set hlsearch! hlsearch?<CR>
 
 " window management
 noremap <silent> <C-z> :UndotreeToggle<CR>
