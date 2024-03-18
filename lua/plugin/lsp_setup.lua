@@ -27,7 +27,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- add all lsp capabilities
+local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+lsp_capabilities = require('cmp_nvim_lsp').update_capabilities(lsp_capabilities)
 
 local default_setup = function(server)
 	require("lspconfig")[server].setup({
