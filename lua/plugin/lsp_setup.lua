@@ -95,27 +95,27 @@ cmp.setup({
 	},
 })
 
--- CUSTOM CALLBACK FOR AUTO BRACKETS FOR FUNCTIONS AND CLASS
-local function on_confirm_done(evt)
-	local entry = evt.entry
-	local item = entry:get_completion_item()
-	local types = require("cmp.types")
+-- -- CUSTOM CALLBACK FOR AUTO BRACKETS FOR FUNCTIONS AND CLASS
+-- local function on_confirm_done(evt)
+-- 	local entry = evt.entry
+-- 	local item = entry:get_completion_item()
+-- 	local types = require("cmp.types")
 
-	if evt.commit_character then
-		return
-	end
+-- 	if evt.commit_character then
+-- 		return
+-- 	end
 
-	if
-		entry:get_kind() == types.lsp.CompletionItemKind.Function
-		or entry:get_kind() == types.lsp.CompletionItemKind.Method
-		or entry:get_kind() == types.lsp.CompletionItemKind.Class
-	then
-		local keys = vim.api.nvim_replace_termcodes("(", false, false, true)
-		vim.api.nvim_feedkeys(keys, "i", true)
-		return
-	end
-end
-cmp.event:on("confirm_done", on_confirm_done)
+-- 	if
+-- 		entry:get_kind() == types.lsp.CompletionItemKind.Function
+-- 		or entry:get_kind() == types.lsp.CompletionItemKind.Method
+-- 		or entry:get_kind() == types.lsp.CompletionItemKind.Class
+-- 	then
+-- 		local keys = vim.api.nvim_replace_termcodes("(", false, false, true)
+-- 		vim.api.nvim_feedkeys(keys, "i", true)
+-- 		return
+-- 	end
+-- end
+-- cmp.event:on("confirm_done", on_confirm_done)
 
 -- make things pretty I guess
 require("noice").setup({
