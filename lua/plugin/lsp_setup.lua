@@ -95,28 +95,6 @@ cmp.setup({
 	},
 })
 
--- -- CUSTOM CALLBACK FOR AUTO BRACKETS FOR FUNCTIONS AND CLASS
--- local function on_confirm_done(evt)
--- 	local entry = evt.entry
--- 	local item = entry:get_completion_item()
--- 	local types = require("cmp.types")
-
--- 	if evt.commit_character then
--- 		return
--- 	end
-
--- 	if
--- 		entry:get_kind() == types.lsp.CompletionItemKind.Function
--- 		or entry:get_kind() == types.lsp.CompletionItemKind.Method
--- 		or entry:get_kind() == types.lsp.CompletionItemKind.Class
--- 	then
--- 		local keys = vim.api.nvim_replace_termcodes("(", false, false, true)
--- 		vim.api.nvim_feedkeys(keys, "i", true)
--- 		return
--- 	end
--- end
--- cmp.event:on("confirm_done", on_confirm_done)
-
 -- make things pretty I guess
 require("noice").setup({
   lsp = {
@@ -136,4 +114,49 @@ require("noice").setup({
   presets = {
     lsp_doc_border = true,
   },
+})
+
+-- COPILOT
+require('copilot').setup({
+  panel = {
+    enabled = true,
+    auto_refresh = false,
+    keymap = {
+      jump_prev = "[[",
+      jump_next = "]]",
+      accept = "<CR>",
+      refresh = "gr",
+      open = "<M-CR>"
+    },
+    layout = {
+      position = "bottom", -- | top | left | right
+      ratio = 0.4
+    },
+  },
+  suggestion = {
+    enabled = true,
+    auto_trigger = true,
+    debounce = 75,
+    keymap = {
+      accept = "<M-m>",
+      accept_word = false,
+      accept_line = false,
+      next = "<M-]>",
+      prev = "<M-[>",
+      dismiss = "<M-h>",
+    },
+  },
+  filetypes = {
+    yaml = false,
+    markdown = false,
+    help = false,
+    gitcommit = false,
+    gitrebase = false,
+    hgcommit = false,
+    svn = false,
+    cvs = false,
+    ["."] = false,
+  },
+  copilot_node_command = 'node', -- Node.js version must be > 18.x
+  server_opts_overrides = {},
 })

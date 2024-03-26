@@ -19,6 +19,8 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'lukas-reineke/cmp-under-comparator'
 " better lsp displays
 Plug 'folke/noice.nvim'
+" Copilot
+Plug 'zbirenbaum/copilot.lua'
 
 " vim fugitive and gitgutter
 Plug 'tpope/vim-fugitive'
