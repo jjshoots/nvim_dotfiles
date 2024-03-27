@@ -54,7 +54,7 @@ Plug 'mbbill/undotree'
 " easy surround, rainbow brackets, and autoclose brackets
 Plug 'kylechui/nvim-surround'
 Plug 'luochen1990/rainbow'
-Plug 'cohama/lexima.vim'
+Plug 'm4xshen/autoclose.nvim'
 
 " smart commenting
 Plug 'tpope/vim-commentary'
