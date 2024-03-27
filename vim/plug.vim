@@ -51,7 +51,7 @@ Plug 'voldikss/vim-floaterm'
 " undotree
 Plug 'mbbill/undotree'
 
-" easy surroung, rainbow brackets, and autoclose brackets
+" easy surround, rainbow brackets, and autoclose brackets
 Plug 'kylechui/nvim-surround'
 Plug 'luochen1990/rainbow'
 Plug 'cohama/lexima.vim'
