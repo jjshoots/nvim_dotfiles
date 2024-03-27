@@ -119,7 +119,7 @@ require("noice").setup({
 -- COPILOT
 require('copilot').setup({
   panel = {
-    enabled = true,
+    enabled = false,
     auto_refresh = false,
     keymap = {
       jump_prev = "[[",
@@ -135,7 +135,7 @@ require('copilot').setup({
   },
   suggestion = {
     enabled = true,
-    auto_trigger = true,
+    auto_trigger = false,
     debounce = 75,
     keymap = {
       accept = "<M-m>",
