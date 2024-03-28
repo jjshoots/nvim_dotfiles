@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = event.buf }
 
 		-- buffer-local keybindings
-		vim.keymap.set("i", "<M-s>", vim.lsp.buf.signature_help, opts)
+		vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<M-[>", vim.diagnostic.goto_prev)
 		vim.keymap.set("n", "<M-]>", vim.diagnostic.goto_next)
 		vim.keymap.set("n", "<space>l", vim.diagnostic.open_float)
@@ -137,12 +137,12 @@ require('copilot').setup({
     auto_trigger = false,
     debounce = 75,
     keymap = {
-      accept = "<M-m>",
+      accept = "<C-m>",
       accept_word = false,
       accept_line = false,
-      next = "<M-l>",
-      prev = "<M-h>",
-      dismiss = "<M-n>",
+      next = "<C-l>",
+      prev = "<C-h>",
+      dismiss = "<C-n>",
     },
   },
   filetypes = {
