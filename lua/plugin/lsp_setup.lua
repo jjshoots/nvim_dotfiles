@@ -140,9 +140,9 @@ require('copilot').setup({
       accept = "<C-m>",
       accept_word = false,
       accept_line = false,
-      next = "<C-l>",
-      prev = "<C-h>",
-      dismiss = "<C-n>",
+      next = "<C-n>",
+      prev = "<C-b>",
+      dismiss = "<Esc>",
     },
   },
   filetypes = {
