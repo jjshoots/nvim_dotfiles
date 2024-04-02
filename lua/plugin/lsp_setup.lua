@@ -26,9 +26,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
--- add all lsp capabilities
-local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
-lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(lsp_capabilities)
+-- Enhance LSP capabilities with 'cmp_nvim_lsp' and enable dynamic file watching
+local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+lsp_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
 local default_setup = function(server)
 	require("lspconfig")[server].setup({
@@ -96,66 +96,66 @@ cmp.setup({
 
 -- make things pretty I guess
 require("noice").setup({
-  lsp = {
-    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-    override = {
-      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-      ["vim.lsp.util.stylize_markdown"] = true,
-      ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-    },
-  },
-  cmdline = {
-    enabled = false,
-  },
-  messages = {
-    enabled = false,
-  },
-  presets = {
-    lsp_doc_border = true,
-  },
+	lsp = {
+		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+		override = {
+			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+			["vim.lsp.util.stylize_markdown"] = true,
+			["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+		},
+	},
+	cmdline = {
+		enabled = false,
+	},
+	messages = {
+		enabled = false,
+	},
+	presets = {
+		lsp_doc_border = true,
+	},
 })
 
 -- COPILOT
-require('copilot').setup({
-  panel = {
-    enabled = false,
-    auto_refresh = false,
-    keymap = {
-      jump_prev = "[[",
-      jump_next = "]]",
-      accept = "<CR>",
-      refresh = "gr",
-      open = "<M-CR>"
-    },
-    layout = {
-      position = "bottom", -- | top | left | right
-      ratio = 0.4
-    },
-  },
-  suggestion = {
-    enabled = true,
-    auto_trigger = false,
-    debounce = 75,
-    keymap = {
-      accept = "<C-m>",
-      accept_word = false,
-      accept_line = false,
-      next = "<C-l>",
-      prev = "<C-h>",
-      dismiss = "<Esc>",
-    },
-  },
-  filetypes = {
-    yaml = false,
-    markdown = false,
-    help = false,
-    gitcommit = false,
-    gitrebase = false,
-    hgcommit = false,
-    svn = false,
-    cvs = false,
-    ["."] = false,
-  },
-  copilot_node_command = 'node', -- Node.js version must be > 18.x
-  server_opts_overrides = {},
+require("copilot").setup({
+	panel = {
+		enabled = false,
+		auto_refresh = false,
+		keymap = {
+			jump_prev = "[[",
+			jump_next = "]]",
+			accept = "<CR>",
+			refresh = "gr",
+			open = "<M-CR>",
+		},
+		layout = {
+			position = "bottom", -- | top | left | right
+			ratio = 0.4,
+		},
+	},
+	suggestion = {
+		enabled = true,
+		auto_trigger = false,
+		debounce = 75,
+		keymap = {
+			accept = "<C-m>",
+			accept_word = false,
+			accept_line = false,
+			next = "<C-l>",
+			prev = "<C-h>",
+			dismiss = "<Esc>",
+		},
+	},
+	filetypes = {
+		yaml = false,
+		markdown = false,
+		help = false,
+		gitcommit = false,
+		gitrebase = false,
+		hgcommit = false,
+		svn = false,
+		cvs = false,
+		["."] = false,
+	},
+	copilot_node_command = "node", -- Node.js version must be > 18.x
+	server_opts_overrides = {},
 })
