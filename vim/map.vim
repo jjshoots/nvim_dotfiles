@@ -97,6 +97,9 @@ noremap <silent> $ g$
 nnoremap <A-o> o<Esc>O
 nnoremap <A-i> i<space>
 
+" mapping for deleting a word in forward mode, equivalent to Ctrl-Del
+inoremap <C-e> <C-o>dw
+
 " for quickly jumping to the n-th buffer
 nnoremap <leader>1 :LualineBuffersJump 1<CR>
 nnoremap <leader>2 :LualineBuffersJump 2<CR>
