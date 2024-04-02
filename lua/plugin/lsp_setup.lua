@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Enhance LSP capabilities with 'cmp_nvim_lsp' and enable dynamic file watching
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-lsp_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+-- lsp_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
 local default_setup = function(server)
 	require("lspconfig")[server].setup({
