@@ -24,6 +24,7 @@ fun! OnEnter()
 
     if &filetype == 'tex'
         \ || &filetype == 'md'
+        \ || &filetype == 'json'
       setlocal wrap
     endif
   endif
