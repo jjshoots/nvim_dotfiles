@@ -17,8 +17,10 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 " sorting autocomplete list
 Plug 'lukas-reineke/cmp-under-comparator'
+
 " better lsp displays
 Plug 'folke/noice.nvim'
+
 " Copilot
 Plug 'zbirenbaum/copilot.lua'
 
