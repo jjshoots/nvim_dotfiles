@@ -15,7 +15,7 @@ hi NormalSB ctermbg=NONE guibg=NONE
 hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 " highlight for borders
-hi FloatBorder ctermbg=NONE guibg=NONE guifg=#AAAAAA
+hi FloatBorder ctermbg=NONE guibg=NONE guifg=#CCCCCC
 
 hi FoldColumn guibg=#2C3245 guifg=NONE
 hi clear SignColumn
