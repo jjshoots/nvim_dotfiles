@@ -1,3 +1,13 @@
+-- highlight group for neotree specifically
+vim.cmd [[
+  hi NeoTreeNormal ctermbg=NONE guibg=NONE
+  hi NeoTreeFloatNormal ctermbg=NONE guibg=NONE
+  hi NeoTreeTitleBar ctermbg=NONE guibg=NONE
+  hi NeoTreeFloatTitle ctermbg=NONE guibg=NONE
+  hi NeoTreeFloatBorder ctermbg=NONE guibg=NONE
+  hi NeoTreeEndOfBuffer ctermbg=NONE guibg=NONE
+]]
+
 -- setup with some options
 require("neo-tree").setup({
 	sort = {
@@ -12,6 +22,7 @@ require("neo-tree").setup({
 	filters = {
 		dotfiles = true,
 	},
+  popup_border_style = "rounded"
 })
 
 -- mapping

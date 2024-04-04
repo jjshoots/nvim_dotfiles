@@ -52,10 +52,10 @@ local cmp = require("cmp")
 cmp.setup({
 	window = {
 		completion = cmp.config.window.bordered({
-			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+			winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 		}),
 		documentation = cmp.config.window.bordered({
-			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+			winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 		}),
 	},
 	sources = {

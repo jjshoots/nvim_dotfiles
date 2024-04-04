@@ -26,7 +26,7 @@ require("noice").setup({
 			win_options = {
 				winhighlight = {
 					Normal = "Normal",
-					FloatBorder = "BorderBG",
+					FloatBorder = "FloatBorder",
 					CursorLine = "PmenuSel",
 					Search = "None",
 				},
@@ -36,7 +36,7 @@ require("noice").setup({
 			win_options = {
 				winhighlight = {
 					Normal = "Normal",
-					FloatBorder = "BorderBG",
+					FloatBorder = "FloatBorder",
 					CursorLine = "PmenuSel",
 					Search = "None",
 				},
@@ -46,7 +46,7 @@ require("noice").setup({
 			win_options = {
 				winhighlight = {
 					Normal = "Normal",
-					FloatBorder = "BorderBG",
+					FloatBorder = "FloatBorder",
 					CursorLine = "PmenuSel",
 					Search = "None",
 				},
@@ -56,7 +56,7 @@ require("noice").setup({
 			win_options = {
 				winhighlight = {
 					Normal = "Normal",
-					FloatBorder = "BorderBG",
+					FloatBorder = "FloatBorder",
 					CursorLine = "PmenuSel",
 					Search = "None",
 				},
