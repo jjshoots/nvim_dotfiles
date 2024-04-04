@@ -1,11 +1,11 @@
 -- function to call files
-function call(file)
+local function call(file)
 	vim.cmd("source " .. file)
 end
 
 -- function to iterate through all paths in table
-function call_all(list)
-	for i, file in pairs(list) do
+local function call_all(list)
+	for _, file in pairs(list) do
 		local ok, err = pcall(call, file)
 		if not ok then
 			print("Error calling " .. file)
