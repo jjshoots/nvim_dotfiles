@@ -56,16 +56,16 @@ vim.o.diffopt = vim.o.diffopt .. ",vertical"
 vim.wo.signcolumn = "yes"
 
 -- set up clipboard integration
-vim.api.nvim_set_var('clipboard', {
-    copy = {
-        ['+'] = 'xsel --clipboard --input',
-        ['*'] = 'xsel --clipboard --input',
-    },
-    paste = {
-        ['+'] = 'xsel --clipboard --output',
-        ['*'] = 'xsel --clipboard --output',
-    },
-    cache_enabled = 1,
+vim.api.nvim_set_var("clipboard", {
+	copy = {
+		["+"] = "xsel --clipboard --input",
+		["*"] = "xsel --clipboard --input",
+	},
+	paste = {
+		["+"] = "xsel --clipboard --output",
+		["*"] = "xsel --clipboard --output",
+	},
+	cache_enabled = 1,
 })
 
 -- use the system clipboard by default

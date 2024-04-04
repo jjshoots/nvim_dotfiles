@@ -19,7 +19,7 @@ require("neo-tree").setup({
 	filters = {
 		dotfiles = true,
 	},
-  popup_border_style = "rounded"
+	popup_border_style = "rounded",
 })
 
 -- mapping
