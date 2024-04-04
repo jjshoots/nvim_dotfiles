@@ -4,7 +4,6 @@ vim.cmd("hi NeoTreeFloatNormal ctermbg=NONE guibg=NONE")
 vim.cmd("hi NeoTreeTitleBar ctermbg=NONE guibg=NONE")
 vim.cmd("hi NeoTreeFloatTitle ctermbg=NONE guibg=NONE")
 vim.cmd("hi NeoTreeEndOfBuffer ctermbg=NONE guibg=NONE")
-vim.cmd("hi link NeoTreeFloatBorder FloatBorder")
 
 -- setup with some options
 require("neo-tree").setup({
