@@ -1,3 +1,6 @@
+" leaderkey
+let mapleader = " "
+
 " disable some stupid things
 nnoremap <backspace> <nop>
 nnoremap <space> <nop>
@@ -6,9 +9,6 @@ nnoremap <CR> <nop>
 " disable scrolling, use the mouse
 nnoremap <C-u> <nop>
 nnoremap <C-d> <nop>
-
-" leaderkey
-let mapleader = " "
 
 " nohl toggle
 noremap <leader>s :set hlsearch! hlsearch?<CR>
@@ -77,7 +77,7 @@ nnoremap <C-o> <C-i>
 nnoremap <C-i> <C-o>
 
 " honestly this is the better save
-nnoremap <C-s> :w!<CR>
+nnoremap <silent> <C-s> :w!<CR>
 
 " remap for quickly grabbing word under cursor and
 " applying to search without moving
@@ -101,15 +101,15 @@ nnoremap <A-i> i<space>
 inoremap <C-e> <C-o>dw
 
 " for quickly jumping to the n-th buffer
-nnoremap <leader>1 :LualineBuffersJump 1<CR>
-nnoremap <leader>2 :LualineBuffersJump 2<CR>
-nnoremap <leader>3 :LualineBuffersJump 3<CR>
-nnoremap <leader>4 :LualineBuffersJump 4<CR>
-nnoremap <leader>5 :LualineBuffersJump 5<CR>
-nnoremap <leader>6 :LualineBuffersJump 6<CR>
-nnoremap <leader>7 :LualineBuffersJump 7<CR>
-nnoremap <leader>8 :LualineBuffersJump 8<CR>
-nnoremap <leader>9 :LualineBuffersJump 9<CR>
+nnoremap <silent> <leader>1 :LualineBuffersJump 1<CR>
+nnoremap <silent> <leader>2 :LualineBuffersJump 2<CR>
+nnoremap <silent> <leader>3 :LualineBuffersJump 3<CR>
+nnoremap <silent> <leader>4 :LualineBuffersJump 4<CR>
+nnoremap <silent> <leader>5 :LualineBuffersJump 5<CR>
+nnoremap <silent> <leader>6 :LualineBuffersJump 6<CR>
+nnoremap <silent> <leader>7 :LualineBuffersJump 7<CR>
+nnoremap <silent> <leader>8 :LualineBuffersJump 8<CR>
+nnoremap <silent> <leader>9 :LualineBuffersJump 9<CR>
 
 " close buffers or quit nvim
 fun! s:CloseBuffersOrQuit()
@@ -135,7 +135,7 @@ fun! s:ToggleGstatus() abort
 	endfor
 endfun
 
-nnoremap <M-f> :call <SID>ToggleGstatus()<CR>4j
+nnoremap <silent> <M-f> :call <SID>ToggleGstatus()<CR>4j
 
 " map for closing diff view
 command! -nargs=0 Diffquit normal! ZZ:Gedit<CR>
