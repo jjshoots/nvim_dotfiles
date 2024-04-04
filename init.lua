@@ -23,5 +23,5 @@ local lua_paths = vim.split(vim.fn.glob("$HOME/.config/nvim/lua/*.lua"), "\n")
 call_all(lua_paths)
 
 -- source lua plugin stuff
-local plugin_paths = vim.split(vim.fn.glob("$HOME/.config/nvim/lua/plugin/*.lua"), "\n")
+local plugin_paths = vim.split(vim.fn.glob("$HOME/.config/nvim/pluagins/*.lua"), "\n")
 call_all(plugin_paths)
