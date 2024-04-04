@@ -8,7 +8,7 @@ vim.g.floaterm_autoinsert = false
 
 -- colours
 vim.api.nvim_set_hl(0, "Floaterm", {})
-vim.api.nvim_set_hl(0, "FloatermBorder", {})
+vim.cmd("highlight link FloatermBorder FloatBorder")
 
 -- floaterm function with insert mode
 function FloatermInsertEnter()
