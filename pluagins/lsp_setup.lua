@@ -30,6 +30,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+-- Enhance LSP capabilities with 'cmp_nvim_lsp' and enable dynamic file watching
+local lsp_capabilities = require("cmp_nvim_lsp")
+lsp_capabilities.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- lsp_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {},
@@ -41,11 +46,6 @@ require("mason-lspconfig").setup({
 		end,
 	},
 })
-
--- Enhance LSP capabilities with 'cmp_nvim_lsp' and enable dynamic file watching
-local lsp_capabilities = require("cmp_nvim_lsp")
-lsp_capabilities.default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- lsp_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
 -- AUTOCOMPLETION
 local cmp = require("cmp")

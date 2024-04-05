@@ -86,8 +86,8 @@ group = vim.api.nvim_create_augroup("AutoWrap", { clear = true })
 vim.api.nvim_create_autocmd("FileType", { pattern = "tex", command = "setlocal wrap", group = group })
 vim.api.nvim_create_autocmd("FileType", { pattern = "markdown", command = "setlocal wrap", group = group })
 
-group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
-vim.api.nvim_create_autocmd("VimEnter", { callback = telescope_find_files, group = group })
+-- group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
+-- vim.api.nvim_create_autocmd("VimEnter", { callback = telescope_find_files, group = group })
 
 group = vim.api.nvim_create_augroup("AutoConceal", { clear = true })
 vim.api.nvim_create_autocmd("FileType", { pattern = "json", command = "set conceallevel=0", group = group })

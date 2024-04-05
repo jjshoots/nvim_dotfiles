@@ -1,3 +1,17 @@
+-- bootstrap lazy nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
 -- function to call files
 local function call(file)
 	vim.cmd("source " .. file)
@@ -22,6 +36,5 @@ call_all(vim_paths)
 local lua_paths = vim.split(vim.fn.glob("$HOME/.config/nvim/lua/*.lua"), "\n")
 call_all(lua_paths)
 
--- source lua plugin stuff
-local plugin_paths = vim.split(vim.fn.glob("$HOME/.config/nvim/pluagins/*.lua"), "\n")
-call_all(plugin_paths)
+-- lazy load plugins
+require("lazy").setup("plugins")

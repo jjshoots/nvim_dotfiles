@@ -1,3 +1,6 @@
+-- mapping
+vim.api.nvim_set_keymap("n", "<C-e>", ":Neotree position=float toggle<CR>", { noremap = true, silent = true })
+
 -- highlight group for neotree specifically
 vim.cmd("hi NeoTreeNormal ctermbg=NONE guibg=NONE")
 vim.cmd("hi NeoTreeFloatNormal ctermbg=NONE guibg=NONE")
@@ -21,6 +24,3 @@ require("neo-tree").setup({
 	},
 	popup_border_style = "rounded",
 })
-
--- mapping
-vim.api.nvim_set_keymap("n", "<C-e>", ":Neotree position=float toggle<CR>", { noremap = true, silent = true })

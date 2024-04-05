@@ -1,3 +1,6 @@
+-- let rainbow handle brackets
+vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
+
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all"
 	ensure_installed = { "python", "c", "lua", "yaml" },
@@ -23,6 +26,3 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 	},
 })
-
--- let rainbow handle brackets
-vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
