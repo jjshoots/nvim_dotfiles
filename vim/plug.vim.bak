@@ -56,14 +56,14 @@ Plug 'jjshoots/betterf.nvim'
 " for splitting and joining long arguments lists
 Plug 'echasnovski/mini.splitjoin'
 
+" easy surround, rainbow brackets, and autoclose brackets
+Plug 'luochen1990/rainbow'
+Plug 'kylechui/nvim-surround'
+Plug 'm4xshen/autoclose.nvim'
+
 " EVERYTHING BELOW THIS LINE NOT DONE
 " undotree
 Plug 'mbbill/undotree'
-
-" easy surround, rainbow brackets, and autoclose brackets
-Plug 'kylechui/nvim-surround'
-Plug 'luochen1990/rainbow'
-Plug 'm4xshen/autoclose.nvim'
 
 " smart commenting
 Plug 'tpope/vim-commentary'

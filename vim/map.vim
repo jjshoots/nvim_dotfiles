@@ -14,7 +14,6 @@ nnoremap <C-d> <nop>
 noremap <leader>s :set hlsearch! hlsearch?<CR>
 
 " window management
-noremap <silent> <C-z> :UndotreeToggle<CR>
 noremap <C-Left> 5<C-w><
 noremap <C-Right> 5<C-w>>
 noremap <C-Up> 5<C-w>-
