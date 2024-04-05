@@ -19,5 +19,5 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	config = config_function,
-  event = "LspAttach",
+	event = "LspAttach",
 }

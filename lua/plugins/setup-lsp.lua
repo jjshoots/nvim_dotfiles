@@ -37,7 +37,7 @@ local function config_function()
 	lsp_capabilities.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 	-- lsp_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
-  require("mason").setup({})
+	require("mason").setup({})
 	require("mason-lspconfig").setup({
 		ensure_installed = {},
 		handlers = {
