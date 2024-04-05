@@ -35,5 +35,5 @@ return {
 		require("nvim-treesitter.install").update({ with_sync = true })()
 	end,
 	config = config_function,
-  event = "VeryLazy",
+	event = "VeryLazy",
 }

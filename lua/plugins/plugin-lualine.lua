@@ -69,5 +69,5 @@ return {
 		"kyazdani42/nvim-web-devicons",
 	},
 	config = config_function,
-  event = "VeryLazy",
+	event = "VeryLazy",
 }

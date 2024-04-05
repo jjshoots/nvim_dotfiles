@@ -17,7 +17,7 @@ local function toggle_gstatus()
 end
 
 local function config_function()
-  -- command for closing diff view
+	-- command for closing diff view
 	vim.cmd("command! Diffquit normal! ZZ:Gedit<CR>")
 end
 

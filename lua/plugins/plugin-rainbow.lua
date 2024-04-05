@@ -5,5 +5,5 @@ end
 return {
 	"luochen1990/rainbow",
 	config = config_function,
-  event = "VeryLazy",
+	event = "VeryLazy",
 }
