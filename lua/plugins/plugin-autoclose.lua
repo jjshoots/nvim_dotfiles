@@ -5,5 +5,5 @@ end
 return {
 	"m4xshen/autoclose.nvim",
 	config = config_function,
-	event = "VeryLazy",
+	event = "InsertEnter",
 }

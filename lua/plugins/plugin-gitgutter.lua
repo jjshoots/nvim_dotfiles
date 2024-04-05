@@ -6,5 +6,5 @@ end
 return {
 	"airblade/vim-gitgutter",
 	config = config_function,
-	event = "BufReadCmd",
+	event = "VeryLazy",
 }

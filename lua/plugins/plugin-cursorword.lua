@@ -7,5 +7,5 @@ end
 return {
 	"xiyaowong/nvim-cursorword",
 	config = config_function,
-	event = "VimEnter",
+	event = "VeryLazy",
 }

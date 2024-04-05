@@ -4,5 +4,5 @@ end
 return {
 	"",
 	config = config_function,
-	event = "BufReadCmd",
+	event = "VeryLazy",
 }
