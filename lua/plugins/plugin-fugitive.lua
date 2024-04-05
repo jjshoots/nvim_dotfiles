@@ -1,20 +1,18 @@
--- Toggle Git status
 local function toggle_gstatus()
-	local windows = vim.api.nvim_list_wins()
 	local found = false
-
-	for _, win in ipairs(windows) do
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
 		local buf = vim.api.nvim_win_get_buf(win)
-		local fugitive_status = vim.api.nvim_buf_get_var(buf, "fugitive_status")
-		if fugitive_status ~= nil and fugitive_status ~= "" then
+		local name = vim.api.nvim_buf_get_name(buf)
+		if string.find(name, "fugitive://") then
 			vim.api.nvim_win_close(win, false)
 			found = true
+			break
 		end
 	end
-
 	if not found then
 		vim.cmd("vertical Git")
 		vim.cmd("vertical resize 70")
+		vim.cmd("normal! 4j")
 	end
 end
 

@@ -6,6 +6,6 @@ end
 
 return {
 	"xiyaowong/nvim-cursorword",
-	event = "VimEnter",
 	config = config_function,
+	event = "VimEnter",
 }

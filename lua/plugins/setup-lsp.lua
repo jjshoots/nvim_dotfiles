@@ -3,7 +3,6 @@ local function config_function()
 	vim.api.nvim_create_autocmd("LspAttach", {
 		desc = "LSP actions",
 		callback = function(event)
-			print("LSP Attached!")
 			local opts = { buffer = event.buf }
 
 			-- keybindings
@@ -13,8 +12,8 @@ local function config_function()
 			vim.keymap.set("n", "<leader>u", vim.diagnostic.open_float)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-			vim.keymap.set("n", "<M-u>", "<cmd>Telescope diagnostics<cr>", opts)
-			vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
+			vim.keymap.set("n", "<M-u>", require("telescope.builtin").diagnostics, opts)
+			vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, opts)
 			-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 			-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 			-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
@@ -32,21 +31,20 @@ local function config_function()
 		end,
 	})
 
-	-- enhance LSP capabilities with 'cmp_nvim_lsp' and enable dynamic file watching
-	local lsp_capabilities = require("cmp_nvim_lsp")
-	lsp_capabilities.default_capabilities(vim.lsp.protocol.make_client_capabilities())
-	-- lsp_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+	-- I have no idea what these lines are doing
+	-- update capabilities with nvim cmp
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+	-- setup the servers
 	require("mason").setup({})
-	require("mason-lspconfig").setup({
-		ensure_installed = {},
-		handlers = {
-			function(server)
-				require("lspconfig")[server].setup({
-					capabilities = lsp_capabilities,
-				})
-			end,
-		},
+	require("mason-lspconfig").setup({})
+	require("mason-lspconfig").setup_handlers({
+		function(server_name)
+			require("lspconfig")[server_name].setup({
+				capabilities = capabilities,
+			})
+		end,
 	})
 end
 
