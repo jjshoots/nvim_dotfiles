@@ -2,7 +2,7 @@ local function config_function()
 	require("aerial").setup({
 		-- optionally use on_attach to set keymaps when aerial has attached to a buffer
 		on_attach = function(bufnr)
-			-- Jump forwards/backwards with '{' and '}'
+			-- Jump between tags with {}
 			vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
 			vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
 
@@ -19,5 +19,5 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	config = config_function,
-	event = "LspAttach",
+  event = "LspAttach",
 }
