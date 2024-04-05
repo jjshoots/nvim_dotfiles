@@ -63,4 +63,5 @@ return {
 		"lukas-reineke/cmp-under-comparator",
 	},
 	config = config_function,
+  event = "VeryLazy",
 }
