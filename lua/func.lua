@@ -57,13 +57,12 @@ end
 local group
 local autocmd_create = vim.api.nvim_create_autocmd
 
-
 group = vim.api.nvim_create_augroup("HighlightOnYank", { clear = true })
 autocmd_create("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank({
-      higroup = "HighlightOnYank",
-    })
+			higroup = "HighlightOnYank",
+		})
 	end,
 	group = group,
 })
