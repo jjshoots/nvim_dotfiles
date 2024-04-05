@@ -44,12 +44,19 @@ Plug 'nvim-neo-tree/neo-tree.nvim', {'branch': 'v3.x'}
 " indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-" highlight matching word under cursor
-Plug 'xiyaowong/nvim-cursorword'
-
 " floating terminal
 Plug 'voldikss/vim-floaterm'
 
+" highlight matching word under cursor
+Plug 'xiyaowong/nvim-cursorword'
+
+" betterf
+Plug 'jjshoots/betterf.nvim'
+
+" for splitting and joining long arguments lists
+Plug 'echasnovski/mini.splitjoin'
+
+" EVERYTHING BELOW THIS LINE NOT DONE
 " undotree
 Plug 'mbbill/undotree'
 
@@ -61,16 +68,10 @@ Plug 'm4xshen/autoclose.nvim'
 " smart commenting
 Plug 'tpope/vim-commentary'
 
-" for splitting and joining long arguments lists
-Plug 'echasnovski/mini.splitjoin'
-
 " repeat commonly used plugins
 Plug 'tpope/vim-repeat'
 
 " auto documentation
 Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
-
-" betterf
-Plug 'jjshoots/betterf.nvim'
 
 call plug#end()

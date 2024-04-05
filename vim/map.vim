@@ -122,20 +122,3 @@ endfunction
 
 " for closing buffers
 nnoremap <C-d> :call <SID>CloseBuffersOrQuit()<CR>
-
-" git status
-fun! s:ToggleGstatus() abort
-	for l:winnr in range(1, winnr('$'))
-		if !empty(getwinvar(l:winnr, 'fugitive_status'))
-			execute l:winnr.'close'
-		else
-      vertical Git
-      vertical resize 70
-		endif
-	endfor
-endfun
-
-nnoremap <silent> <M-f> :call <SID>ToggleGstatus()<CR>4j
-
-" map for closing diff view
-command! -nargs=0 Diffquit normal! ZZ:Gedit<CR>
