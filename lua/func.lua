@@ -55,11 +55,15 @@ end
 
 -- setup autocommands
 local group
+local autocmd_create = vim.api.nvim_create_autocmd
 
-group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
+
+group = vim.api.nvim_create_augroup("HighlightOnYank", { clear = true })
+autocmd_create("TextYankPost", {
 	callback = function()
-		vim.highlight.on_yank()
+		vim.highlight.on_yank({
+      higroup = "HighlightOnYank",
+    })
 	end,
 	group = group,
 })
@@ -69,26 +73,21 @@ vim.api.nvim_create_autocmd({ "VimEnter", "BufWinEnter", "WinEnter" }, { callbac
 vim.api.nvim_create_autocmd("WinLeave", { callback = on_leave, group = group })
 
 group = vim.api.nvim_create_augroup("CursorIgnoreOnFocus", { clear = true })
-vim.api.nvim_create_autocmd("FocusLost", { command = "let g:oldmouse=&mouse | set mouse=", group = group })
-vim.api.nvim_create_autocmd(
+autocmd_create("FocusLost", { command = "let g:oldmouse=&mouse | set mouse=", group = group })
+autocmd_create(
 	"FocusGained",
 	{ command = 'if exists("g:oldmouse") | let &mouse=g:oldmouse | unlet g:oldmouse | endif', group = group }
 )
 
 group = vim.api.nvim_create_augroup("AutoTrimWhiteSpace", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePre", { callback = trim_whitespace, group = group })
-vim.api.nvim_create_autocmd(
-	{ "BufNewFile", "BufRead" },
-	{ pattern = "*.world", command = "set syntax=xml", group = group }
-)
+autocmd_create("BufWritePre", { callback = trim_whitespace, group = group })
+autocmd_create({ "BufNewFile", "BufRead" }, { pattern = "*.world", command = "set syntax=xml", group = group })
 
-group = vim.api.nvim_create_augroup("AutoWrap", { clear = true })
-vim.api.nvim_create_autocmd("FileType", { pattern = "tex", command = "setlocal wrap", group = group })
-vim.api.nvim_create_autocmd("FileType", { pattern = "markdown", command = "setlocal wrap", group = group })
-
-group = vim.api.nvim_create_augroup("AutoConceal", { clear = true })
-vim.api.nvim_create_autocmd("FileType", { pattern = "json", command = "set conceallevel=0", group = group })
-vim.api.nvim_create_autocmd("FileType", { pattern = "md", command = "set conceallevel=2", group = group })
+group = vim.api.nvim_create_augroup("AutoWrapAndConceal", { clear = true })
+autocmd_create("FileType", { pattern = "tex", command = "setlocal wrap", group = group })
+autocmd_create("FileType", { pattern = "markdown", command = "setlocal wrap", group = group })
+autocmd_create("FileType", { pattern = "json", command = "set conceallevel=0", group = group })
+autocmd_create("FileType", { pattern = "md", command = "set conceallevel=2", group = group })
 
 group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
-vim.api.nvim_create_autocmd("VimEnter", { callback = telescope_find_files, group = group })
+autocmd_create("VimEnter", { callback = telescope_find_files, group = group })

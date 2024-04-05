@@ -32,8 +32,9 @@ return {
         " change highlight for split indicator
         hi VertSplit guifg=#9E4447
 
-        " highlight word under cursor
-        hi CursorWord guibg=#313E42
+        " highlight colour on yank
+        " hi HighlightOnYank guibg=#B2902C gui=underline
+        hi HighlightOnYank gui=underline guisp=#FFCF40
         ]])
 	end,
 }
