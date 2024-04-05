@@ -69,6 +69,9 @@ end
 
 return {
 	"folke/noice.nvim",
+  dependencies = {
+    "hrsh7th/nvim-cmp"
+  },
 	config = config_function,
 	event = "VeryLazy",
 }
