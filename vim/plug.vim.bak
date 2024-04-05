@@ -61,17 +61,17 @@ Plug 'luochen1990/rainbow'
 Plug 'kylechui/nvim-surround'
 Plug 'm4xshen/autoclose.nvim'
 
-" EVERYTHING BELOW THIS LINE NOT DONE
 " undotree
 Plug 'mbbill/undotree'
 
+" auto documentation
+Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
+
+" EVERYTHING BELOW THIS LINE NOT DONE
 " smart commenting
 Plug 'tpope/vim-commentary'
 
 " repeat commonly used plugins
 Plug 'tpope/vim-repeat'
-
-" auto documentation
-Plug 'heavenshell/vim-pydocstring', {'do': 'make install', 'for': 'python'}
 
 call plug#end()
