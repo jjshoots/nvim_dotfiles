@@ -49,7 +49,7 @@ end
 -- function to open telescope find_files if no files are opened via command line
 local function telescope_find_files()
 	if #vim.v.argv == 2 then
-		vim.cmd("Telescope find_files")
+    require("telescope.builtin").find_files()
 	end
 end
 
@@ -75,7 +75,7 @@ vim.api.nvim_create_autocmd(
 	{ command = 'if exists("g:oldmouse") | let &mouse=g:oldmouse | unlet g:oldmouse | endif', group = group }
 )
 
-group = vim.api.nvim_create_augroup("FileStuff", { clear = true })
+group = vim.api.nvim_create_augroup("AutoTrimWhiteSpace", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", { callback = trim_whitespace, group = group })
 vim.api.nvim_create_autocmd(
 	{ "BufNewFile", "BufRead" },
@@ -86,9 +86,9 @@ group = vim.api.nvim_create_augroup("AutoWrap", { clear = true })
 vim.api.nvim_create_autocmd("FileType", { pattern = "tex", command = "setlocal wrap", group = group })
 vim.api.nvim_create_autocmd("FileType", { pattern = "markdown", command = "setlocal wrap", group = group })
 
--- group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
--- vim.api.nvim_create_autocmd("VimEnter", { callback = telescope_find_files, group = group })
-
 group = vim.api.nvim_create_augroup("AutoConceal", { clear = true })
 vim.api.nvim_create_autocmd("FileType", { pattern = "json", command = "set conceallevel=0", group = group })
 vim.api.nvim_create_autocmd("FileType", { pattern = "md", command = "set conceallevel=2", group = group })
+
+group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
+vim.api.nvim_create_autocmd("VimEnter", { callback = telescope_find_files, group = group })
