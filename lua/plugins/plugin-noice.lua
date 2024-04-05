@@ -73,5 +73,5 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = config_function,
-  event = "VeryLazy",
+	event = "VeryLazy",
 }

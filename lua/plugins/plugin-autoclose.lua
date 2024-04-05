@@ -1,5 +1,5 @@
 local function config_function()
-  require("autoclose").setup()
+	require("autoclose").setup()
 end
 
 return {

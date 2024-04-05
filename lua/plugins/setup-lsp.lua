@@ -59,5 +59,5 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	config = config_function,
-  event = "VeryLazy",
+	event = "VeryLazy",
 }

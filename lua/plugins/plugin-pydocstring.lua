@@ -1,5 +1,4 @@
-local function config_function()
-end
+local function config_function() end
 
 return {
 	"heavenshell/vim-pydocstring",

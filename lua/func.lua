@@ -49,7 +49,7 @@ end
 -- function to open telescope find_files if no files are opened via command line
 local function telescope_find_files()
 	if #vim.v.argv == 2 then
-    require("telescope.builtin").find_files()
+		require("telescope.builtin").find_files()
 	end
 end
 
