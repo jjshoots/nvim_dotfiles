@@ -69,9 +69,6 @@ end
 
 return {
 	"folke/noice.nvim",
-	dependencies = {
-		"MunifTanjim/nui.nvim",
-	},
 	config = config_function,
 	event = "VeryLazy",
 }
