@@ -13,10 +13,14 @@ local function config_function()
 					["<C-k>"] = "move_selection_previous",
 					["<M-p>"] = "close",
 					["<M-q>"] = "close",
+					["<M-l>"] = "close",
+					["<M-t>"] = "close",
 				},
 				n = {
 					["<M-p>"] = "close",
 					["<M-q>"] = "close",
+					["<M-l>"] = "close",
+					["<M-t>"] = "close",
 				},
 			},
 			file_ignore_patterns = {
