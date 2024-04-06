@@ -14,6 +14,7 @@ local function config_function()
 			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 			vim.keymap.set("n", "<M-u>", require("telescope.builtin").diagnostics, opts)
 			vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, opts)
+			vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
 			-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 			-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 			-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
@@ -34,7 +35,7 @@ local function config_function()
 	-- I have no idea what these lines are doing
 	-- update capabilities with nvim cmp
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+	capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 	-- setup the servers
 	require("mason").setup({})
@@ -49,10 +50,10 @@ local function config_function()
 end
 
 return {
-	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
 	dependencies = {
 		"williamboman/mason.nvim",
-		"neovim/nvim-lspconfig",
+		"williamboman/mason-lspconfig.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 		"nvim-telescope/telescope.nvim",
 	},
