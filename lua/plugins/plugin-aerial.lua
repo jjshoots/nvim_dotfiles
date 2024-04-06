@@ -1,15 +1,5 @@
 local function config_function()
-	require("aerial").setup({
-		-- optionally use on_attach to set keymaps when aerial has attached to a buffer
-		on_attach = function(bufnr)
-			-- Jump between tags with {}
-			vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-			vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-
-			-- Open telescope tag view
-			vim.keymap.set("n", "<M-t>", "<cmd>Telescope aerial<cr>")
-		end,
-	})
+	require("aerial").setup({})
 	require("telescope").load_extension("aerial")
 end
 
@@ -20,4 +10,9 @@ return {
 	},
 	config = config_function,
 	event = "LspAttach",
+  keys = {
+		{ "<M-t>", "<cmd>Telescope aerial<cr>", mode = "n", noremap = true, silent = true },
+		{ "{", "<cmd>AerialPrev<cr>", mode = "n", noremap = true, silent = true },
+		{ "}", "<cmd>AerialNext<cr>", mode = "n", noremap = true, silent = true },
+  },
 }
