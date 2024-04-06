@@ -20,11 +20,11 @@ local function config_function()
 			auto_trigger = false,
 			debounce = 75,
 			keymap = {
-				accept = "<M-m>",
+				accept = "<C-m>",
 				accept_word = false,
 				accept_line = false,
-				next = "<M-l>",
-				prev = "<M-h>",
+				next = "<C-l>",
+				prev = "<C-h>",
 				dismiss = "<Esc>",
 			},
 		},
@@ -48,7 +48,7 @@ return {
 	"zbirenbaum/copilot.lua",
 	config = config_function,
 	keys = {
-		{ "<M-l>", mode = "i" },
-		{ "<M-h>", mode = "i" },
+		{ "<C-l>", mode = "i" },
+		{ "<C-h>", mode = "i" },
 	},
 }

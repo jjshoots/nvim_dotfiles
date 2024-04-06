@@ -11,7 +11,7 @@ local function config_function()
 		},
 		mapping = cmp.mapping.preset.insert({
 			-- Tab selects the first item
-			["<M-m>"] = cmp.mapping.confirm({ select = true }),
+			["<C-m>"] = cmp.mapping.confirm({ select = true }),
 
 			-- Ctrl + space triggers completion menu
 			["<C-Space>"] = cmp.mapping.complete(),
