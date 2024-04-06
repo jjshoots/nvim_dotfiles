@@ -12,8 +12,9 @@ local function config_function()
 					["<C-j>"] = "move_selection_next",
 					["<C-k>"] = "move_selection_previous",
 					["<M-p>"] = "close",
-					["<M-l>"] = "close",
-					["<M-t>"] = "close",
+				},
+				n = {
+					["<M-p>"] = "close",
 				},
 			},
 			file_ignore_patterns = {
