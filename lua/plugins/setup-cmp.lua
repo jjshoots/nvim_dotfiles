@@ -11,7 +11,7 @@ local function config_function()
 		},
 		mapping = cmp.mapping.preset.insert({
 			-- Tab selects the first item
-			["<C-m>"] = cmp.mapping.confirm({ select = true }),
+			["<Tab>"] = cmp.mapping.confirm({ select = true }),
 
 			-- Ctrl + space triggers completion menu
 			["<C-Space>"] = cmp.mapping.complete(),
@@ -58,7 +58,6 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"L3MON4D3/LuaSnip",
-		"nvim-treesitter/nvim-treesitter",
 		-- sorting autocomplete list
 		"lukas-reineke/cmp-under-comparator",
 	},

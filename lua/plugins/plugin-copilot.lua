@@ -20,7 +20,7 @@ local function config_function()
 			auto_trigger = false,
 			debounce = 75,
 			keymap = {
-				accept = "<C-m>",
+				accept = "<Tab>",
 				accept_word = false,
 				accept_line = false,
 				next = "<C-l>",
