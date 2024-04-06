@@ -10,9 +10,9 @@ return {
 	},
 	config = config_function,
 	event = "LspAttach",
-  keys = {
+	keys = {
 		{ "<M-t>", "<cmd>Telescope aerial<cr>", mode = "n", noremap = true, silent = true },
 		{ "{", "<cmd>AerialPrev<cr>", mode = "n", noremap = true, silent = true },
 		{ "}", "<cmd>AerialNext<cr>", mode = "n", noremap = true, silent = true },
-  },
+	},
 }
