@@ -31,10 +31,6 @@ noremap <C-j> 3j
 noremap <C-m> $
 noremap <C-n> ^
 
-" mapping for comment
-vmap <C-/> gcgv
-nmap <C-/> gcc
-
 " mapping for macro repeat
 nnoremap m @q
 
