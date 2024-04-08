@@ -16,7 +16,7 @@ local function config_function()
 		-- LHS of operator-pending mappings in NORMAL and VISUAL mode
 		opleader = {
 			-- Line-comment keymap
-			line = "<C-c>",
+			line = "<C-/>",
 			-- Block-comment keymap
 			block = "<nop>",
 		},
