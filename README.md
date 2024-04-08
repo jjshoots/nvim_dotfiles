@@ -32,12 +32,6 @@ sudo apt install fd-find ripgrep
 
 # Custom Fonts
 
-## Default Mononoki
-
-curl -s https://raw.githubusercontent.com/jjshoots/mononoki-monospace-patched/master/install.sh | bash -s
-
-## Other fonts
-
 Download the font repo first:
 ```
 git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
