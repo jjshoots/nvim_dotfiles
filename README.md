@@ -24,13 +24,6 @@ cd ~/.config
 git clone https://github.com/jjshoots/nvim_dotfiles.git nvim
 ```
 
-## Install Plug and all plugins
-```
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-nvim --headless +PlugInstall +qall
-```
-
 ## Install ripgrep and fd
 ```
 sudo apt install fd-find ripgrep
