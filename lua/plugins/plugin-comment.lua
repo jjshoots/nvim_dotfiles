@@ -9,7 +9,7 @@ local function config_function()
 		ignore = "^$",
 		toggler = {
 			-- Line-comment toggle keymap
-			line = "<C-c>",
+			line = "<C-/>",
 			-- Block-comment toggle keymap
 			block = "<nop>",
 		},
@@ -47,6 +47,6 @@ return {
 	"numToStr/Comment.nvim",
 	config = config_function,
 	keys = {
-		{ "<C-c>", mode = { "n", "v" } },
+		{ "<C-/>", mode = { "n", "v" } },
 	},
 }
