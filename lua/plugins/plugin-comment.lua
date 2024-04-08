@@ -9,14 +9,14 @@ local function config_function()
 		ignore = "^$",
 		toggler = {
 			-- Line-comment toggle keymap
-			line = "<C-/>",
+			line = "<C-c>",
 			-- Block-comment toggle keymap
 			block = "<nop>",
 		},
 		-- LHS of operator-pending mappings in NORMAL and VISUAL mode
 		opleader = {
 			-- Line-comment keymap
-			line = "<C-/>",
+			line = "<C-c>",
 			-- Block-comment keymap
 			block = "<nop>",
 		},
