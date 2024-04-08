@@ -3,9 +3,9 @@ local function config_function()
 	vim.api.nvim_create_autocmd("LspAttach", {
 		desc = "LSP actions",
 		callback = function(event)
-      local map = function(mode, keys, func, desc)
-        vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-      end
+			local map = function(mode, keys, func, desc)
+				vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+			end
 
 			-- keybindings
 			map("i", "<C-s>", vim.lsp.buf.signature_help, "Signature help.")
@@ -17,7 +17,7 @@ local function config_function()
 			map("n", "<M-u>", require("telescope.builtin").diagnostics, "Show all diagnostics.")
 			map("n", "gd", require("telescope.builtin").lsp_definitions, "Go to definition.")
 			map("n", "gr", require("telescope.builtin").lsp_references, "Show all references.")
-      map("n", "gt", require('telescope.builtin').lsp_type_definitions, "Go to typedef.")
+			map("n", "gt", require("telescope.builtin").lsp_type_definitions, "Go to typedef.")
 			-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 			-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 			-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)

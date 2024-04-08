@@ -7,5 +7,5 @@ return {
 	"heavenshell/vim-pydocstring",
 	config = config_function,
 	build = "make install",
-  ft = "python",
+	ft = "python",
 }
