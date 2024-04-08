@@ -43,4 +43,4 @@ cd nerd-fonts
 ./install.sh Mononoki
 ```
 
-Change font to `Mononoki` in whatever terminal emulator you're using.
+Change font to `mononoki Nerd Font Mono` in whatever terminal emulator you're using.
