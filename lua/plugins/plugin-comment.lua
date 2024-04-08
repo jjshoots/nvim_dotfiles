@@ -46,5 +46,7 @@ end
 return {
 	"numToStr/Comment.nvim",
 	config = config_function,
-	event = "VeryLazy",
+	keys = {
+    "<C-/>"
+  },
 }
