@@ -47,6 +47,6 @@ return {
 	"numToStr/Comment.nvim",
 	config = config_function,
 	keys = {
-    "<C-c>"
-  },
+		{ "<C-c>", mode = { "n", "v" } },
+	},
 }
