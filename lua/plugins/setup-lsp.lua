@@ -4,7 +4,7 @@ local function config_function()
 		desc = "LSP actions",
 		callback = function(event)
 			local map = function(mode, keys, func, desc)
-				vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+				vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 			end
 
 			-- keybindings
