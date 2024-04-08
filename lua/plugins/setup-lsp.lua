@@ -3,18 +3,21 @@ local function config_function()
 	vim.api.nvim_create_autocmd("LspAttach", {
 		desc = "LSP actions",
 		callback = function(event)
-			local opts = { buffer = event.buf }
+      local map = function(mode, keys, func, desc)
+        vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+      end
 
 			-- keybindings
-			vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, opts)
-			vim.keymap.set("n", "<M-[>", vim.diagnostic.goto_prev)
-			vim.keymap.set("n", "<M-]>", vim.diagnostic.goto_next)
-			vim.keymap.set("n", "<leader>u", vim.diagnostic.open_float)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-			vim.keymap.set("n", "<M-u>", require("telescope.builtin").diagnostics, opts)
-			vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, opts)
-			vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
+			map("i", "<C-s>", vim.lsp.buf.signature_help, "Signature help.")
+			map("n", "<M-[>", vim.diagnostic.goto_prev, "Previous diagnostics.")
+			map("n", "<M-]>", vim.diagnostic.goto_next, "Next diagnostics.")
+			map("n", "<leader>u", vim.diagnostic.open_float, "Expand diagnostics.")
+			map("n", "K", vim.lsp.buf.hover, "Hover Definition.")
+			map("n", "<leader>r", vim.lsp.buf.rename, "Rename.")
+			map("n", "<M-u>", require("telescope.builtin").diagnostics, "Show all diagnostics.")
+			map("n", "gd", require("telescope.builtin").lsp_definitions, "Go to definition.")
+			map("n", "gr", require("telescope.builtin").lsp_references, "Show all references.")
+      map("n", "gt", require('telescope.builtin').lsp_type_definitions, "Go to typedef.")
 			-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 			-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 			-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
