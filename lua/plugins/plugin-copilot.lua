@@ -48,7 +48,6 @@ return {
 	"zbirenbaum/copilot.lua",
 	config = config_function,
 	keys = {
-		{ "<M-l>", mode = "i" },
-		{ "<M-h>", mode = "i" },
+		{ "<C-c>", mode = "i" },
 	},
 }
