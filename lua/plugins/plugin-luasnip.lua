@@ -2,7 +2,7 @@ local function config_function()
 	require("luasnip").config.set_config({
 		history = true,
 		updateevents = "TextChanged,TextChangedI",
-		enable_auto_snippets = true,
+		enable_autosnippets = true,
 	})
 	require("luasnip.loaders.from_vscode").lazy_load()
 
