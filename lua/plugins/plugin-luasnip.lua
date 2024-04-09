@@ -9,14 +9,14 @@ local function config_function()
 	-- Expand or jump to the next snippet placeholder
 	vim.api.nvim_set_keymap(
 		"i",
-		"<C-m>",
+		"<C-l>",
 		'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
 		{ expr = true, silent = true }
 	)
 	-- Jump to the previous snippet placeholder
 	vim.api.nvim_set_keymap(
 		"i",
-		"<C-n>",
+		"<C-h>",
 		'luasnip#jumpable(-1) ? "<Plug>luasnip-jump-prev" : "<S-Tab>"',
 		{ expr = true, silent = true }
 	)
