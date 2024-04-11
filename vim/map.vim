@@ -11,7 +11,7 @@ nnoremap <C-u> <nop>
 nnoremap <C-d> <nop>
 
 " nohl toggle
-noremap <leader>s :set hlsearch! hlsearch?<CR>
+noremap <silent> <leader>s :set hlsearch! hlsearch?<CR>
 
 " window management
 noremap <C-Left> 5<C-w><
@@ -60,8 +60,8 @@ vnoremap > >gv
 vnoremap < <gv
 
 " move section up and down HEK YES
-vnoremap J :m '>+1<CR>gv
-vnoremap K :m '<-2<CR>gv
+vnoremap <silent> J :m '>+1<CR>gv
+vnoremap <silent> K :m '<-2<CR>gv
 
 " next and previous buffer
 nnoremap <silent> <leader>o :bn<CR>
