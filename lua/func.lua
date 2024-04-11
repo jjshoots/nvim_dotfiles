@@ -6,17 +6,11 @@ local function on_enter()
 		and vim.bo.buftype ~= "terminal"
 		and vim.bo.buftype ~= "prompt"
 		and vim.bo.buftype ~= "quickfix"
+		and vim.bo.modifiable
 	then
-		if vim.bo.modifiable then
-			vim.wo.cursorline = true
-			vim.wo.signcolumn = "auto"
-			vim.wo.relativenumber = true
-			vim.wo.foldcolumn = "1"
-		end
-
-		if vim.bo.filetype == "tex" or vim.bo.filetype == "md" or vim.bo.filetype == "json" then
-			vim.wo.wrap = true
-		end
+		vim.wo.cursorline = true
+		vim.wo.signcolumn = "auto"
+		vim.wo.relativenumber = true
 	end
 end
 
@@ -28,14 +22,12 @@ local function on_leave()
 		and vim.bo.buftype ~= "terminal"
 		and vim.bo.buftype ~= "prompt"
 		and vim.bo.buftype ~= "quickfix"
+		and vim.bo.modifiable
 	then
-		if vim.bo.modifiable then
-			vim.wo.cursorline = false
-			vim.wo.signcolumn = "no"
-			vim.wo.relativenumber = false
-			vim.wo.wrap = false
-			vim.wo.foldcolumn = "0"
-		end
+		vim.wo.cursorline = false
+		vim.wo.signcolumn = "no"
+		vim.wo.relativenumber = false
+		vim.wo.wrap = false
 	end
 end
 
@@ -85,8 +77,9 @@ autocmd_create({ "BufNewFile", "BufRead" }, { pattern = "*.world", command = "se
 group = vim.api.nvim_create_augroup("AutoWrapAndConceal", { clear = true })
 autocmd_create("FileType", { pattern = "tex", command = "setlocal wrap", group = group })
 autocmd_create("FileType", { pattern = "markdown", command = "setlocal wrap", group = group })
+autocmd_create("FileType", { pattern = "markdown", command = "set conceallevel=2", group = group })
+autocmd_create("FileType", { pattern = "json", command = "setlocal wrap", group = group })
 autocmd_create("FileType", { pattern = "json", command = "set conceallevel=0", group = group })
-autocmd_create("FileType", { pattern = "md", command = "set conceallevel=2", group = group })
 
 group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
 autocmd_create("VimEnter", { callback = telescope_find_files, group = group })
