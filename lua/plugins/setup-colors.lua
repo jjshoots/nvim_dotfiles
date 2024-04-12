@@ -22,9 +22,8 @@ return {
         hi FloatTitle ctermbg=NONE guibg=NONE
         hi NormalFloat ctermbg=NONE guibg=NONE
 
-        " highlight for borders
+        " highlight for borders, folding, and sign column
         hi FloatBorder ctermbg=NONE guibg=NONE guifg=#CCCCCC
-
         hi FoldColumn guibg=#2C3245 guifg=NONE
         hi clear SignColumn
 
