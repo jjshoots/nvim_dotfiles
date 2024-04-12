@@ -19,6 +19,8 @@ return {
         hi NormalNC ctermbg=NONE guibg=NONE
         hi NormalSB ctermbg=NONE guibg=NONE
         hi EndOfBuffer ctermbg=NONE guibg=NONE
+        hi FloatTitle ctermbg=NONE guibg=NONE
+        hi NormalFloat ctermbg=NONE guibg=NONE
 
         " highlight for borders
         hi FloatBorder ctermbg=NONE guibg=NONE guifg=#CCCCCC

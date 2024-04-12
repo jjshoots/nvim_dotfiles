@@ -32,6 +32,21 @@ local function config_function()
 				vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 					virtual_text = false,
 				})
+
+			-- border for diagnostics
+			vim.diagnostic.config({
+				float = { border = "rounded" },
+			})
+			vim.cmd([[
+        hi DiagnosticError guibg=NONE
+        hi DiagnosticWarn guibg=NONE
+        hi DiagnosticInfo guibg=NONE
+        hi DiagnosticHint guibg=NONE
+        hi DiagnosticVirtualTextError guibg=NONE
+        hi DiagnosticVirtualTextWarn guibg=NONE
+        hi DiagnosticVirtualTextInfo guibg=NONE
+        hi DiagnosticVirtualTextHint guibg=NONE
+      ]])
 		end,
 	})
 
