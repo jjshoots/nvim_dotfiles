@@ -1,13 +1,13 @@
-# Install dependencies
-sudo apt update
-sudo apt install git ripgrep fd-find --yes
-
 # check if nvim exists
 if ! command -v nvim &> /dev/null
 then
-    echo "nvim not found, installing from snap"
+    echo "nvim not found, installing from snap..."
     sudo snap install nvim --classic
 fi
+
+# Install dependencies
+sudo apt update
+sudo apt install git ripgrep fd-find --yes
 
 # Install neovim
 sudo snap install neovim --classic
