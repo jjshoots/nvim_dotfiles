@@ -1,12 +1,12 @@
 local function config_function()
 	-- highlight group for neotree specifically
 	vim.cmd([[
-    hi link NeoTreeNormal Normal
-    hi link NeoTreeFloatNormal Normal
-    hi link NeoTreeTitleBar Title
-    hi link NeoTreeFloatTitle FloatBorder
-    hi link NeotreeFloatBorder FloatBorder
-    hi link NeoTreeEndOfBuffer EndOfBuffer
+    hi! link NeoTreeNormal Normal
+    hi! link NeoTreeFloatNormal Normal
+    hi! link NeoTreeTitleBar Title
+    hi! link NeoTreeFloatTitle FloatBorder
+    hi! link NeotreeFloatBorder FloatBorder
+    hi! link NeoTreeEndOfBuffer EndOfBuffer
   ]])
 
 	-- setup with some options
