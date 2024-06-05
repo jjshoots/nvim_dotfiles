@@ -122,4 +122,4 @@ fun! s:CloseTabsOrQuit()
 endfunction
 
 " for closing buffers
-nnoremap <silent> <C-d> :q<CR>
+nnoremap <C-d> :call <SID>CloseBuffersOrQuit()<CR>
