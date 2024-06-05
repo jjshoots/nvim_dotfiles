@@ -7,7 +7,7 @@ local function config_function()
 		white = "#d9d7ce",
 		green = "#bbe67e",
 		blue = "#59c2ff",
-		darkblue = "#0071b3",
+		celadon = "#108275",
 		orange = "#f07178",
 		lightgray = "#607080",
 	}
@@ -32,8 +32,8 @@ local function config_function()
 		inactive_sections = {
 			lualine_a = {},
 			lualine_b = {},
-			lualine_c = { { "filename", path = 1 } },
-			lualine_x = { "location" },
+			lualine_c = {},
+			lualine_x = {},
 			lualine_y = {},
 			lualine_z = {},
 		},
@@ -70,7 +70,7 @@ local function config_function()
 					max_length = vim.o.columns * 0.8,
 					buffers_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
-						active = { bg = colors.darkblue, fg = colors.white },
+						active = { bg = colors.celadon, fg = colors.black },
 					},
 					symbols = {
 						modified = " ●", -- Text to show when the buffer is modified
@@ -87,6 +87,7 @@ local function config_function()
 		},
 		extensions = {},
 	})
+
 end
 
 return {
