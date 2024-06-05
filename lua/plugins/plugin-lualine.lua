@@ -31,7 +31,7 @@ local function config_function()
 		inactive_sections = {
 			lualine_a = {},
 			lualine_b = {},
-			lualine_c = { "filename" },
+			lualine_c = { "filename", path = 1 },
 			lualine_x = { "location" },
 			lualine_y = {},
 			lualine_z = {},
@@ -39,11 +39,14 @@ local function config_function()
 		tabline = {
 			lualine_a = {
 				{
-					"buffers",
+					"tabs",
 					show_modified_status = true,
 					mode = 2,
 					max_length = vim.o.columns * 0.8,
 					buffers_color = {
+						inactive = { bg = colors.black, fg = colors.lightgray },
+					},
+					tabs_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
 					},
 					symbols = {
