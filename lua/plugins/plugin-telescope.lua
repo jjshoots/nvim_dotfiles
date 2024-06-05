@@ -40,6 +40,7 @@ return {
 	},
 	config = config_function,
 	keys = {
+		{ "<M-b>", "<cmd>Telescope buffers<cr>", mode = "n", noremap = true, silent = true },
 		{ "<M-p>", "<cmd>Telescope find_files<cr>", mode = "n", noremap = true, silent = true },
 		{ "<M-q>", "<cmd>Telescope live_grep<cr>", mode = "n", noremap = true, silent = true },
 		{
