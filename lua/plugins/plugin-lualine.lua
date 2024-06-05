@@ -7,9 +7,9 @@ local function config_function()
 		white = "#d9d7ce",
 		green = "#bbe67e",
 		blue = "#59c2ff",
-		celadon = "#108275",
 		orange = "#f07178",
 		lightgray = "#607080",
+		celadon = "#108275",
 	}
 
 	require("lualine").setup({
@@ -40,13 +40,12 @@ local function config_function()
 		tabline = {
 			lualine_a = {
 				{
-					"tabs",
+					"buffers",
 					show_modified_status = true,
-					mode = 0,
+					mode = 2,
 					max_length = vim.o.columns * 0.8,
-					tabs_color = {
+					buffers_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
-						active = { bg = colors.blue, fg = colors.black },
 					},
 					symbols = {
 						modified = " ●", -- Text to show when the buffer is modified
@@ -58,17 +57,13 @@ local function config_function()
 			lualine_b = {},
 			lualine_c = {},
 			lualine_x = {},
-			lualine_y = {},
-			lualine_z = { "hostname" },
-		},
-		winbar = {
-			lualine_a = {
+			lualine_y = {
 				{
-					"buffers",
+					"tabs",
 					show_modified_status = true,
-					mode = 2,
+					mode = 0,
 					max_length = vim.o.columns * 0.8,
-					buffers_color = {
+					tabs_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
 						active = { bg = colors.celadon, fg = colors.black },
 					},
@@ -78,12 +73,8 @@ local function config_function()
 						directory = "", -- Text to show when the buffer is a directory
 					},
 				},
-			},
-			lualine_b = {},
-			lualine_c = {},
-			lualine_x = {},
-			lualine_y = {},
-			lualine_z = {},
+      },
+			lualine_z = { "hostname" },
 		},
 		extensions = {},
 	})
