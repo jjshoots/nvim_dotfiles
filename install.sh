@@ -1,9 +1,8 @@
-# check if nvim exists
-if ! command -v nvim &> /dev/null
-then
-    echo "nvim not found, installing from snap..."
-    sudo snap install nvim --classic
-fi
+# install nvim
+sudo apt update
+sudo apt install snapd -y
+sudo apt purge neovim
+sudo snap install nvim --classic
 
 # Install dependencies
 sudo apt update
