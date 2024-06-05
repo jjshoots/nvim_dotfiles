@@ -46,7 +46,7 @@ local function config_function()
 					max_length = vim.o.columns * 0.8,
 					tabs_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
-						active = { bg = colors.darkblue, fg = colors.white },
+						active = { bg = colors.blue, fg = colors.black },
 					},
 					symbols = {
 						modified = " ●", -- Text to show when the buffer is modified
@@ -70,7 +70,7 @@ local function config_function()
 					max_length = vim.o.columns * 0.8,
 					buffers_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
-						active = { bg = colors.blue, fg = colors.black },
+						active = { bg = colors.darkblue, fg = colors.white },
 					},
 					symbols = {
 						modified = " ●", -- Text to show when the buffer is modified
