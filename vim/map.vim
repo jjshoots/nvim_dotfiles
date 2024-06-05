@@ -115,5 +115,14 @@ fun! s:CloseBuffersOrQuit()
   endif
 endfunction
 
+" close tabs or quiti nvim
+fun! s:CloseTabsOrQuit()
+  if tabpagenr('$') > 1
+    execute ':tabclose'
+  else
+    qall!
+  endif
+endfunction
+
 " for closing buffers
-nnoremap <C-d> :call <SID>CloseBuffersOrQuit()<CR>
+nnoremap <C-d> :call <SID>CloseTabsOrQuit()<CR>
