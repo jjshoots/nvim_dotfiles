@@ -7,6 +7,7 @@ local function config_function()
 		white = "#d9d7ce",
 		green = "#bbe67e",
 		blue = "#59c2ff",
+		darkblue = "#0071b3",
 		orange = "#f07178",
 		lightgray = "#607080",
 	}
@@ -41,13 +42,11 @@ local function config_function()
 				{
 					"tabs",
 					show_modified_status = true,
-					mode = 2,
+					mode = 0,
 					max_length = vim.o.columns * 0.8,
-					buffers_color = {
-						inactive = { bg = colors.black, fg = colors.lightgray },
-					},
 					tabs_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
+						active = { bg = colors.darkblue, fg = colors.white },
 					},
 					symbols = {
 						modified = " ●", -- Text to show when the buffer is modified
@@ -61,6 +60,30 @@ local function config_function()
 			lualine_x = {},
 			lualine_y = {},
 			lualine_z = { "hostname" },
+		},
+		winbar = {
+			lualine_a = {
+				{
+					"buffers",
+					show_modified_status = true,
+					mode = 2,
+					max_length = vim.o.columns * 0.8,
+					buffers_color = {
+						inactive = { bg = colors.black, fg = colors.lightgray },
+						active = { bg = colors.blue, fg = colors.black },
+					},
+					symbols = {
+						modified = " ●", -- Text to show when the buffer is modified
+						alternate_file = "", -- Text to show to identify the alternate file
+						directory = "", -- Text to show when the buffer is a directory
+					},
+				},
+			},
+			lualine_b = {},
+			lualine_c = {},
+			lualine_x = {},
+			lualine_y = {},
+			lualine_z = {},
 		},
 		extensions = {},
 	})
