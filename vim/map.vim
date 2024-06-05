@@ -64,8 +64,8 @@ vnoremap <silent> J :m '>+1<CR>gv
 vnoremap <silent> K :m '<-2<CR>gv
 
 " next and previous buffer
-nnoremap <silent> <leader>o :bn<CR>
-nnoremap <silent> <leader>i :bp<CR>
+nnoremap <silent> <leader>o gt
+nnoremap <silent> <leader>i gT
 
 " remap previous and next positions
 nnoremap <C-o> <C-i>
