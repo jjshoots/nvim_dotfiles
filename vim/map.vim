@@ -13,6 +13,9 @@ nnoremap <C-d> <nop>
 " nohl toggle
 noremap <silent> <leader>s :set hlsearch! hlsearch?<CR>
 
+" tab management
+nnoremap <silent> <C-t> :tabnew<CR>
+
 " window management
 noremap <C-Left> 5<C-w><
 noremap <C-Right> 5<C-w>>
@@ -112,7 +115,7 @@ fun! s:CloseBuffersOrQuit()
   endif
 endfunction
 
-" close tabs or quiti nvim
+" close tabs or quit nvim
 fun! s:CloseTabsOrQuit()
   if tabpagenr('$') > 1
     execute ':tabclose'
@@ -123,3 +126,13 @@ endfunction
 
 " for closing buffers
 nnoremap <C-d> :call <SID>CloseBuffersOrQuit()<CR>
+
+" open a new tab, rename it, and start a terminal in insert mode
+fun! s:OpenTerminalTab()
+  tabnew
+  terminal
+  startinsert
+endfunction
+
+" Map <leader>T to call the OpenTerminalTab function
+nnoremap <leader>t :call <SID>OpenTerminalTab()<CR>
