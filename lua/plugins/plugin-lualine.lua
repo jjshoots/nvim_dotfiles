@@ -32,7 +32,7 @@ local function config_function()
 					"filename",
 					path = 1,
 				},
-      },
+			},
 		},
 		inactive_sections = {
 			lualine_a = {},
@@ -44,9 +44,9 @@ local function config_function()
 				{
 					"filename",
 					path = 1,
-          color = { bg = colors.white },
+					color = { bg = colors.white },
 				},
-      },
+			},
 		},
 		tabline = {
 			lualine_a = {

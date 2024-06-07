@@ -1,3 +1,21 @@
+-- function to clean no-name empty buffers
+local function clean_empty_buffers()
+	local buffers = {}
+	for i = 1, vim.fn.bufnr("$") do
+		if
+			vim.fn.buflisted(i) == 1
+			and vim.fn.bufname(i) == ""
+			and vim.fn.bufwinnr(i) < 0
+			and vim.fn.getbufline(i, 1, "$")[1] == ""
+		then
+			table.insert(buffers, i)
+		end
+	end
+	if #buffers > 0 then
+		vim.cmd("bd " .. table.concat(buffers, " "))
+	end
+end
+
 -- function to handle entering a window
 local function on_enter()
 	if
@@ -83,3 +101,6 @@ autocmd_create("FileType", { pattern = "json", command = "set conceallevel=0", g
 
 group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
 autocmd_create("VimEnter", { callback = telescope_find_files, group = group })
+
+group = vim.api.nvim_create_augroup("CleanBuffers", { clear = true })
+autocmd_create("BufAdd", { callback = clean_empty_buffers, group = group })

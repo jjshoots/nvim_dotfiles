@@ -63,9 +63,11 @@ vnoremap < <gv
 vnoremap <silent> J :m '>+1<CR>gv
 vnoremap <silent> K :m '<-2<CR>gv
 
-" next and previous buffer
+" next and previous tab and buffer
 nnoremap <silent> <leader>o :tabnext<CR>
 nnoremap <silent> <leader>i :tabprevious<CR>
+nnoremap <silent> <leader>m :bnext<CR>
+nnoremap <silent> <leader>n :bprevious<CR>
 
 " remap previous and next positions
 nnoremap <C-o> <C-i>
