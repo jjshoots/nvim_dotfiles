@@ -6,7 +6,7 @@ local function clean_empty_buffers()
 			vim.fn.buflisted(i) == 1
 			and vim.fn.bufname(i) == ""
 			and vim.fn.bufwinnr(i) < 0
-			and vim.fn.getbufline(i, 1, "$")[1] == ""
+			-- and vim.fn.getbufline(i, 1, "$")[1] == ""
 		then
 			table.insert(buffers, i)
 		end
