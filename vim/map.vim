@@ -121,4 +121,4 @@ nnoremap <silent> <leader>8 :tabn 8<CR>
 nnoremap <silent> <leader>9 :tabn 9<CR>
 
 " for closing things
-nnoremap <C-d> :q<CR>
+nnoremap <silent> <C-d> :bd<CR>

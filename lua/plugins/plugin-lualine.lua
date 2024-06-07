@@ -53,7 +53,7 @@ local function config_function()
 				{
 					"tabs",
 					show_modified_status = true,
-					mode = 2,
+					mode = 0,
 					max_length = vim.o.columns * 0.8,
 					tabs_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
@@ -68,7 +68,23 @@ local function config_function()
 			lualine_b = {},
 			lualine_c = {},
 			lualine_x = {},
-			lualine_y = {},
+			lualine_y = {
+				{
+					"buffers",
+					show_modified_status = true,
+					mode = 0,
+					max_length = vim.o.columns * 0.8,
+					buffers_color = {
+						active = { bg = colors.lightgray, fg = colors.black },
+						inactive = { bg = colors.black, fg = colors.lightgray },
+					},
+					symbols = {
+						modified = " ●", -- Text to show when the buffer is modified
+						alternate_file = "", -- Text to show to identify the alternate file
+						directory = "", -- Text to show when the buffer is a directory
+					},
+				},
+      },
 			lualine_z = { "hostname" },
 		},
 		extensions = {},
