@@ -9,7 +9,7 @@ local function config_function()
 		defaults = {
 			mappings = {
 				i = {
-					["<Tab>"] = "select_vertical",
+					["<S-CR>"] = "select_vertical",
 					["<C-j>"] = "move_selection_next",
 					["<C-k>"] = "move_selection_previous",
 					["<M-p>"] = "close",
@@ -18,7 +18,7 @@ local function config_function()
 					["<M-t>"] = "close",
 				},
 				n = {
-					["<Tab>"] = "select_vertical",
+					["<S-CR>"] = "select_vertical",
 					["<M-p>"] = "close",
 					["<M-q>"] = "close",
 					["<M-u>"] = "close",
