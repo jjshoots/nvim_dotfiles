@@ -35,7 +35,13 @@ local function config_function()
 			lualine_c = {},
 			lualine_x = {},
 			lualine_y = {},
-			lualine_z = {},
+			lualine_z = {
+				{
+					"filename",
+					path = 1,
+          color = { bg = colors.white },
+				},
+      },
 		},
 		tabline = {
 			lualine_a = {
