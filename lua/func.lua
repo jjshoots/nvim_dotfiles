@@ -6,7 +6,7 @@ local function clean_empty_buffers()
 			vim.fn.buflisted(i) == 1
 			and vim.fn.bufname(i) == ""
 			and vim.fn.bufwinnr(i) < 0
-			-- and vim.fn.getbufline(i, 1, "$")[1] == ""
+			and vim.fn.getbufline(i, 1, "$")[1] == ""
 		then
 			table.insert(buffers, i)
 		end
@@ -103,4 +103,4 @@ group = vim.api.nvim_create_augroup("AutoTelescope", { clear = true })
 autocmd_create("VimEnter", { callback = telescope_find_files, group = group })
 
 group = vim.api.nvim_create_augroup("CleanBuffers", { clear = true })
-autocmd_create("BufAdd", { callback = clean_empty_buffers, group = group })
+autocmd_create("BufLeave", { callback = clean_empty_buffers, group = group })
