@@ -69,6 +69,8 @@ vnoremap <silent> K :m '<-2<CR>gv
 " next and previous buffer
 nnoremap <silent> <leader>o :bn<CR>
 nnoremap <silent> <leader>i :bp<CR>
+nnoremap <silent> <leader>m :tabnext<CR>
+nnoremap <silent> <leader>n :tabprevious<CR>
 
 " remap previous and next positions
 nnoremap <C-o> <C-i>
@@ -99,12 +101,15 @@ nnoremap <A-i> i<space>
 inoremap <C-e> <C-o>dw
 
 " for quickly jumping to the n-th buffer
-nnoremap <silent> <leader>1 1gt
-nnoremap <silent> <leader>2 2gt
-nnoremap <silent> <leader>3 3gt
-nnoremap <silent> <leader>4 4gt
-nnoremap <silent> <leader>5 5gt
-nnoremap <silent> <leader>6 6gt
+nnoremap <silent> <leader>1 :LualineBuffersJump 1<CR>
+nnoremap <silent> <leader>2 :LualineBuffersJump 2<CR>
+nnoremap <silent> <leader>3 :LualineBuffersJump 3<CR>
+nnoremap <silent> <leader>4 :LualineBuffersJump 4<CR>
+nnoremap <silent> <leader>5 :LualineBuffersJump 5<CR>
+nnoremap <silent> <leader>6 :LualineBuffersJump 6<CR>
+nnoremap <silent> <leader>7 :LualineBuffersJump 7<CR>
+nnoremap <silent> <leader>8 :LualineBuffersJump 8<CR>
+nnoremap <silent> <leader>9 :LualineBuffersJump 9<CR>
 
 " close buffers or quit nvim
 fun! s:CloseBuffersOrQuit()
