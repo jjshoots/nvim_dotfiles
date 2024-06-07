@@ -13,9 +13,6 @@ nnoremap <C-d> <nop>
 " nohl toggle
 noremap <silent> <leader>s :set hlsearch! hlsearch?<CR>
 
-" tab management
-nnoremap <silent> <C-t> :tabnew<CR>
-
 " window management
 noremap <C-Left> 5<C-w><
 noremap <C-Right> 5<C-w>>
@@ -67,10 +64,8 @@ vnoremap <silent> J :m '>+1<CR>gv
 vnoremap <silent> K :m '<-2<CR>gv
 
 " next and previous buffer
-nnoremap <silent> <leader>o :bn<CR>
-nnoremap <silent> <leader>i :bp<CR>
-nnoremap <silent> <leader>m :tabnext<CR>
-nnoremap <silent> <leader>n :tabprevious<CR>
+nnoremap <silent> <leader>o :tabnext<CR>
+nnoremap <silent> <leader>i :tabprevious<CR>
 
 " remap previous and next positions
 nnoremap <C-o> <C-i>
@@ -100,16 +95,28 @@ nnoremap <A-i> i<space>
 " mapping for deleting a word in forward mode, equivalent to Ctrl-Del
 inoremap <C-e> <C-o>dw
 
-" for quickly jumping to the n-th buffer
-nnoremap <silent> <leader>1 :LualineBuffersJump 1<CR>
-nnoremap <silent> <leader>2 :LualineBuffersJump 2<CR>
-nnoremap <silent> <leader>3 :LualineBuffersJump 3<CR>
-nnoremap <silent> <leader>4 :LualineBuffersJump 4<CR>
-nnoremap <silent> <leader>5 :LualineBuffersJump 5<CR>
-nnoremap <silent> <leader>6 :LualineBuffersJump 6<CR>
-nnoremap <silent> <leader>7 :LualineBuffersJump 7<CR>
-nnoremap <silent> <leader>8 :LualineBuffersJump 8<CR>
-nnoremap <silent> <leader>9 :LualineBuffersJump 9<CR>
+" open a new tab, rename it, and start a terminal in insert mode
+fun! s:OpenTerminalTab()
+  tabnew
+  terminal
+  startinsert
+endfunction
+
+" tab management
+nnoremap <silent> <leader>t :call <SID>OpenTerminalTab()<CR>
+nnoremap <silent> <C-t> :tabnew<CR>:Telescope find_files<CR>
+
+" for quickly jumping to the n-th tab
+" nnoremap <silent> <leader>1 :LualineBuffersJump 1<CR>
+nnoremap <silent> <leader>1 :tabn 1<CR>
+nnoremap <silent> <leader>2 :tabn 2<CR>
+nnoremap <silent> <leader>3 :tabn 3<CR>
+nnoremap <silent> <leader>4 :tabn 4<CR>
+nnoremap <silent> <leader>5 :tabn 5<CR>
+nnoremap <silent> <leader>6 :tabn 6<CR>
+nnoremap <silent> <leader>7 :tabn 7<CR>
+nnoremap <silent> <leader>8 :tabn 8<CR>
+nnoremap <silent> <leader>9 :tabn 9<CR>
 
 " close buffers or quit nvim
 fun! s:CloseBuffersOrQuit()
@@ -131,13 +138,3 @@ endfunction
 
 " for closing buffers
 nnoremap <C-d> :call <SID>CloseBuffersOrQuit()<CR>
-
-" open a new tab, rename it, and start a terminal in insert mode
-fun! s:OpenTerminalTab()
-  tabnew
-  terminal
-  startinsert
-endfunction
-
-" Map <leader>T to call the OpenTerminalTab function
-nnoremap <leader>t :call <SID>OpenTerminalTab()<CR>
