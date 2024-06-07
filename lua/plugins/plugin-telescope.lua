@@ -9,6 +9,8 @@ local function config_function()
 		defaults = {
 			mappings = {
 				i = {
+					-- ["<CR>"] = "select_tab",
+					-- ["<C-t>"] = "select_default",
 					["<C-j>"] = "move_selection_next",
 					["<C-k>"] = "move_selection_previous",
 					["<M-p>"] = "close",
@@ -17,10 +19,13 @@ local function config_function()
 					["<M-t>"] = "close",
 				},
 				n = {
+					-- ["<CR>"] = "select_tab",
+					-- ["<C-t>"] = "select_default",
 					["<M-p>"] = "close",
 					["<M-q>"] = "close",
 					["<M-u>"] = "close",
 					["<M-t>"] = "close",
+					["q"] = "close",
 				},
 			},
 			file_ignore_patterns = {
@@ -29,6 +34,29 @@ local function config_function()
 			},
 		},
 	})
+
+	-- buffer picker and deleter
+	vim.keymap.set("n", "<M-b>", function()
+		require("telescope.builtin").buffers({
+			initial_mode = "normal",
+			attach_mappings = function(prompt_bufnr, map)
+				local delete_buf = function()
+					local current_picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+					current_picker:delete_selection(function(selection)
+						vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+					end)
+				end
+
+				map("n", "<C-d>", delete_buf)
+
+				return true
+			end,
+		}, {
+			sort_lastused = true,
+			sort_mru = true,
+			theme = "dropdown",
+		})
+	end)
 end
 
 return {
@@ -40,6 +68,7 @@ return {
 	},
 	config = config_function,
 	keys = {
+		{ "<M-b>" },
 		{ "<M-p>", "<cmd>Telescope find_files<cr>", mode = "n", noremap = true, silent = true },
 		{ "<M-q>", "<cmd>Telescope live_grep<cr>", mode = "n", noremap = true, silent = true },
 		{
