@@ -118,23 +118,5 @@ nnoremap <silent> <leader>7 :tabn 7<CR>
 nnoremap <silent> <leader>8 :tabn 8<CR>
 nnoremap <silent> <leader>9 :tabn 9<CR>
 
-" close buffers or quit nvim
-fun! s:CloseBuffersOrQuit()
-  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
-    execute ':bd'
-  else
-    qall!
-  endif
-endfunction
-
-" close tabs or quit nvim
-fun! s:CloseTabsOrQuit()
-  if tabpagenr('$') > 1
-    execute ':tabclose'
-  else
-    qall!
-  endif
-endfunction
-
-" for closing buffers
-nnoremap <C-d> :call <SID>CloseBuffersOrQuit()<CR>
+" for closing things
+nnoremap <C-d> :q<CR>

@@ -1,0 +1,17 @@
+" close buffers or quit nvim
+fun! s:CloseBuffersOrQuit()
+  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
+    execute ':bd'
+  else
+    qall!
+  endif
+endfunction
+
+" close tabs or quit nvim
+fun! s:CloseTabsOrQuit()
+  if tabpagenr('$') > 1
+    execute ':tabclose'
+  else
+    qall!
+  endif
+endfunction
