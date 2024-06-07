@@ -10,6 +10,7 @@ local function config_function()
 			mappings = {
 				i = {
 					["<S-CR>"] = "select_vertical",
+					["<C-CR>"] = "select_horizontal",
 					["<C-j>"] = "move_selection_next",
 					["<C-k>"] = "move_selection_previous",
 					["<M-p>"] = "close",
@@ -19,6 +20,7 @@ local function config_function()
 				},
 				n = {
 					["<S-CR>"] = "select_vertical",
+					["<C-CR>"] = "select_horizontal",
 					["<M-p>"] = "close",
 					["<M-q>"] = "close",
 					["<M-u>"] = "close",
