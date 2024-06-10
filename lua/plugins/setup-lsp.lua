@@ -3,8 +3,17 @@ local function config_function()
 	vim.api.nvim_create_autocmd("LspAttach", {
 		desc = "LSP actions",
 		callback = function(event)
+			-- function for easy map
 			local map = function(mode, keys, func, desc)
 				vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+			end
+
+			-- split before doing things function
+			local function split_and_execute(telescope_function)
+				return function()
+					vim.cmd("vsplit")
+					telescope_function()
+				end
 			end
 
 			-- keybindings
@@ -21,15 +30,17 @@ local function config_function()
 			map(
 				"n",
 				"gD",
-				":vsplit | lua require('telescope.builtin').lsp_definitions()<CR>",
-				"Go to definition in vertical split."
+				split_and_execute(require("telescope.builtin").lsp_definitions),
+				"Go to definition in new split."
 			)
 			map(
 				"n",
 				"gT",
-				":vsplit | lua require('telescope.builtin').lsp_type_definitions()<CR>",
-				"Go to type definition in vertical split."
+				split_and_execute(require("telescope.builtin").lsp_type_definitions),
+				"Go to type definition in new split."
 			)
+
+			-- Map the function to the key combinations
 			-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 			-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 			-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
