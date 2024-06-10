@@ -84,7 +84,7 @@ local function config_function()
 						directory = "", -- Text to show when the buffer is a directory
 					},
 				},
-      },
+			},
 			lualine_z = { "hostname" },
 		},
 		extensions = {},

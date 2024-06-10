@@ -18,6 +18,18 @@ local function config_function()
 			map("n", "gd", require("telescope.builtin").lsp_definitions, "Go to definition.")
 			map("n", "gr", require("telescope.builtin").lsp_references, "Show all references.")
 			map("n", "gt", require("telescope.builtin").lsp_type_definitions, "Go to typedef.")
+			map(
+				"n",
+				"gD",
+				":vsplit | lua require('telescope.builtin').lsp_definitions()<CR>",
+				"Go to definition in vertical split."
+			)
+			map(
+				"n",
+				"gT",
+				":vsplit | lua require('telescope.builtin').lsp_type_definitions()<CR>",
+				"Go to type definition in vertical split."
+			)
 			-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 			-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 			-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
