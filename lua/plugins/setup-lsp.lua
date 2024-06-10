@@ -35,6 +35,12 @@ local function config_function()
 			)
 			map(
 				"n",
+				"gR",
+				split_and_execute(require("telescope.builtin").lsp_references),
+				"Go to references in new split."
+			)
+			map(
+				"n",
 				"gT",
 				split_and_execute(require("telescope.builtin").lsp_type_definitions),
 				"Go to type definition in new split."
