@@ -53,7 +53,7 @@ local function config_function()
 				{
 					"buffers",
 					show_modified_status = true,
-					mode = 0,
+					mode = 2,
 					max_length = vim.o.columns * 0.8,
 					buffers_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
