@@ -133,4 +133,4 @@ nnoremap <silent> <Tab>9 :tabn 9<CR>
 " for closing things
 nnoremap <silent> <C-d>b :bd<CR>
 nnoremap <silent> <C-d>v :q<CR>
-nnoremap <silent> <C-d>t :tabclose<CR>
+nnoremap <silent> <Tab>q :tabclose<CR>
