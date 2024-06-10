@@ -4,7 +4,7 @@ local function config_function()
 		desc = "LSP actions",
 		callback = function(event)
 			-- function for easy map
-			local map = function(mode, keys, func, desc)
+			local function map(mode, keys, func, desc)
 				vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 			end
 
