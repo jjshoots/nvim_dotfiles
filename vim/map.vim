@@ -108,17 +108,27 @@ endfunction
 nnoremap <silent> <leader>t :call <SID>OpenTerminalTab()<CR>
 nnoremap <silent> <C-t> :tabnew<CR>:Telescope find_files<CR>
 
+" for quickly jumping to the n-th buffer
+nnoremap <silent> <leader>1 :LualineBuffersJump 1<CR>
+nnoremap <silent> <leader>2 :LualineBuffersJump 2<CR>
+nnoremap <silent> <leader>3 :LualineBuffersJump 3<CR>
+nnoremap <silent> <leader>4 :LualineBuffersJump 4<CR>
+nnoremap <silent> <leader>5 :LualineBuffersJump 5<CR>
+nnoremap <silent> <leader>6 :LualineBuffersJump 6<CR>
+nnoremap <silent> <leader>7 :LualineBuffersJump 7<CR>
+nnoremap <silent> <leader>8 :LualineBuffersJump 8<CR>
+nnoremap <silent> <leader>9 :LualineBuffersJump 9<CR>
+
 " for quickly jumping to the n-th tab
-" nnoremap <silent> <leader>1 :LualineBuffersJump 1<CR>
-nnoremap <silent> <leader>1 :tabn 1<CR>
-nnoremap <silent> <leader>2 :tabn 2<CR>
-nnoremap <silent> <leader>3 :tabn 3<CR>
-nnoremap <silent> <leader>4 :tabn 4<CR>
-nnoremap <silent> <leader>5 :tabn 5<CR>
-nnoremap <silent> <leader>6 :tabn 6<CR>
-nnoremap <silent> <leader>7 :tabn 7<CR>
-nnoremap <silent> <leader>8 :tabn 8<CR>
-nnoremap <silent> <leader>9 :tabn 9<CR>
+nnoremap <silent> <Tab>1 :tabn 1<CR>
+nnoremap <silent> <Tab>2 :tabn 2<CR>
+nnoremap <silent> <Tab>3 :tabn 3<CR>
+nnoremap <silent> <Tab>4 :tabn 4<CR>
+nnoremap <silent> <Tab>5 :tabn 5<CR>
+nnoremap <silent> <Tab>6 :tabn 6<CR>
+nnoremap <silent> <Tab>7 :tabn 7<CR>
+nnoremap <silent> <Tab>8 :tabn 8<CR>
+nnoremap <silent> <Tab>9 :tabn 9<CR>
 
 " for closing things
 nnoremap <silent> <C-d>b :bd<CR>
