@@ -51,11 +51,11 @@ local function config_function()
 		tabline = {
 			lualine_a = {
 				{
-					"tabs",
+					"buffers",
 					show_modified_status = true,
 					mode = 0,
 					max_length = vim.o.columns * 0.8,
-					tabs_color = {
+					buffers_color = {
 						inactive = { bg = colors.black, fg = colors.lightgray },
 					},
 					symbols = {
@@ -70,12 +70,12 @@ local function config_function()
 			lualine_x = {},
 			lualine_y = {
 				{
-					"buffers",
+					"tabs",
 					show_modified_status = true,
 					mode = 0,
 					max_length = vim.o.columns * 0.8,
-					buffers_color = {
-						active = { bg = colors.lightgray, fg = colors.black },
+					tabs_color = {
+						active = { bg = colors.celadon, fg = colors.black },
 						inactive = { bg = colors.black, fg = colors.lightgray },
 					},
 					symbols = {
