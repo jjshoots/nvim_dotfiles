@@ -36,28 +36,28 @@ local function config_function()
 	})
 
 	-- buffer picker and deleter
-	-- vim.keymap.set("n", "<M-b>", function()
-	-- 	require("telescope.builtin").buffers({
-	-- 		initial_mode = "insert",
-	-- 		attach_mappings = function(prompt_bufnr, map)
-	-- 			local delete_buf = function()
-	-- 				local current_picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
-	-- 				current_picker:delete_selection(function(selection)
-	-- 					vim.api.nvim_buf_delete(selection.bufnr, { force = true })
-	-- 				end)
-	-- 			end
+	vim.keymap.set("n", "<M-b>", function()
+		require("telescope.builtin").buffers({
+			initial_mode = "insert",
+			attach_mappings = function(prompt_bufnr, map)
+				local delete_buf = function()
+					local current_picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+					current_picker:delete_selection(function(selection)
+						vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+					end)
+				end
 
-	-- 			map("i", "<C-d>", delete_buf)
-	-- 			map("n", "<C-d>", delete_buf)
+				map("i", "<C-d>", delete_buf)
+				map("n", "<C-d>", delete_buf)
 
-	-- 			return true
-	-- 		end,
-	-- 	}, {
-	-- 		sort_lastused = true,
-	-- 		sort_mru = true,
-	-- 		theme = "dropdown",
-	-- 	})
-	-- end)
+				return true
+			end,
+		}, {
+			sort_lastused = true,
+			sort_mru = true,
+			theme = "dropdown",
+		})
+	end)
 end
 
 return {
