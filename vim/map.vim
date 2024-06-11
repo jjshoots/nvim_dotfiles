@@ -138,7 +138,7 @@ fun! s:CloseBuffersOrQuit()
     qall!
   endif
 endfunction
-nnoremap <silent> <C-d> :call <SIC>CloseBuffersOrQuit()<CR>
+nnoremap <silent> <C-d> :call <SID>CloseBuffersOrQuit()<CR>
 
 " close tabs or quit nvim
 fun! s:CloseTabsOrQuit()
