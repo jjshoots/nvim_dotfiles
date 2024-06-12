@@ -5,6 +5,9 @@ vim.o.scrolloff = 8
 -- no sounds please
 vim.o.errorbells = false
 
+-- infinite timeout
+vim.o.timeoutlen = 5000
+
 -- numbering
 vim.wo.number = true
 vim.wo.relativenumber = true
