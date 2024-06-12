@@ -16,13 +16,13 @@ local function config_function()
 				end
 			end
 
-      -- open new tab before doing things function
-      local function tab_and_execute(telescope_function)
-        return function()
-          vim.cmd("tab split")
-          telescope_function()
-        end
-      end
+			-- open new tab before doing things function
+			local function tab_and_execute(telescope_function)
+				return function()
+					vim.cmd("tab split")
+					telescope_function()
+				end
+			end
 
 			-- keybindings
 			map("i", "<C-s>", vim.lsp.buf.signature_help, "Signature help.")
