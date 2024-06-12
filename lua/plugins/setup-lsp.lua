@@ -55,19 +55,19 @@ local function config_function()
 			)
 			map(
 				"n",
-				"gnd",
+				"g<Tab>d",
 				tab_and_execute(require("telescope.builtin").lsp_definitions),
 				"Go to definition in new tab."
 			)
 			map(
 				"n",
-				"gnr",
+				"g<Tab>r",
 				tab_and_execute(require("telescope.builtin").lsp_references),
 				"Go to references in new tab."
 			)
 			map(
 				"n",
-				"gnt",
+				"g<Tab>t",
 				tab_and_execute(require("telescope.builtin").lsp_type_definitions),
 				"Go to type definition in new tab."
 			)
