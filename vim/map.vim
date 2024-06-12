@@ -5,6 +5,7 @@ let mapleader = " "
 nnoremap <backspace> <nop>
 nnoremap <space> <nop>
 nnoremap <CR> <nop>
+nnoremap <Tab> <nop>
 
 " disable scrolling, use the mouse
 nnoremap <C-u> <nop>
