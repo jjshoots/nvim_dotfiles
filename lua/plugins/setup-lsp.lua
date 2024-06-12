@@ -16,6 +16,14 @@ local function config_function()
 				end
 			end
 
+      -- open new tab before doing things function
+      local function tab_and_execute(telescope_function)
+        return function()
+          vim.cmd("tabnew")
+          telescope_function()
+        end
+      end
+
 			-- keybindings
 			map("i", "<C-s>", vim.lsp.buf.signature_help, "Signature help.")
 			map("n", "<M-[>", vim.diagnostic.goto_prev, "Previous diagnostics.")
@@ -44,6 +52,24 @@ local function config_function()
 				"gT",
 				split_and_execute(require("telescope.builtin").lsp_type_definitions),
 				"Go to type definition in new split."
+			)
+			map(
+				"n",
+				"gnd",
+				tab_and_execute(require("telescope.builtin").lsp_definitions),
+				"Go to definition in new tab."
+			)
+			map(
+				"n",
+				"gnr",
+				tab_and_execute(require("telescope.builtin").lsp_references),
+				"Go to references in new tab."
+			)
+			map(
+				"n",
+				"gnt",
+				tab_and_execute(require("telescope.builtin").lsp_type_definitions),
+				"Go to type definition in new tab."
 			)
 
 			-- Map the function to the key combinations
