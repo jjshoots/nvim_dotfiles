@@ -7,5 +7,5 @@ return {
 	keys = {
 		{ "<leader>m", "<Plug>(quickhl-manual-this)", mode = "n", noremap = true, silent = true },
 		{ "<leader>M", "<Plug>(quickhl-manual-reset)", mode = "n", noremap = true, silent = true },
-  },
+	},
 }
