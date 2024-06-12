@@ -19,7 +19,7 @@ local function config_function()
       -- open new tab before doing things function
       local function tab_and_execute(telescope_function)
         return function()
-          vim.cmd("tabnew")
+          vim.cmd("tab split")
           telescope_function()
         end
       end
