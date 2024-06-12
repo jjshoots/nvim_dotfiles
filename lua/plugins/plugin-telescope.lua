@@ -11,6 +11,7 @@ local function config_function()
 				i = {
 					["<S-CR>"] = "select_vertical",
 					["<C-CR>"] = "select_horizontal",
+					["<M-CR>"] = "select_tab",
 					["<C-j>"] = "move_selection_next",
 					["<C-k>"] = "move_selection_previous",
 					["<M-p>"] = "close",
@@ -21,6 +22,7 @@ local function config_function()
 				n = {
 					["<S-CR>"] = "select_vertical",
 					["<C-CR>"] = "select_horizontal",
+					["<M-CR>"] = "select_tab",
 					["<M-p>"] = "close",
 					["<M-q>"] = "close",
 					["<M-u>"] = "close",
