@@ -8,20 +8,24 @@ local function config_function()
 				vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 			end
 
-			-- split before doing things function
-			local function split_and_execute(telescope_function)
-				return function()
+			-- automappings for vsplit, hsplit, newtab
+			local function split_tab_map(telescope_function, key, definition)
+				local vsplit_keymap = string.format("g%s", string.upper(key))
+				local hsplit_keymap = string.format("g<C-%s>", key)
+				local newtab_keymap = string.format("g<M-%s>", key)
+
+				map("n", vsplit_keymap, function()
 					vim.cmd("vsplit")
 					telescope_function()
-				end
-			end
-
-			-- open new tab before doing things function
-			local function tab_and_execute(telescope_function)
-				return function()
+				end, string.format("Go to %s in new vertical split.", definition))
+				map("n", hsplit_keymap, function()
+					vim.cmd("split")
+					telescope_function()
+				end, string.format("Go to %s in new horizontal split.", definition))
+				map("n", newtab_keymap, function()
 					vim.cmd("tab split")
 					telescope_function()
-				end
+				end, string.format("Go to %s in new tab.", definition))
 			end
 
 			-- keybindings
@@ -35,42 +39,9 @@ local function config_function()
 			map("n", "gd", require("telescope.builtin").lsp_definitions, "Go to definition.")
 			map("n", "gr", require("telescope.builtin").lsp_references, "Show all references.")
 			map("n", "gt", require("telescope.builtin").lsp_type_definitions, "Go to typedef.")
-			map(
-				"n",
-				"gD",
-				split_and_execute(require("telescope.builtin").lsp_definitions),
-				"Go to definition in new split."
-			)
-			map(
-				"n",
-				"gR",
-				split_and_execute(require("telescope.builtin").lsp_references),
-				"Go to references in new split."
-			)
-			map(
-				"n",
-				"gT",
-				split_and_execute(require("telescope.builtin").lsp_type_definitions),
-				"Go to type definition in new split."
-			)
-			map(
-				"n",
-				"g<Tab>d",
-				tab_and_execute(require("telescope.builtin").lsp_definitions),
-				"Go to definition in new tab."
-			)
-			map(
-				"n",
-				"g<Tab>r",
-				tab_and_execute(require("telescope.builtin").lsp_references),
-				"Go to references in new tab."
-			)
-			map(
-				"n",
-				"g<Tab>t",
-				tab_and_execute(require("telescope.builtin").lsp_type_definitions),
-				"Go to type definition in new tab."
-			)
+			split_tab_map(require("telescope.builtin").lsp_definitions, "d", "definitions")
+			split_tab_map(require("telescope.builtin").lsp_references, "r", "definitions")
+			split_tab_map(require("telescope.builtin").lsp_type_definitions, "t", "definitions")
 
 			-- Map the function to the key combinations
 			-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
