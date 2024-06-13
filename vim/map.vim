@@ -60,6 +60,9 @@ vnoremap <A-d> ygvd
 vnoremap > >gv
 vnoremap < <gv
 
+" for yanking in visual mode
+vnoremap y ygv
+
 " move section up and down HEK YES
 vnoremap <silent> J :m '>+1<CR>gv
 vnoremap <silent> K :m '<-2<CR>gv
