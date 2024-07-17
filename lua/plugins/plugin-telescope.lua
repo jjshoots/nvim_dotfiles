@@ -7,6 +7,10 @@ local function config_function()
 	-- telescope itself
 	require("telescope").setup({
 		defaults = {
+			layout_config = {
+				width = 0.92,
+				height = 0.96,
+			},
 			mappings = {
 				i = {
 					["<S-CR>"] = "select_vertical",
