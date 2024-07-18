@@ -1,8 +1,3 @@
-local function toggle_lsp_lines()
-	-- alias otherwise we cannot use very lazy
-	require("lsp_lines").toggle()
-end
-
 local function config_function()
 	vim.cmd([[
     hi DiagnosticError guifg=#DA4A4A guibg=#2C202B
@@ -27,6 +22,12 @@ return {
 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 	config = config_function,
 	keys = {
-		{ "<leader>U", toggle_lsp_lines, mode = "n", noremap = true, silent = true },
+		{
+		  "<leader>U",
+		  function() require("lsp_lines").toggle() end,
+		  mode = "n",
+		  noremap = true,
+		  silent = true
+		},
 	},
 }
