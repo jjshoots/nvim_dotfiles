@@ -1,23 +1,20 @@
+local function toggle_lsp_lines()
+  -- alias otherwise we cannot use very lazy
+  require("lsp_lines").toggle()
+end
+
 local function config_function()
-	require("lsp_lines").setup()
-	vim.diagnostic.config({
-		-- NOTE: Enable plugin
-		virtual_lines = true,
-		-- NOTE: Disable default regular virtual text diagnostics.
-		virtual_text = false,
-		vim.keymap.set(
-		  "n",
-		  "<Leader>u",
-		  require("lsp_lines").toggle,
-		  { desc = "Toggle lsp_lines" },
-		),
-	})
+  require("lsp_lines").setup()
+  vim.diagnostic.config {
+    virtual_lines = true,
+  }
+  require("lsp_lines").toggle()
 end
 
 return {
 	"maan2003/lsp_lines.nvim",
 	config = config_function,
-	keys = {
-		"<leader>u",
-	},
+  keys = {
+		{ "<leader>u", toggle_lsp_lines, mode = "n", noremap = true, silent = true },
+  },
 }
