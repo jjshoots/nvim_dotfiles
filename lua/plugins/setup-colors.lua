@@ -35,6 +35,17 @@ return {
 
       " highlight colour on yank
       hi HighlightOnYank gui=underline guisp=#FFCF40
+
+      " highlights for diagnostics,
+      " these must be here because neotree messes with it somehow
+      hi DiagnosticError guifg=#DA4A4A guibg=#2C202B
+      hi DiagnosticWarn guifg=#E1AE68 guibg=#4A4137
+      hi DiagnosticInfo guifg=#1B937E guibg=#1b2b33
+      hi DiagnosticHint guifg=#088F8F guibg=#023020
+      hi link DiagnosticVirtualTextError DiagnosticError
+      hi link DiagnosticVirtualTextWarn DiagnosticWarn
+      hi link DiagnosticVirtualTextInfo DiagnosticInfo
+      hi link DiagnosticVirtualTextHint DiagnosticHint
       ]])
 	end,
 }
