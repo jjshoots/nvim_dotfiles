@@ -8,5 +8,7 @@ end
 return {
 	"tpope/vim-commentary",
 	config = config_function,
-	event = "VeryLazy",
+  keys = {
+    "<C-/>",
+  }
 }
