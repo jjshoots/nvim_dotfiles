@@ -8,7 +8,8 @@ end
 return {
 	"tpope/vim-commentary",
 	config = config_function,
-  keys = {
-    "<C-/>",
-  }
+	keys = {
+		{ "<C-/>", mode = "n" },
+		{ "<C-/>", mode = "v" },
+	},
 }

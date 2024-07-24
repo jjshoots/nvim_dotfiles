@@ -22,11 +22,13 @@ return {
 	config = config_function,
 	keys = {
 		{
-		  "<leader>U",
-		  function() require("lsp_lines").toggle() end,
-		  mode = "n",
-		  noremap = true,
-		  silent = true
+			"<leader>U",
+			function()
+				require("lsp_lines").toggle()
+			end,
+			mode = "n",
+			noremap = true,
+			silent = true,
 		},
 	},
 }
