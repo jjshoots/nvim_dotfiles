@@ -36,5 +36,5 @@ end
 return {
 	"lukas-reineke/indent-blankline.nvim",
 	config = config_function,
-	event = "VeryLazy",
+	event = "BufReadPost",
 }
