@@ -5,5 +5,5 @@ end
 return {
 	"lewis6991/gitsigns.nvim",
 	config = config_function,
-	event = "BufReadPost",
+	event = "VeryLazy",
 }
