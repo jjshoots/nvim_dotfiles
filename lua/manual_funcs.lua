@@ -5,4 +5,3 @@ local function copy_filepath_to_clipboard()
 	print("File path copied: " .. filepath)
 end
 vim.api.nvim_create_user_command("CopyFilePath", copy_filepath_to_clipboard, {})
-vim.api.nvim_create_user_command("CFP", copy_filepath_to_clipboard, {})
