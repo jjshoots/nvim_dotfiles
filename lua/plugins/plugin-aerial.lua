@@ -1,10 +1,25 @@
 local function config_function()
 	require("aerial").setup({})
+	require("telescope").setup({
+		extensions = {
+			aerial = {
+				-- Display symbols as <root>.<parent>.<symbol>
+				show_nesting = {
+					["_"] = true, -- This key will be the default
+				},
+				nesting_symbol = "│ ",
+				nesting_symbol_length = 2,
+				-- Available modes: symbols, lines, both
+				show_columns = "both",
+			},
+		},
+	})
 	require("telescope").load_extension("aerial")
 end
 
 return {
-	"stevearc/aerial.nvim",
+	-- TODO: update this when https://github.com/stevearc/aerial.nvim/pull/395 gets merged
+	"jjshoots/aerial.nvim",
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 	},
