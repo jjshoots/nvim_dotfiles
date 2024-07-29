@@ -45,7 +45,7 @@ vim.o.foldenable = false
 -- no need backup cause we use undodir
 vim.o.backup = false
 vim.o.swapfile = false
-vim.o.undodir = vim.fn.expand("~/.nvim/undodir")
+vim.o.undodir = vim.fn.expand("~/.local/share/nvim/undodir")
 vim.o.undofile = true
 
 -- hide status cause we using powerline
