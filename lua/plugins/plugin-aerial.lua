@@ -7,8 +7,8 @@ local function config_function()
 				show_nesting = {
 					["_"] = true, -- This key will be the default
 				},
-				nesting_symbol = "│ ",
-				nesting_symbol_length = 2,
+				nesting_symbol = " .",
+				nesting_symbol_length = 0,
 				-- Available modes: symbols, lines, both
 				show_columns = "both",
 			},
