@@ -83,7 +83,9 @@ local function config_function()
 
 	-- setup the servers
 	require("mason").setup({})
-	require("mason-lspconfig").setup({})
+	require("mason-lspconfig").setup({
+		ensure_installed = { "lua_ls", "pyright" },
+	})
 	require("mason-lspconfig").setup_handlers({
 		function(server_name)
 			require("lspconfig")[server_name].setup({
