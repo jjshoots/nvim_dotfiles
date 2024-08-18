@@ -7,10 +7,15 @@ local function config_function()
 				show_nesting = {
 					["_"] = true, -- This key will be the default
 				},
-				nesting_symbol = " .",
-				nesting_symbol_length = 0,
 				-- Available modes: symbols, lines, both
 				show_columns = "both",
+				format_symbol = function(symbol_path, filetype)
+					if #symbol_path == 1 then
+						return symbol_path[#symbol_path]
+					else
+						return string.rep(" ", #symbol_path - 1) .. "." .. symbol_path[#symbol_path]
+					end
+				end,
 			},
 		},
 	})
@@ -18,8 +23,7 @@ local function config_function()
 end
 
 return {
-	-- TODO: update this when https://github.com/stevearc/aerial.nvim/pull/395 gets merged
-	"jjshoots/aerial.nvim",
+	"stevearc/aerial.nvim",
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 	},
