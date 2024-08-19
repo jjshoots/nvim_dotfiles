@@ -85,9 +85,9 @@ local function config_function()
 	require("mason").setup({})
 	require("mason-lspconfig").setup({
 		ensure_installed = {
-		  "lua_ls",
-		  "pyright",
-		  "typos_lsp",
+			"lua_ls",
+			"pyright",
+			"typos_lsp",
 		},
 	})
 	require("mason-lspconfig").setup_handlers({
