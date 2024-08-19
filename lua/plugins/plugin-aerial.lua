@@ -10,12 +10,6 @@ local function config_function()
 				-- Available modes: symbols, lines, both
 				show_columns = "both",
 				format_symbol = function(symbol_path, filetype)
-					-- handle json and yaml specially
-					if filetype == "json" or filetype == "yaml" then
-						return table.concat(symbol_path, ".")
-					end
-
-					-- everything else
 					if #symbol_path == 1 then
 						return symbol_path[#symbol_path]
 					else
