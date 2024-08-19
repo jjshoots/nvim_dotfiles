@@ -22,6 +22,15 @@ local function config_function()
 					["<M-q>"] = "close",
 					["<M-u>"] = "close",
 					["<M-t>"] = "close",
+          ["<C-y>"] = function()
+            local entry = require("telescope.actions.state").get_selected_entry()
+            local cb_opts = vim.opt.clipboard:get()
+            if vim.tbl_contains(cb_opts, "unnamed") then vim.fn.setreg("*", entry.path) end
+            if vim.tbl_contains(cb_opts, "unnamedplus") then
+              vim.fn.setreg("+", entry.path)
+            end
+            vim.fn.setreg("", entry.path)
+          end,
 				},
 				n = {
 					["<S-CR>"] = "select_vertical",
