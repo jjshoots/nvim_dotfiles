@@ -24,6 +24,13 @@ local function config_function()
 			dotfiles = true,
 		},
 		popup_border_style = "rounded",
+    window ={
+      mappings = {
+        ["<S-CR>"] = "open_vsplit",
+        ["<C-CR>"] = "open_split",
+        ["<M-CR>"] = "open_tabnew",
+      }
+    }
 	})
 end
 
