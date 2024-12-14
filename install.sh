@@ -6,7 +6,7 @@ sudo snap install nvim --classic
 
 # Install dependencies
 sudo apt update
-sudo apt install git ripgrep fd-find npm --yes
+sudo apt install git ripgrep fd-find npm curl --yes
 
 # Install neovim
 sudo snap install neovim --classic
