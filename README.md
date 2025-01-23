@@ -1,8 +1,14 @@
 # To do everything at once
 Note that this will do everything except install custom fonts
 
+Linux:
 ```sh
-curl -s https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install.sh | bash -s
+curl -fsSL https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install_linux.sh | bash -s
+```
+
+MacOS:
+```
+curl -fsSL https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install_macos.sh | bash
 ```
 
 # Take me through the steps
