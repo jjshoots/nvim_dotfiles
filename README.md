@@ -3,7 +3,7 @@ Note that this will do everything except install custom fonts
 
 Linux:
 ```sh
-curl -fsSL https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install_linux.sh | bash -s
+curl -fsSL https://raw.githubusercontent.com/jjshoots/nvim_dotfiles/master/install.sh | bash -s
 ```
 
 MacOS:
