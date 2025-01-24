@@ -58,18 +58,34 @@ vim.o.mouse = "a"
 vim.o.diffopt = vim.o.diffopt .. ",vertical"
 vim.wo.signcolumn = "yes"
 
--- set up clipboard integration
-vim.api.nvim_set_var("clipboard", {
-	copy = {
-		["+"] = "xsel --clipboard --input",
-		["*"] = "xsel --clipboard --input",
-	},
-	paste = {
-		["+"] = "xsel --clipboard --output",
-		["*"] = "xsel --clipboard --output",
-	},
-	cache_enabled = 1,
-})
+-- set up clipboard integration based on the operating system
+if (vim.fn.has('macunix') == 1) then
+  -- macOS clipboard setup
+  vim.api.nvim_set_var("clipboard", {
+    copy = {
+      ["+"] = "pbcopy",
+      ["*"] = "pbcopy",
+    },
+    paste = {
+      ["+"] = "pbpaste",
+      ["*"] = "pbpaste",
+    },
+    cache_enabled = 1,
+  })
+else
+  -- linux clipboard setup (using xsel)
+  vim.api.nvim_set_var("clipboard", {
+    copy = {
+      ["+"] = "xsel --clipboard --input",
+      ["*"] = "xsel --clipboard --input",
+    },
+    paste = {
+      ["+"] = "xsel --clipboard --output",
+      ["*"] = "xsel --clipboard --output",
+    },
+    cache_enabled = 1,
+  })
+end
 
 -- use the system clipboard by default
 vim.o.clipboard = "unnamedplus"
