@@ -77,6 +77,11 @@ nnoremap <C-i> <C-o>
 " honestly this is the better save
 nnoremap <silent> <C-s> :w!<CR>
 
+" remap for quickly grabbing word under cursor and
+" applying to search without moving
+nnoremap <A-w> *N
+vnoremap <A-w> y?<C-R>+<CR>N/<Esc>gv
+
 " mapping for folding
 nnoremap <leader>z za
 
