@@ -133,15 +133,13 @@ nnoremap <silent> <Tab>9 :tabn 9<CR>
 
 " remove from quickfix list (x for quickfiX)
 " remove all files
-nnoremap <silent> <leader>xD :cexpr filter(getqflist(), {_, v -> v.bufnr != bufnr('%')})<CR>
-" remove current file
-nnoremap <silent> <leader>xd :cexpr filter(getqflist(), {_, v -> v.bufnr != winbufnr(0)})<CR>
+nnoremap <silent> <C-q>d :cexpr filter(getqflist(), {_, v -> v.bufnr != bufnr('%')})<CR>
 " next item
-nnoremap <silent> <leader>xn :cnext<CR>
-nnoremap <silent> <leader>xj :cnext<CR>
+nnoremap <silent> <C-q>n :cnext<CR>
+nnoremap <silent> <C-q>j :cnext<CR>
 " previous item
-nnoremap <silent> <leader>xp :cprev<CR>
-nnoremap <silent> <leader>xk :cprev<CR>
+nnoremap <silent> <C-q>p :cprev<CR>
+nnoremap <silent> <C-q>k :cprev<CR>
 
 " close buffers or quit nvim
 fun! s:CloseBuffersOrQuit()
