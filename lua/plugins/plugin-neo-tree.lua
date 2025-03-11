@@ -1,4 +1,5 @@
 local function config_function()
+
 	-- highlight group for neotree specifically
 	vim.cmd([[
     hi! link NeoTreeNormal Normal
@@ -8,6 +9,17 @@ local function config_function()
     hi! link NeotreeFloatBorder FloatBorder
     hi! link NeoTreeEndOfBuffer EndOfBuffer
   ]])
+
+  local function yank_filepath(state)
+    -- yanks the full filepath of the current file
+    local node = state.tree:get_node()  -- Get the current node
+    local path = node.path  -- Extract the file path
+
+    if path then
+      vim.fn.setreg("+", path)  -- Copy to system clipboard
+      vim.notify("File path copied: " .. path, vim.log.levels.INFO)  -- Notify user
+    end
+  end
 
 	-- setup with some options
 	require("neo-tree").setup({
@@ -29,6 +41,7 @@ local function config_function()
         ["<S-CR>"] = "open_vsplit",
         ["<C-CR>"] = "open_split",
         ["<M-CR>"] = "open_tabnew",
+        ["<C-y>"] = yank_filepath,
       }
     }
 	})
