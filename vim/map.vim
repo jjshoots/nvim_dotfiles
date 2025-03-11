@@ -131,6 +131,9 @@ nnoremap <silent> <Tab>7 :tabn 7<CR>
 nnoremap <silent> <Tab>8 :tabn 8<CR>
 nnoremap <silent> <Tab>9 :tabn 9<CR>
 
+" remove from quickfix list
+nnoremap <silent> <leader>dq :cexpr filter(getqflist(), {_, v -> v.bufnr != bufnr('%')})<CR>
+
 " close buffers or quit nvim
 fun! s:CloseBuffersOrQuit()
   if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
