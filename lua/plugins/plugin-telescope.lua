@@ -5,6 +5,7 @@ local function config_function()
     ]])
 
 	-- telescope itself
+  local actions = require("telescope.actions")
 	require("telescope").setup({
 		defaults = {
 			layout_config = {
@@ -13,15 +14,9 @@ local function config_function()
 			},
 			mappings = {
 				i = {
-					["<S-CR>"] = "select_vertical",
-					["<C-CR>"] = "select_horizontal",
-					["<M-CR>"] = "select_tab",
-					["<C-j>"] = "move_selection_next",
-					["<C-k>"] = "move_selection_previous",
-					["<M-p>"] = "close",
-					["<M-q>"] = "close",
-					["<M-u>"] = "close",
-					["<M-t>"] = "close",
+					["<C-j>"] = actions.move_selection_next,
+					["<C-k>"] = actions.move_selection_previous,
+					["<C-q>"] = actions.smart_send_to_qflist,
 					["<C-y>"] = function()
 						local entry = require("telescope.actions.state").get_selected_entry()
 						local cb_opts = vim.opt.clipboard:get()
@@ -35,13 +30,6 @@ local function config_function()
 					end,
 				},
 				n = {
-					["<S-CR>"] = "select_vertical",
-					["<C-CR>"] = "select_horizontal",
-					["<M-CR>"] = "select_tab",
-					["<M-p>"] = "close",
-					["<M-q>"] = "close",
-					["<M-u>"] = "close",
-					["<M-t>"] = "close",
 					["q"] = "close",
 				},
 			},
@@ -89,6 +77,7 @@ return {
 		{ "<M-b>" },
 		{ "<M-p>", "<cmd>Telescope find_files<cr>", mode = "n", noremap = true, silent = true },
 		{ "<M-q>", "<cmd>Telescope live_grep<cr>", mode = "n", noremap = true, silent = true },
+		{ "<M-x>", "<cmd>Telescope quickfix<cr>", mode = "n", noremap = true, silent = true },
 		{
 			"<leader>p",
 			"<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
