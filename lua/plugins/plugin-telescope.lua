@@ -14,6 +14,9 @@ local function config_function()
 			},
 			mappings = {
 				i = {
+					["<S-CR>"] = actions.select_vertical,
+					["<C-CR>"] = actions.select_horizontal,
+					["<M-CR>"] = actions.select_tab,
 					["<C-j>"] = actions.move_selection_next,
 					["<C-k>"] = actions.move_selection_previous,
 					["<C-q>"] = actions.smart_send_to_qflist,
@@ -30,6 +33,9 @@ local function config_function()
 					end,
 				},
 				n = {
+					["<S-CR>"] = actions.select_vertical,
+					["<C-CR>"] = actions.select_horizontal,
+					["<M-CR>"] = actions.select_tab,
 					["q"] = "close",
 				},
 			},
