@@ -131,7 +131,7 @@ nnoremap <silent> <Tab>7 :tabn 7<CR>
 nnoremap <silent> <Tab>8 :tabn 8<CR>
 nnoremap <silent> <Tab>9 :tabn 9<CR>
 
-" remove from quickfix list (x for quickfiX)
+" remove from quickfix list
 " remove all files
 nnoremap <silent> <C-q>d :cexpr filter(getqflist(), {_, v -> v.bufnr != bufnr('%')})<CR>
 " next item
