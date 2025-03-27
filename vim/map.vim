@@ -133,7 +133,9 @@ nnoremap <silent> <Tab>9 :tabn 9<CR>
 
 " remove from quickfix list
 " remove all files
-nnoremap <silent> <C-q>d :cexpr filter(getqflist(), {_, v -> v.bufnr != bufnr('%')})<CR>
+nnoremap <silent> <C-q>d <Cmd>
+  \ cexpr filter(getqflist(), {_, v -> v.bufnr != bufnr('%')}) <Bar>
+  \ echom "Quickfix list cleared."<CR>
 " next item
 nnoremap <silent> <C-q>n :cnext<CR>
 nnoremap <silent> <C-q>j :cnext<CR>
