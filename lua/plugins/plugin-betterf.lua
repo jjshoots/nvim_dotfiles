@@ -41,7 +41,7 @@ return {
 	"jjshoots/betterf.nvim",
 	config = config_function,
 	keys = {
-		"<leader>f",
-		"<leader>F",
+		{ "<leader>f", mode = { "n", "o", "v" } },
+		{ "<leader>F", mode = { "n", "o", "v" } },
 	},
 }
