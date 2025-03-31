@@ -83,8 +83,8 @@ return {
 	keys = {
 		{ "<M-b>" },
 		{ "<M-p>", "<cmd>Telescope find_files<cr>", mode = "n", noremap = true, silent = true },
-		{ "<M-q>", "<cmd>Telescope live_grep<cr>", mode = "n", noremap = true, silent = true },
-		{ "<M-x>", "<cmd>Telescope quickfix<cr>", mode = "n", noremap = true, silent = true },
+		{ "<M-/>", "<cmd>Telescope live_grep<cr>", mode = "n", noremap = true, silent = true },
+		{ "<M-q>", "<cmd>Telescope quickfix<cr>", mode = "n", noremap = true, silent = true },
 		{
 			"<leader>p",
 			"<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
@@ -93,7 +93,7 @@ return {
 			silent = true,
 		},
 		{
-			"<leader>q",
+			"<leader>/",
 			"<cmd>Telescope live_grep hidden=true no_ignore=true<cr>",
 			mode = "n",
 			noremap = true,
