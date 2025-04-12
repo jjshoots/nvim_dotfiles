@@ -5,8 +5,8 @@ local function config_function()
     local label1 = entry1.completion_item.label
     local label2 = entry2.completion_item.label
 
-    local is_arg1 = label1:match(".+=$")
-    local is_arg2 = label2:match(".+=$")
+    local is_arg1 = label1:sub(-1) == '='
+    local is_arg2 = label2:sub(-1) == '='
 
     if is_arg1 and not is_arg2 then
       return true
