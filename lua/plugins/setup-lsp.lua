@@ -89,21 +89,22 @@ local function config_function()
 			"pyright",
 			"typos_lsp",
 		},
-	})
-	require("mason-lspconfig").setup_handlers({
-		function(server_name)
-			require("lspconfig")[server_name].setup({
-				capabilities = capabilities,
-			})
-		end,
+    handlers = {
+      -- Default handler for all servers
+      function(server_name)
+        require("lspconfig")[server_name].setup({
+          capabilities = capabilities,
+        })
+      end,
+    }
 	})
 end
 
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 		"nvim-telescope/telescope.nvim",
 	},
