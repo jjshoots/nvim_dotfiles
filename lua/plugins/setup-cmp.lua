@@ -1,19 +1,18 @@
 local function config_function()
+	-- Comparator for preferring named arguments over other things
+	local function prefer_named_arguments(entry1, entry2)
+		local label1 = entry1.completion_item.label
+		local label2 = entry2.completion_item.label
 
-  -- Comparator for preferring named arguments over other things
-  local function prefer_named_arguments(entry1, entry2)
-    local label1 = entry1.completion_item.label
-    local label2 = entry2.completion_item.label
+		local is_arg1 = label1:sub(-1) == "="
+		local is_arg2 = label2:sub(-1) == "="
 
-    local is_arg1 = label1:sub(-1) == '='
-    local is_arg2 = label2:sub(-1) == '='
-
-    if is_arg1 and not is_arg2 then
-      return true
-    elseif not is_arg1 and is_arg2 then
-      return false
-    end
-  end
+		if is_arg1 and not is_arg2 then
+			return true
+		elseif not is_arg1 and is_arg2 then
+			return false
+		end
+	end
 
 	local cmp = require("cmp")
 	cmp.setup({
@@ -56,7 +55,7 @@ local function config_function()
 		}),
 		sorting = {
 			comparators = {
-        prefer_named_arguments,
+				prefer_named_arguments,
 				require("cmp-under-comparator").under,
 				cmp.config.compare.score,
 				cmp.config.compare.locality,

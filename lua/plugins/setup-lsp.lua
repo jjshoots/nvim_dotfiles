@@ -89,14 +89,14 @@ local function config_function()
 			"pyright",
 			"typos_lsp",
 		},
-    handlers = {
-      -- Default handler for all servers
-      function(server_name)
-        require("lspconfig")[server_name].setup({
-          capabilities = capabilities,
-        })
-      end,
-    }
+		handlers = {
+			-- Default handler for all servers
+			function(server_name)
+				require("lspconfig")[server_name].setup({
+					capabilities = capabilities,
+				})
+			end,
+		},
 	})
 end
 

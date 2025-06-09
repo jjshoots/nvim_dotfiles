@@ -5,7 +5,7 @@ local function config_function()
     ]])
 
 	-- telescope itself
-  local actions = require("telescope.actions")
+	local actions = require("telescope.actions")
 	require("telescope").setup({
 		defaults = {
 			layout_config = {
@@ -20,18 +20,18 @@ local function config_function()
 					["<C-j>"] = actions.move_selection_next,
 					["<C-k>"] = actions.move_selection_previous,
 					["<C-q>"] = actions.smart_send_to_qflist,
-          ["<C-y>"] = function()
-              local entry = require("telescope.actions.state").get_selected_entry()
-              local cb_opts = vim.opt.clipboard:get()
-              if vim.tbl_contains(cb_opts, "unnamed") then
-                  vim.fn.setreg("*", entry.path)
-              end
-              if vim.tbl_contains(cb_opts, "unnamedplus") then
-                  vim.fn.setreg("+", entry.path)
-              end
-              vim.fn.setreg("", entry.path)
-              print("File path copied: " .. entry.path)  -- Echo out the copied file path
-          end,
+					["<C-y>"] = function()
+						local entry = require("telescope.actions.state").get_selected_entry()
+						local cb_opts = vim.opt.clipboard:get()
+						if vim.tbl_contains(cb_opts, "unnamed") then
+							vim.fn.setreg("*", entry.path)
+						end
+						if vim.tbl_contains(cb_opts, "unnamedplus") then
+							vim.fn.setreg("+", entry.path)
+						end
+						vim.fn.setreg("", entry.path)
+						print("File path copied: " .. entry.path) -- Echo out the copied file path
+					end,
 				},
 				n = {
 					["<S-CR>"] = actions.select_vertical,
@@ -41,7 +41,7 @@ local function config_function()
 				},
 			},
 			file_ignore_patterns = {
-        "node_modules/",
+				"node_modules/",
 				".venv/",
 				"venv/",
 				"__pycache__",
