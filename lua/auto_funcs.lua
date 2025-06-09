@@ -12,7 +12,7 @@ local function clean_empty_buffers()
 		end
 	end
 	if #buffers > 0 then
-		vim.cmd("bd " .. table.concat(buffers, " "))
+		vim.cmd("bd! " .. table.concat(buffers, " "))
 	end
 end
 
