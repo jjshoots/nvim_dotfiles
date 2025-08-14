@@ -15,7 +15,7 @@ local function config_function()
         row = "center",       -- Row position: number, "center", or percentage string
         col = "center",       -- Column position: number, "center", or percentage string
         relative = "editor",  -- Relative to: "editor" or "cursor"
-        border = "rounded",   -- Border style: "none", "single", "double", "rounded", "solid", "shadow"
+        border = "single",   -- Border style: "none", "single", "double", "rounded", "solid", "shadow"
       },
     },
     -- File refresh settings
