@@ -56,7 +56,7 @@ return {
 	},
 	config = config_function,
 	keys = {
-		{ "<C-e>", "<cmd>Neotree position=float reveal<cr>", mode = "n", noremap = true, silent = true },
+		{ "<C-e>", "<cmd>Neotree position=float reveal toggle<cr>", mode = "n", noremap = true, silent = true },
 		{ "<C-n>", "<cmd>Neotree position=float toggle<cr>", mode = "n", noremap = true, silent = true },
 	},
 }
