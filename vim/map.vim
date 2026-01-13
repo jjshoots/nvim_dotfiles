@@ -15,10 +15,10 @@ nnoremap <C-d> <nop>
 noremap <silent> <leader>s :set hlsearch! hlsearch?<CR>
 
 " window management
-noremap <C-Left> 5<C-w><
-noremap <C-Right> 5<C-w>>
-noremap <C-Up> 5<C-w>-
-noremap <C-Down> 5<C-w>+
+noremap <A-Left> 5<C-w><
+noremap <A-Right> 5<C-w>>
+noremap <A-Up> 5<C-w>-
+noremap <A-Down> 5<C-w>+
 noremap <leader>h <C-w>h
 noremap <leader>j <C-w>j
 noremap <leader>k <C-w>k
