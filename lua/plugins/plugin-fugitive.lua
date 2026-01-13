@@ -11,7 +11,7 @@ local function toggle_gstatus()
 	end
 	if not found then
 		vim.cmd("vertical Git")
-		vim.cmd("vertical resize 70")
+		vim.cmd("vertical resize 120")
 		vim.cmd("normal! 4j")
 	end
 end
