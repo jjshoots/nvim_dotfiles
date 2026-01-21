@@ -32,6 +32,19 @@ local function config_function()
 						vim.fn.setreg("", entry.path)
 						print("File path copied: " .. entry.path) -- Echo out the copied file path
 					end,
+					["<C-S-y>"] = function()
+						local entry = require("telescope.actions.state").get_selected_entry()
+						local relative_path = vim.fn.fnamemodify(entry.path, ":~:.")
+						local cb_opts = vim.opt.clipboard:get()
+						if vim.tbl_contains(cb_opts, "unnamed") then
+							vim.fn.setreg("*", relative_path)
+						end
+						if vim.tbl_contains(cb_opts, "unnamedplus") then
+							vim.fn.setreg("+", relative_path)
+						end
+						vim.fn.setreg("", relative_path)
+						print("Relative file path copied: " .. relative_path)
+					end,
 				},
 				n = {
 					["<S-CR>"] = actions.select_vertical,

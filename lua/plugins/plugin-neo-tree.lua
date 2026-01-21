@@ -20,6 +20,18 @@ local function config_function()
 		end
 	end
 
+	local function yank_relative_filepath(state)
+		-- yanks the relative filepath of the current file (relative to cwd)
+		local node = state.tree:get_node() -- Get the current node
+		local path = node.path -- Extract the file path
+
+		if path then
+			local relative_path = vim.fn.fnamemodify(path, ":~:.")
+			vim.fn.setreg("+", relative_path) -- Copy to system clipboard
+			vim.notify("Relative file path copied: " .. relative_path, vim.log.levels.INFO) -- Notify user
+		end
+	end
+
 	-- setup with some options
 	require("neo-tree").setup({
 		sort = {
@@ -41,6 +53,7 @@ local function config_function()
 				["<C-CR>"] = "open_split",
 				["<M-CR>"] = "open_tabnew",
 				["<C-y>"] = yank_filepath,
+				["<C-S-y>"] = yank_relative_filepath,
 			},
 		},
 	})
