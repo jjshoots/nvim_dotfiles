@@ -10,7 +10,6 @@ vim.keymap.set("n", "<C-y>", copy_filepath_to_clipboard, { desc = "Copy file pat
 -- copy relative filepath of current file to clipboard (relative to cwd)
 local function copy_relative_filepath_to_clipboard()
 	local filepath = vim.api.nvim_buf_get_name(0)
-	local cwd = vim.fn.getcwd()
 	local relative_path = vim.fn.fnamemodify(filepath, ":~:.")
 	vim.fn.setreg("+", relative_path)
 	print("Relative file path copied: " .. relative_path)
