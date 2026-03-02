@@ -32,6 +32,17 @@ local function config_function()
 		end
 	end
 
+	local function open_in_system(state)
+		-- opens the path using the system 'open' command
+		local node = state.tree:get_node() -- Get the current node
+		local path = node.path -- Extract the file path
+
+		if path then
+			vim.fn.system("open " .. vim.fn.shellescape(path))
+			vim.notify("Opened: " .. path, vim.log.levels.INFO)
+		end
+	end
+
 	-- setup with some options
 	require("neo-tree").setup({
 		sort = {
@@ -54,6 +65,7 @@ local function config_function()
 				["<M-CR>"] = "open_tabnew",
 				["<C-y>"] = yank_filepath,
 				["<C-S-y>"] = yank_relative_filepath,
+				["<M-o>"] = open_in_system,
 			},
 		},
 	})
