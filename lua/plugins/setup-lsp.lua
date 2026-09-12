@@ -30,8 +30,12 @@ local function config_function()
 
 			-- keybindings
 			map("i", "<C-s>", vim.lsp.buf.signature_help, "Signature help.")
-			map("n", "<M-[>", vim.diagnostic.goto_prev, "Previous diagnostics.")
-			map("n", "<M-]>", vim.diagnostic.goto_next, "Next diagnostics.")
+			map("n", "<M-[>", function()
+				vim.diagnostic.jump({ count = -1, float = true })
+			end, "Previous diagnostics.")
+			map("n", "<M-]>", function()
+				vim.diagnostic.jump({ count = 1, float = true })
+			end, "Next diagnostics.")
 			map("n", "<leader>u", vim.diagnostic.open_float, "Expand diagnostics.")
 			map("n", "K", vim.lsp.buf.hover, "Hover Definition.")
 			map("n", "<leader>r", vim.lsp.buf.rename, "Rename.")
@@ -53,14 +57,9 @@ local function config_function()
 			-- 	vim.lsp.buf.format({ async = true })
 			-- end, opts)
 
-			-- disable inlay hints
-			vim.lsp.handlers["textDocument/publishDiagnostics"] =
-				vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-					virtual_text = false,
-				})
-
-			-- border for diagnostics
+			-- disable virtual text, border for diagnostics
 			vim.diagnostic.config({
+				virtual_text = false,
 				float = { border = "rounded" },
 			})
 			vim.cmd([[

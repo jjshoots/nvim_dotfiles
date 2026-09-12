@@ -51,6 +51,9 @@ end
 
 -- function to trim whitespace
 local function trim_whitespace()
+	if not vim.bo.modifiable then
+		return
+	end
 	local save = vim.fn.winsaveview()
 	vim.cmd([[keeppatterns %s/\s\+$//e]])
 	vim.fn.winrestview(save)
@@ -72,7 +75,7 @@ local autocmd_create = vim.api.nvim_create_autocmd
 group = vim.api.nvim_create_augroup("HighlightOnYank", { clear = true })
 autocmd_create("TextYankPost", {
 	callback = function()
-		vim.highlight.on_yank({
+		vim.hl.on_yank({
 			higroup = "HighlightOnYank",
 		})
 	end,
