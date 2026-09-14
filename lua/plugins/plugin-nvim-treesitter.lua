@@ -1,39 +1,46 @@
+local languages = { "python", "c", "lua", "yaml" }
+
 local function config_function()
 	-- let rainbow handle brackets
 	vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
 
-	require("nvim-treesitter.configs").setup({
-		-- A list of parser names, or "all"
-		ensure_installed = { "python", "c", "lua", "yaml" },
+	-- Install the base set of parsers (async, no-op if already installed).
+	require("nvim-treesitter").install(languages)
 
-		-- Install parsers synchronously (only applied to `ensure_installed`)
-		sync_install = true,
+	-- Enable highlighting and indentation per buffer, auto-installing missing
+	-- parsers on the fly (main branch has no `configs` module or auto_install).
+	vim.api.nvim_create_autocmd("FileType", {
+		group = vim.api.nvim_create_augroup("user_treesitter", { clear = true }),
+		callback = function(args)
+			local lang = vim.treesitter.language.get_lang(args.match)
+			if not lang then
+				return
+			end
 
-		-- Automatically install missing parsers when entering buffer
-		-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-		auto_install = true,
+			local function enable()
+				if not pcall(vim.treesitter.start, args.buf, lang) then
+					return
+				end
+				vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			end
 
-		highlight = {
-			-- `false` will disable the whole extension
-			enable = true,
-
-			-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-			-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-			-- Using this option may slow down your editor, and you may see some duplicate highlights.
-			-- Instead of true it can also be a list of languages
-			additional_vim_regex_highlighting = false,
-		},
-		indent = {
-			enable = true,
-		},
+			if vim.treesitter.language.add(lang) then
+				enable()
+			elseif vim.list_contains(require("nvim-treesitter").get_available(), lang) then
+				require("nvim-treesitter").install(lang):await(function()
+					if vim.api.nvim_buf_is_valid(args.buf) then
+						enable()
+					end
+				end)
+			end
+		end,
 	})
 end
 
 return {
 	"nvim-treesitter/nvim-treesitter",
-	build = function()
-		require("nvim-treesitter.install").update({ with_sync = true })()
-	end,
+	branch = "main",
+	lazy = false,
+	build = ":TSUpdate",
 	config = config_function,
-	event = "VeryLazy",
 }
