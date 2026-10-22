@@ -65,7 +65,7 @@ local function config_function()
 				["<M-CR>"] = "open_tabnew",
 				["<C-y>"] = yank_filepath,
 				["<C-S-y>"] = yank_relative_filepath,
-				["<M-o>"] = open_in_system,
+				["<C-M-o>"] = open_in_system,
 			},
 		},
 	})
