@@ -92,8 +92,8 @@ noremap <silent> 0 g0
 noremap <silent> $ g$
 
 " quick new section / position
-nnoremap <C-A-o> o<Esc>O
-nnoremap <C-A-i> i<space>
+nnoremap <A-o> o<Esc>O
+nnoremap <A-i> i<space>
 
 " mapping for deleting a word in forward mode, equivalent to Ctrl-Del
 inoremap <C-e> <C-o>dw
